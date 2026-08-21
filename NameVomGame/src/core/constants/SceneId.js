@@ -1,3 +1,8 @@
+//############################################
+//             SCENE IDENTIFIERS
+//############################################
+
+//provides stable keys for scenes registered with the scene manager
 export const SceneId = Object.freeze(
     {
         TITLE: 'title',
