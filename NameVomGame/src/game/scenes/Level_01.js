@@ -1,12 +1,23 @@
 import * as THREE from 'three';
+import { BaseScene } from './baseScene';
+import { Player } from '../Player';
 
-
-export class Level_01
+export class Level_01 extends BaseScene
 {
-    constructor()
+    constructor(inputManager, updateManager)
     {
-        this.scene = new THREE.Scene();
+        super(updateManager);
+
         this.camera = new THREE.PerspectiveCamera(60,  window.innerWidth / window.innerHeight);
+        this.inputManager = inputManager;
+
+        this.#init();
+    }
+
+    #init()
+    {
+        this.player = new Player(this.inputManager);
+        this.add(this.player);
     }
 
     enter()
@@ -31,11 +42,5 @@ export class Level_01
     exit()
     {
         console.log('EXIT LEVEL 01');
-    }
-
-    resize(width, height)
-    {
-        this.camera.aspect = width / height;
-        this.camera.updateProjectionMatrix();
     }
 }

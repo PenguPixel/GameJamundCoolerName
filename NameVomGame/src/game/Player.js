@@ -13,6 +13,8 @@ export class Player extends THREE.Group
 
         this.inputManager = inputManager;
 
+        this.speed = 3;
+        this.direction = new THREE.Vector3();
         this.#createMesh();
     }
 

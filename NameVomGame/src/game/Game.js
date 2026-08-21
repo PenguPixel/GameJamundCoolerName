@@ -25,13 +25,12 @@ export class Game
 
 
     /**
-     * Setup Methods
+     * Private Setup Methods
      */
 
     #init()
     {
         this.#setupInput();
-
         this.#setupScenes();
     }
 
@@ -51,4 +50,5 @@ export class Game
             new Level_01(this.inputManager, this.sceneManager));
         this.sceneManager.changeScene(SceneId.LEVEL_01);
     }
+
 }
