@@ -7,7 +7,8 @@ import { AssetManager } from "./manager/AssetManager.js";
 import { AssetManifest } from "./config/AssetManifest.js";
 import { SceneManager } from './manager/SceneManager.js';
 import { SceneId } from './constants/SceneId.js';
-import { Game } from '../game/Game.js';
+import { AudioManager } from './manager/AudioManager.js';
+import { AudioManifest } from './config/AudioManifest.js';
 
 export default class Engine
 {
@@ -38,7 +39,8 @@ export default class Engine
         this.inputManager = new InputManager();
         this.updateManager = new UpdateManager();
         this.assetManager = new AssetManager(AssetManifest);
-        this.sceneManager =  new SceneManager()
+        this.audioManager = new AudioManager(AudioManifest);
+        this.sceneManager =  new SceneManager();
 
 
         //register resize event
@@ -60,16 +62,17 @@ export default class Engine
      */
     async start()
     {
-        await this.assetManager.loadAll();
+        await Promise.all([this.assetManager.loadAll(), this.audioManager.loadAll()]);
 
-        this.game = new Game(
-            this.inputManager, 
-            this.updateManager,
-            this.assetManager,
-            this.sceneManager
-        );
+        // this.game = new Game(
+        //     this.inputManager,
+        //     this.updateManager,
+        //     this.assetManager,
+        //     this.sceneManager,
+        //     this.audioManager
+        // );
 
-        this.updateManager.add(this.game);
+        // this.updateManager.add(this.game);
 
         this.renderer.setAnimationLoop(() => this.#updateLoop());
     }

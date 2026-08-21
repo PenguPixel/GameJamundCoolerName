@@ -10,4 +10,4 @@ export const AssetManifest = Object.freeze([
         id: AssetId.CHEST,
         path: './assets/models/chest_03.glb'
     }
-])
+]);
