@@ -6,7 +6,9 @@ export class SceneManager
         this.scenes = new Map();
         this.activeScene = null;
         this.activeSceneId = null;
+
     }
+
 
     update(deltaTime)
     {
@@ -40,5 +42,4 @@ export class SceneManager
     {
         this.activeScene?.resize?.(width, height);
     }
-
 }
