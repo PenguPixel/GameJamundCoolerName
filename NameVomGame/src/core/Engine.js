@@ -9,6 +9,7 @@ import { SceneManager } from './manager/SceneManager.js';
 import { SceneId } from './constants/SceneId.js';
 import { AudioManager } from './manager/AudioManager.js';
 import { AudioManifest } from './config/AudioManifest.js';
+import { Game } from '../game/Game.js';
 
 export default class Engine
 {
@@ -64,15 +65,15 @@ export default class Engine
     {
         await Promise.all([this.assetManager.loadAll(), this.audioManager.loadAll()]);
 
-        // this.game = new Game(
-        //     this.inputManager,
-        //     this.updateManager,
-        //     this.assetManager,
-        //     this.sceneManager,
-        //     this.audioManager
-        // );
+        this.game = new Game(
+            this.inputManager,
+            this.updateManager,
+            this.assetManager,
+            this.sceneManager,
+            this.audioManager
+        );
 
-        // this.updateManager.add(this.game);
+        this.updateManager.add(this.game);
 
         this.renderer.setAnimationLoop(() => this.#updateLoop());
     }

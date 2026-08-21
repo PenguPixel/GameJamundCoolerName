@@ -29,7 +29,8 @@ export class BaseScene
 
     resize(width, height)
     {
-        this.camera?.aspect = width / height;
-        this.camera?.updateProjectionMatrix();
+        if (!this.camera) return;
+        this.camera.aspect = width / height;
+        this.camera.updateProjectionMatrix();
     }
 }

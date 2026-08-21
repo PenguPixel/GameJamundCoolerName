@@ -1,15 +1,16 @@
 import * as THREE from 'three';
-import { BaseScene } from './baseScene';
-import { Player } from '../Player';
+import { BaseScene } from './BaseScene.js';
+import { Player } from '../Player.js';
 
 export class Level_01 extends BaseScene
 {
-    constructor(inputManager, updateManager)
+    constructor(inputManager, updateManager, sceneManager)
     {
         super(updateManager);
 
         this.camera = new THREE.PerspectiveCamera(60,  window.innerWidth / window.innerHeight);
         this.inputManager = inputManager;
+        this.sceneManager = sceneManager;
 
         this.#init();
     }
