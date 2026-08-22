@@ -27,6 +27,39 @@ body
     color: #f5eef7;
 }
 
+.end-screen
+{
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    background: transparent;
+    color: #f5eef7;
+}
+
+.end-screen__content
+{
+    width: min(90vw, 34rem);
+    text-align: center;
+}
+
+.end-screen__title
+{
+    margin: 0 0 3rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+}
+
+.end-screen__button
+{
+    width: min(100%, 22rem);
+}
+
 .title-menu
 {
     width: min(90vw, 34rem);

@@ -4,6 +4,7 @@ import { AssetId } from "../core/constants/AssetId";
 import { InputAction } from "../core/constants/InputAction.js";
 import { AnimationController } from "../core/animation/AnimationController.js";
 import { SceneId } from "../core/constants/SceneId.js";
+import { EndScene } from "./scenes/EndScene.js";
 import { Level_01 } from "./scenes/Level_01.js";
 import { TitleScene } from "./scenes/TitleScene.js";
 
@@ -64,7 +65,14 @@ export class Game
                 this.assetManager
             ));
 
-        this.sceneManager.changeScene(SceneId.TITLE);
+        this.sceneManager.registerScene(SceneId.END, () =>
+            new EndScene(
+                this.updateManager,
+                this.sceneManager,
+                this.audioManager
+            ));
+
+        this.sceneManager.changeScene(TITLE);
     }
 
 }
