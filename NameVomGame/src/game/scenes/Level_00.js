@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import RAPIER from '@dimforge/rapier3d-compat';
 import { PhysicsCollisionGroup } from '../physics/PhysicsCollisionGroup.js';
 import { BaseLevelScene } from './BaseLevelScene.js';
+import { DynamicObjects } from '../templates/DynamicObjects.js';
 
 export class Level_00 extends BaseLevelScene
 {
@@ -144,6 +145,18 @@ export class Level_00 extends BaseLevelScene
 
         // Add
         this.scene.add(leftWallMesh, gateMesh, this.#doorMesh);
+
+        // Dynamic Objects
+
+    this.dynamicFactory = new DynamicObjects(this.physicsWorld);
+
+    const trapDoor = this.dynamicFactory.createTrapDoor({
+        position: { x: 0, y: 0, z: 0 },
+        size: { x: 1, y: 1, z: 1}
+    });
+    console.log(trapDoor);
+
+
     }
 
 
