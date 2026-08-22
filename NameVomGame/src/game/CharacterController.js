@@ -76,21 +76,16 @@ export class CharacterController extends THREE.Group
     }
 
     #swapCharacter()
-{
-    this.activeCharacter = (this.activeCharacter === this.bodyCharacter) 
-        ? this.spiritCharacter 
-        : this.bodyCharacter;
-        
-    console.log('Swapped to:', this.activeCharacter === this.spiritCharacter ? 'SPIRIT' : 'BODY');
-}
-
-    get isSpiritActive()
     {
-<<<<<<< Updated upstream
         this.audioManager.playSfx(AudioId.CHAR_SWAP);
         this.activeCharacter = this.activeCharacter === this.bodyCharacter ? this.spiritCharacter : this.bodyCharacter;
         this.#updateActiveCharacterAudio();
+
+
+        console.log('Swapped to:', this.activeCharacter === this.spiritCharacter ? 'SPIRIT' : 'BODY');
     }
+
+
 
     #updateActiveCharacterAudio()
     {
@@ -105,8 +100,11 @@ export class CharacterController extends THREE.Group
         //the spirit soundscape can be added here without changing the body configuration
         this.audioManager.pauseMusic();
         this.audioManager.pauseAmbient();
-=======
+    }
+
+    get isSpiritActive()
+    {      
         return this.activeCharacter === this.spiritCharacter;
->>>>>>> Stashed changes
     }
 }
+

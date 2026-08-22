@@ -29,12 +29,7 @@ export default class Engine
         this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         this.renderer.shadowMap.enabled = true;
-<<<<<<< Updated upstream
         this.renderer.shadowMap.type = THREE.PCFShadowMap;
-=======
-        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        
->>>>>>> Stashed changes
 
 
         //creates the reusable engine services
