@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { InputAction } from "../core/constants/InputAction.js";
 import { AssetId } from '../core/constants/AssetId.js';
+import { AnimationController } from '../core/animation/AnimationController.js';
 
 export class Player extends THREE.Group
 {
@@ -18,6 +19,7 @@ export class Player extends THREE.Group
         this.speed = 8;
         this.direction = new THREE.Vector3();
         this.#createModel();
+        this.#setupAnimation();
     }
 
     #createMesh()
@@ -40,6 +42,15 @@ export class Player extends THREE.Group
         // this.model.rotation.y = Math.PI;
         this.add(this.model);
     }
+
+    #setupAnimation()
+    {
+        const idleClip = this.model.animations[0];
+        if (!idleClip) throw new Error('Ghost model has no idle animation');
+
+        this.animationController = new AnimationController(this.model, this.model.animations);
+        this.animationController.playLoop(idleClip.name);
+    }
     
     /**
      * Update
@@ -47,6 +58,7 @@ export class Player extends THREE.Group
 
     update(deltaTime)
     {
+        this.animationController.update(deltaTime);
         this.direction.set(0, 0, 0);
 
         if (this.inputManager.isPressed(InputAction.MOVE_FORWARD)) this.direction.z -= 1;
