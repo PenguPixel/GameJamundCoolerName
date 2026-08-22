@@ -1,0 +1,49 @@
+<main class="title-menu" aria-label="main menu">
+    <section class="title-menu__panel" data-panel="menu">
+        <h1 class="title-menu__title">game title</h1>
+
+        <nav class="title-menu__actions" aria-label="title menu">
+            <button class="title-menu__button" type="button" data-action="start">start</button>
+            <button class="title-menu__button" type="button" data-action="options">options</button>
+            <button class="title-menu__button" type="button" data-action="credits">credits</button>
+        </nav>
+    </section>
+
+    <section class="title-menu__panel" data-panel="options" hidden>
+        <h2 class="title-menu__heading">options</h2>
+
+        <div class="title-menu__volume-list">
+            <label class="title-menu__volume">
+                <span>master</span>
+                <input type="range" min="0" max="1" step="0.01" data-volume="master">
+                <output data-volume-output="master"></output>
+            </label>
+
+            <label class="title-menu__volume">
+                <span>music</span>
+                <input type="range" min="0" max="1" step="0.01" data-volume="music">
+                <output data-volume-output="music"></output>
+            </label>
+
+            <label class="title-menu__volume">
+                <span>ambient</span>
+                <input type="range" min="0" max="1" step="0.01" data-volume="ambient">
+                <output data-volume-output="ambient"></output>
+            </label>
+
+            <label class="title-menu__volume">
+                <span>sfx</span>
+                <input type="range" min="0" max="1" step="0.01" data-volume="sfx">
+                <output data-volume-output="sfx"></output>
+            </label>
+        </div>
+
+        <button class="title-menu__button" type="button" data-action="back">back</button>
+    </section>
+
+    <section class="title-menu__panel" data-panel="credits" hidden>
+        <h2 class="title-menu__heading">credits</h2>
+        <p class="title-menu__credits">team credits coming soon.</p>
+        <button class="title-menu__button" type="button" data-action="back">back</button>
+    </section>
+</main>
