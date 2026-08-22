@@ -1,13 +1,18 @@
 import * as THREE from 'three';
 import { BaseLevelScene } from './BaseLevelScene.js';
+import levelData from '../levels/data/LevelSceneTemplate.json';
 
 
-// Für ein neues Level:
-// 1. Datei kopieren und umbenennen.
-// 2. Klasse umbenennen.
-// 3. Neue ID in SceneId.js ergänzen.
-// 4. Scene in Game.js importieren und registrieren.
-// 5. In #setupAssets() und den Level-Hooks das eigentliche Level bauen.
+//############################################
+//             NEW LEVEL SETUP
+//############################################
+
+//1. copy and rename this scene file
+//2. copy and rename LevelSceneTemplate.json
+//3. update the levelData import above to use the renamed json file
+//4. rename the class and add its identifier to SceneId.js
+//5. import and register the scene in Game.js
+//6. add level-specific physics and gameplay through the methods below
 
 
 export class LevelSceneTemplate extends BaseLevelScene
@@ -86,6 +91,7 @@ export class LevelSceneTemplate extends BaseLevelScene
         const groundMaterial = new THREE.MeshStandardMaterial({ color: 0x263d46, side: THREE.DoubleSide });
         const ground = new THREE.Mesh(groundGeometry, groundMaterial);
         ground.rotation.x = -Math.PI / 2;
+        ground.receiveShadow = true;
 
         //the grid is slightly raised to prevent flickering where both surfaces overlap
         const grid = new THREE.GridHelper(groundSize, groundSize, 0x765a7c, 0x263d46);
@@ -100,6 +106,16 @@ export class LevelSceneTemplate extends BaseLevelScene
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
         const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
         directionalLight.position.set(5, 10, 5);
+        directionalLight.castShadow = true;
+        directionalLight.shadow.mapSize.set(1024, 1024);
+        directionalLight.shadow.camera.left = -15;
+        directionalLight.shadow.camera.right = 15;
+        directionalLight.shadow.camera.top = 15;
+        directionalLight.shadow.camera.bottom = -15;
+        directionalLight.shadow.camera.near = 0.1;
+        directionalLight.shadow.camera.far = 50;
+        directionalLight.shadow.bias = -0.0001;
+        directionalLight.shadow.normalBias = 0.02;
 
         this.scene.add(ambientLight, directionalLight);
     }
@@ -107,6 +123,9 @@ export class LevelSceneTemplate extends BaseLevelScene
 
     #setupAssets()
     {
+        //creates every visual object contained in the exported editor json
+        this.levelObjects = this.loadLevelData(levelData);
+
         //create level-specific asset instances here and add them to this.scene
     }
 
@@ -115,6 +134,9 @@ export class LevelSceneTemplate extends BaseLevelScene
     {
         //this collider matches the visible 30 by 30 ground plane
         this.createGroundCollider(30, 30);
+
+        //creates wall and spirit-passable colliders configured by the shared object catalog
+        this.createLevelObjectColliders(this.levelObjects);
 
         //create additional wall, obstacle, trigger, and puzzle colliders here
     }

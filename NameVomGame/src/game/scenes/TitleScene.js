@@ -3,15 +3,17 @@ import { AudioId } from '../../core/constants/AudioId.js';
 import { SceneId } from '../../core/constants/SceneId.js';
 import titleSceneOverlay from '../ui/TitleSceneOverlay.html?raw';
 import { BaseScene } from './BaseScene.js';
+import { isLevelEditorEnabled, openLevelEditor } from 'virtual:level-editor-launcher';
 
 export class TitleScene extends BaseScene
 {
-    constructor(updateManager, sceneManager, audioManager)
+    constructor(updateManager, sceneManager, audioManager, assetManager)
     {
         super(updateManager);
 
         this.sceneManager = sceneManager;
         this.audioManager = audioManager;
+        this.assetManager = assetManager;
 
         this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
 
@@ -44,6 +46,18 @@ export class TitleScene extends BaseScene
         this.overlay.className = 'title-scene';
         this.overlay.innerHTML = titleSceneOverlay;
 
+        let editorButton = null;
+
+        if (isLevelEditorEnabled)
+        {
+            editorButton = document.createElement('button');
+            editorButton.className = 'title-menu__button';
+            editorButton.type = 'button';
+            editorButton.dataset.action = 'editor';
+            editorButton.textContent = 'level editor';
+            this.overlay.querySelector('.title-menu__actions').append(editorButton);
+        }
+
         document.body.append(this.overlay);
         this.#setupMenuSounds();
 
@@ -55,6 +69,11 @@ export class TitleScene extends BaseScene
 
         this.overlay.querySelector('[data-action="credits"]')
             .addEventListener('click', () => this.#showPanel('credits'));
+
+        if (isLevelEditorEnabled)
+        {
+            editorButton.addEventListener('click', () => this.#openLevelEditor());
+        }
 
         for (const button of this.overlay.querySelectorAll('[data-action="back"]'))
         {
@@ -69,7 +88,29 @@ export class TitleScene extends BaseScene
         if (this.isStarting) return;
         this.isStarting = true;
 
-        this.sceneManager.changeScene(SceneId.LEVEL_00);
+        //temporarily opens the editor-generated level for testing
+        this.sceneManager.changeScene(SceneId.LEVEL_05);
+    }
+
+
+    async #openLevelEditor()
+    {
+        if (this.isStarting) return;
+        this.isStarting = true;
+
+        try
+        {
+            await openLevelEditor(
+                this.updateManager,
+                this.sceneManager,
+                this.assetManager
+            );
+        }
+        catch (error)
+        {
+            this.isStarting = false;
+            console.error(error);
+        }
     }
 
     #showPanel(panelName)

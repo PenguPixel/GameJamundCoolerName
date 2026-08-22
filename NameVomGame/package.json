@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "vite build",
+    "build:editor": "vite build --mode editor",
     "dev": "vite --host"
   },
   "devDependencies": {

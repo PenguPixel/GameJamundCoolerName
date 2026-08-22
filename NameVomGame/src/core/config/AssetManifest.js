@@ -15,7 +15,35 @@ export const AssetManifest = Object.freeze([
         path: './assets/models/ghost.glb'
     },
     {
+        id: AssetId.CHARACTER,
+        path: './assets/models/character.glb'
+    },
+    {
         id: AssetId.WORLD1,
         path: './assets/models/world1.glb'
+    },
+    {
+        id: AssetId.WALL,
+        path: './assets/models/wall.glb'
+    },
+    {
+        id: AssetId.WALL_ONE_SIDE_CLOSED,
+        path: './assets/models/wall_one_side_closed.glb'
+    },
+    {
+        id: AssetId.WALL_CORNER,
+        path: './assets/models/wall_corner.glb'
+    },
+    {
+        id: AssetId.BARS,
+        path: './assets/models/bars.glb'
+    },
+    {
+        id: AssetId.DOOR,
+        path: './assets/models/door.glb'
+    },
+    {
+        id: AssetId.STONE,
+        path: './assets/models/stone.glb'
     }
 ]);

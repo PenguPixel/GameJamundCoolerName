@@ -4,6 +4,7 @@ import { EndScene } from "./scenes/EndScene.js";
 import { Level_01 } from "./scenes/Level_01.js";
 import { TitleScene } from "./scenes/TitleScene.js";
 import { Level_00 } from "./scenes/Level_00.js";
+import { Level_05 } from "./scenes/Level_05.js";
 
 export class Game
 {
@@ -52,7 +53,8 @@ export class Game
             new TitleScene(
                 this.updateManager,
                 this.sceneManager,
-                this.audioManager
+                this.audioManager,
+                this.assetManager
             ));
 
         this.sceneManager.registerScene(SceneId.LEVEL_00, () =>
@@ -73,7 +75,16 @@ export class Game
                 this.audioManager
             ));
 
-        //das unter mir kopieren, entkommentieren, sceneid und klassenname der LevelScene ändern
+        this.sceneManager.registerScene(SceneId.LEVEL_05, () =>
+            new Level_05(
+                this.inputManager,
+                this.updateManager,
+                this.sceneManager,
+                this.assetManager,
+                this.audioManager
+            ));
+
+        //copy this block, uncomment it, and replace the scene id and level scene class
         /*
         this.sceneManager.registerScene(SceneId.LEVEL_TEMPLATE, () =>
             new LevelSceneTemplate(

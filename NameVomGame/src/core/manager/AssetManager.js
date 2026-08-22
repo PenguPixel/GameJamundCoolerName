@@ -102,6 +102,16 @@ export class AssetManager
     async #loadGLB(asset)
     {
         const glb = await this.loader.loadAsync(asset.path);
+
+        //enables every loaded mesh to participate in the shared shadow system by default
+        glb.scene.traverse(object =>
+        {
+            if (!object.isMesh) return;
+
+            object.castShadow = true;
+            object.receiveShadow = true;
+        });
+
         this.assets.set(asset.id, glb);
     }
 

@@ -1,0 +1,204 @@
+.level-editor-overlay
+{
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    color: #f5eef7;
+    font-size: 0.9rem;
+}
+
+.level-editor-overlay button,
+.level-editor-overlay input,
+.level-editor-overlay select
+{
+    min-height: 2.4rem;
+    box-sizing: border-box;
+    border: 1px solid #765a7c;
+    border-radius: 0.2rem;
+    background: #18051e;
+    color: #f5eef7;
+    font: inherit;
+}
+
+.level-editor-overlay button
+{
+    padding: 0.55rem 0.8rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.level-editor-overlay button:hover,
+.level-editor-overlay button.is-active
+{
+    border-color: #319db2;
+    background: #35103f;
+}
+
+.level-editor-overlay button:focus-visible,
+.level-editor-overlay input:focus-visible,
+.level-editor-overlay select:focus-visible
+{
+    outline: 2px solid #319db2;
+    outline-offset: 2px;
+}
+
+.level-editor
+{
+    position: absolute;
+    inset: 0;
+}
+
+.level-editor__topbar,
+.level-editor__sidebar,
+.level-editor__status
+{
+    pointer-events: auto;
+    background: rgb(5 16 12 / 94%);
+    box-shadow: 0 0 1.5rem rgb(0 0 0 / 35%);
+    backdrop-filter: blur(0.5rem);
+}
+
+.level-editor__topbar
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 16rem;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.5rem;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+}
+
+.level-editor__name,
+.level-editor__field
+{
+    display: grid;
+    gap: 0.35rem;
+}
+
+.level-editor__name span,
+.level-editor__field span,
+.level-editor h2
+{
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.level-editor__name input
+{
+    width: min(18rem, 35vw);
+    padding: 0.45rem 0.65rem;
+}
+
+.level-editor__file-actions
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.level-editor__sidebar
+{
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 16rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.level-editor__sidebar section
+{
+    margin-bottom: 1.75rem;
+}
+
+.level-editor h2
+{
+    margin: 0 0 0.75rem;
+    color: #a88eae;
+}
+
+.level-editor__button-list
+{
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.level-editor__button-list--row
+{
+    grid-template-columns: 1fr 1fr;
+}
+
+.level-editor__field
+{
+    margin: 1rem 0;
+}
+
+.level-editor__field select
+{
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+.level-editor__sidebar > section > button
+{
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.level-editor__danger
+{
+    border-color: #7d3853 !important;
+}
+
+.level-editor__help p
+{
+    margin: 0.35rem 0;
+    color: rgb(245 238 247 / 68%);
+    font-size: 0.76rem;
+}
+
+.level-editor__status
+{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: min(34rem, calc(100vw - 18rem));
+    padding: 0.75rem 1rem;
+    border-left: 3px solid #319db2;
+    color: #d9f8ff;
+}
+
+@media (max-width: 760px)
+{
+    .level-editor__sidebar
+    {
+        width: 12rem;
+    }
+
+    .level-editor__topbar
+    {
+        left: 12rem;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .level-editor__name input
+    {
+        width: 100%;
+    }
+
+    .level-editor__file-actions
+    {
+        justify-content: flex-start;
+    }
+}

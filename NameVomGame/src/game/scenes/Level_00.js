@@ -77,6 +77,7 @@ export class Level_00 extends BaseLevelScene
         const groundMaterial = new THREE.MeshStandardMaterial({ color: 0x263d46, side: THREE.DoubleSide });
         const ground = new THREE.Mesh(groundGeometry, groundMaterial);
         ground.rotation.x = -Math.PI / 2;
+        ground.receiveShadow = true;
 
         //the grid is slightly raised to prevent flickering where both surfaces overlap
         const grid = new THREE.GridHelper(groundSize, groundSize, 0x765a7c, 0x263d46);
@@ -91,6 +92,16 @@ export class Level_00 extends BaseLevelScene
         const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
         const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
         directionalLight.position.set(5, 10, 5);
+        directionalLight.castShadow = true;
+        directionalLight.shadow.mapSize.set(1024, 1024);
+        directionalLight.shadow.camera.left = -15;
+        directionalLight.shadow.camera.right = 15;
+        directionalLight.shadow.camera.top = 15;
+        directionalLight.shadow.camera.bottom = -15;
+        directionalLight.shadow.camera.near = 0.1;
+        directionalLight.shadow.camera.far = 50;
+        directionalLight.shadow.bias = -0.0001;
+        directionalLight.shadow.normalBias = 0.02;
 
         this.scene.add(ambientLight, directionalLight);
     }

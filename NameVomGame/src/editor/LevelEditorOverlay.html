@@ -1,0 +1,46 @@
+<main class="level-editor" aria-label="level editor">
+    <header class="level-editor__topbar">
+        <label class="level-editor__name">
+            <span>level name</span>
+            <input type="text" value="new_level" data-editor-name>
+        </label>
+
+        <div class="level-editor__file-actions">
+            <button type="button" data-editor-action="import">import json</button>
+            <button type="button" data-editor-action="export">export json</button>
+            <button type="button" data-editor-action="back">back to title</button>
+            <input type="file" accept="application/json,.json" data-editor-file hidden>
+        </div>
+    </header>
+
+    <aside class="level-editor__sidebar">
+        <section>
+            <h2>objects</h2>
+            <div class="level-editor__button-list" data-editor-catalog></div>
+            <button type="button" data-editor-action="select">select tool</button>
+        </section>
+
+        <section>
+            <h2>transform</h2>
+            <div class="level-editor__button-list level-editor__button-list--row">
+                <button type="button" data-editor-transform="translate">move (w)</button>
+                <button type="button" data-editor-transform="rotate">rotate (e)</button>
+            </div>
+
+            <label class="level-editor__field">
+                <span>grid size</span>
+                <select data-editor-grid>
+                    <option value="0.25">0.25</option>
+                    <option value="0.5">0.5</option>
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                </select>
+            </label>
+
+            <button type="button" data-editor-action="delete" class="level-editor__danger">delete selected</button>
+            <button type="button" data-editor-action="clear" class="level-editor__danger">clear level</button>
+        </section>
+    </aside>
+
+    <output class="level-editor__status" data-editor-status>select an object to start placing.</output>
+</main>

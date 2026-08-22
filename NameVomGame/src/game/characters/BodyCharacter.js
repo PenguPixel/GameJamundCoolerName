@@ -7,7 +7,7 @@ export class BodyCharacter extends BaseCharacter
 {
     constructor(assetManager, physicsWorld, position)
     {
-        super(assetManager, AssetId.GHOST);
+        super(assetManager, AssetId.CHARACTER);
 
         //a dynamic rigid body is affected by gravity, contacts, forces, and impulses
         const rigidBodyDescription = RAPIER.RigidBodyDesc

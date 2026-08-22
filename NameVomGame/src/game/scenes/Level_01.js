@@ -18,17 +18,15 @@ export class Level_01 extends BaseLevelScene
         this.#setupEnvironment();
         this.#setupAssets();
         this.#setupWorldPlane();
-        this.createGroundCollider(20, 20);
+        this.createGroundCollider(50, 50);
     }
 
     enterLevel()
     {
-        console.log('ENTER LEVEL 01');
     }
 
     exitLevel()
     {
-        console.log('EXIT LEVEL 01');
     }
 
     #setupLights()
@@ -36,6 +34,12 @@ export class Level_01 extends BaseLevelScene
         const ambientLight = new THREE.AmbientLight(0xffffff, 1);
         const pointLight = new THREE.PointLight(0xff00ff, 8);
         pointLight.position.set(1, 1, 1);
+        pointLight.castShadow = true;
+        pointLight.shadow.mapSize.set(1024, 1024);
+        pointLight.shadow.camera.near = 0.1;
+        pointLight.shadow.camera.far = 50;
+        pointLight.shadow.bias = -0.0001;
+        pointLight.shadow.normalBias = 0.02;
 
         this.scene.add(ambientLight, pointLight);
     }
@@ -58,23 +62,24 @@ export class Level_01 extends BaseLevelScene
 
     #setupWorldPlane()
     {
-        // World Size
         const worldTileSize = 10;
-        const cols = 5;
-        const rows = 5;
-
-        const worldTileMeshes = this.assetManager.createInstancedMeshes(AssetId.WORLD1, 25);
-
         const gridSize = 5;
+        const worldTileCount = gridSize * gridSize;
+        const worldTileMeshes = this.assetManager.createInstancedMeshes(AssetId.WORLD1, worldTileCount);
         const dummy = new THREE.Object3D();
 
-        for (let i = 0; i < 25; i++)
+        for (let i = 0; i < worldTileCount; i++)
         {
             const row = Math.floor(i / gridSize);
             const column = i % gridSize;
+            const offset = (gridSize - 1) / 2;
 
-            dummy.position.set(column, 0, row);
-            dummy.scale.setScalar(0.001)
+            dummy.position.set(
+                (column - offset) * worldTileSize,
+                0,
+                (row - offset) * worldTileSize
+            );
+            dummy.scale.setScalar(0.001);
             dummy.rotation.x = -Math.PI / 2;
             dummy.updateMatrix();
 
@@ -82,24 +87,6 @@ export class Level_01 extends BaseLevelScene
         }
 
         worldTileMeshes.instanceMatrix.needsUpdate = true;
-
-        // console.log(worldTileMeshes);
-        // worldTileMeshes.scale.setScalar(0.1);
-
-        // const worldPlaneGroup = new THREE.Group();
-
-        // for(let x = 0; x < cols; x++)
-        // {
-        //     for(let z = 0; z < rows; z++)
-        //     {
-        //         const posX = (x - cols / 2) * worldTileSize;
-        //         const posZ = (z - rows / 2) * worldTileSize;
-
-        //         worldTileMeshes.position.set(posX, 0, posZ);
-
-        //         worldPlaneGroup.add(worldTileMeshes);
-        //     }
-        // }
 
         this.scene.add(worldTileMeshes);
     }
