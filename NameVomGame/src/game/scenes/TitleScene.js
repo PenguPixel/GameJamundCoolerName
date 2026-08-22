@@ -27,7 +27,6 @@ export class TitleScene extends BaseScene
         this.#createOverlay();
         this.audioManager.playMusic(AudioId.TITLE_MUSIC);
         this.audioManager.playAmbient(AudioId.TITLE_AMBIENT);
-        console.log('Enter Title Scene');
     }
 
     exit()
@@ -89,8 +88,7 @@ export class TitleScene extends BaseScene
         if (this.isStarting) return;
         this.isStarting = true;
 
-        //temporarily opens the editor-generated level for testing
-        this.sceneManager.changeScene(SceneId.LEVEL_05);
+        this.sceneManager.changeScene(SceneId.LEVEL_00);
     }
 
 

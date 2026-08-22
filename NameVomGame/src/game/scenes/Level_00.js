@@ -34,7 +34,6 @@ export class Level_00 extends BaseLevelScene
     //called whenever this level becomes the active scene
     enterLevel()
     {
-        console.log('ENTER LEVEL 00');
     }
 
 
@@ -146,12 +145,18 @@ export class Level_00 extends BaseLevelScene
         // Meshes
         const leftWallMesh = new THREE.Mesh( new THREE.BoxGeometry(4, 3, 0.5), wallMat);
         leftWallMesh.position.set(-2, 1.5, -2);
+        leftWallMesh.castShadow = true;
+        leftWallMesh.receiveShadow = true;
 
         const gateMesh = new THREE.Mesh( new THREE.BoxGeometry(2, 3, 0.5), gateMat);
         gateMesh.position.set(2, 1.5, -2);
+        gateMesh.castShadow = true;
+        gateMesh.receiveShadow = true;
         
         this.#doorMesh = new THREE.Mesh( new THREE.BoxGeometry(2, 3, 0.5), doorMat);
         this.#doorMesh.position.set(0, 1.5, -2);
+        this.#doorMesh.castShadow = true;
+        this.#doorMesh.receiveShadow = true;
 
         // Add
         this.scene.add(leftWallMesh, gateMesh, this.#doorMesh);
@@ -167,7 +172,7 @@ export class Level_00 extends BaseLevelScene
 
         const leftWallBody = this.physicsWorld.createRigidBody(RAPIER.RigidBodyDesc.fixed());
         const leftWallDesc = RAPIER.ColliderDesc.cuboid(2, 1.5, 0.25)
-            .setTranslation(-4, 1.5, -2)
+            .setTranslation(-2, 1.5, -2)
             .setCollisionGroups(PhysicsCollisionGroup.WORLD);
         this.physicsWorld.createCollider(leftWallDesc, leftWallBody);
 
