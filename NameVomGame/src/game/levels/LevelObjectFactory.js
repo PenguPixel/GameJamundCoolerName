@@ -15,9 +15,11 @@ export class LevelObjectFactory
         if (!definition) throw new Error(`Unknown level object type: ${type}`);
 
         const instance = this.assetManager.createInstance(definition.assetId);
-        const object = definition.centerOnGround
-            ? this.#createCenteredRoot(instance)
-            : instance;
+        const object = definition.surfaceMeshName
+            ? this.#createSurfaceAlignedRoot(instance, definition.surfaceMeshName)
+            : definition.centerOnGround
+                ? this.#createCenteredRoot(instance)
+                : instance;
 
         object.scale.fromArray(definition.defaultScale);
         object.rotation.fromArray(definition.defaultRotation);
@@ -211,6 +213,29 @@ export class LevelObjectFactory
 
         instance.position.x -= center.x;
         instance.position.y -= bounds.min.y;
+        instance.position.z -= center.z;
+        root.add(instance);
+        root.animations = instance.animations ?? [];
+
+        return root;
+    }
+
+
+    #createSurfaceAlignedRoot(instance, surfaceMeshName)
+    {
+        const surfaceMesh = instance.getObjectByName(surfaceMeshName);
+        if (!surfaceMesh) throw new Error(`Surface mesh not found: ${surfaceMeshName}`);
+
+        instance.updateWorldMatrix(true, true);
+
+        const root = new THREE.Group();
+        const bounds = new THREE.Box3().setFromObject(instance);
+        const surfaceBounds = new THREE.Box3().setFromObject(surfaceMesh);
+        const center = bounds.getCenter(new THREE.Vector3());
+
+        //places the selected mesh top at local y zero while centering the full asset horizontally
+        instance.position.x -= center.x;
+        instance.position.y -= surfaceBounds.max.y;
         instance.position.z -= center.z;
         root.add(instance);
         root.animations = instance.animations ?? [];

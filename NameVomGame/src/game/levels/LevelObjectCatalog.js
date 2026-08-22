@@ -88,7 +88,7 @@ export const LevelObjectCatalog = Object.freeze([
         assetId: AssetId.SPIKES,
         defaultScale: [1, 1, 1],
         defaultRotation: [0, 0, 0],
-        centerOnGround: true,
+        surfaceMeshName: 'plate',
         placementY: 0
     }),
     Object.freeze({
