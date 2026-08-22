@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import RAPIER from '@dimforge/rapier3d-compat';
+import { PhysicsCollisionGroup } from '../physics/PhysicsCollisionGroup.js';
 import { BaseLevelScene } from './BaseLevelScene.js';
 
 export class Level_00 extends BaseLevelScene
@@ -22,6 +24,7 @@ export class Level_00 extends BaseLevelScene
         this.scene.background = new THREE.Color(0x101218);
 
         this.#setupEnvironment();
+        this.#setupRoomGeometry();
         this.#setupLights();
         this.#setupAssets();
         this.#setupPhysics();
@@ -31,7 +34,7 @@ export class Level_00 extends BaseLevelScene
     //called whenever this level becomes the active scene
     enterLevel()
     {
-
+        console.log('ENTER LEVEL 00');
     }
 
 
@@ -85,6 +88,11 @@ export class Level_00 extends BaseLevelScene
         this.scene.add(ground, grid);
     }
 
+    #setupRoomGeometry()
+    {
+        
+
+    }
 
     #setupLights()
     {
@@ -96,13 +104,46 @@ export class Level_00 extends BaseLevelScene
     }
 
 
+    // Puzzle and State References
+    // Door
+    #doorMesh = null;
+    #doorCollider = null;
+    #doorRigidBody = null;
+    #isDoorOpen = false;
+    
+    // Lever
+    #leverTriggerCollider = null;
+    #leverMesh = null;
+    
     #setupAssets()
     {
         //create level-specific asset instances here and add them to this.scene
+
+        // Materials
+        const wallMat = new THREE.MeshStandardMaterial({color: 0xaaaaaa});
+        const doorMat = new THREE.MeshStandardMaterial({color: 0x00aaaa});
+        const gateMat = new THREE.MeshStandardMaterial({
+            color: 0xaa00aa,
+            wireframe: true,
+        });
+        const triggerMat = new THREE.MeshStandardMaterial({
+            color: 0xaaaa00,
+            emissive: 0xaaaaaa,
+            emissiveIntensity: 0.8
+        });
         
+        // Meshes
+        const leftWallMesh = new THREE.Mesh( new THREE.BoxGeometry(4, 3, 0.5), wallMat);
+        leftWallMesh.position.set(-2, 1.5, -2);
+
+        const gateMesh = new THREE.Mesh( new THREE.BoxGeometry(2, 3, 0.5), gateMat);
+        gateMesh.position.set(2, 1.5, -2);
         
-        
-        //this.scene.add()
+        this.#doorMesh = new THREE.Mesh( new THREE.BoxGeometry(2, 3, 0.5), doorMat);
+        this.#doorMesh.position.set(0, 1.5, -2);
+
+        // Add
+        this.scene.add(leftWallMesh, gateMesh, this.#doorMesh);
     }
 
 
@@ -112,5 +153,24 @@ export class Level_00 extends BaseLevelScene
         this.createGroundCollider(30, 30);
 
         //create additional wall, obstacle, trigger, and puzzle colliders here
+
+        const leftWallBody = this.physicsWorld.createRigidBody(RAPIER.RigidBodyDesc.fixed());
+        const leftWallDesc = RAPIER.ColliderDesc.cuboid(2, 1.5, 0.25)
+            .setTranslation(-4, 1.5, -2)
+            .setCollisionGroups(PhysicsCollisionGroup.WORLD);
+        this.physicsWorld.createCollider(leftWallDesc, leftWallBody);
+
+        const gateBody = this.physicsWorld.createRigidBody(RAPIER.RigidBodyDesc.fixed());
+        const gateDesc = RAPIER.ColliderDesc.cuboid(1, 1.5, 0.25)
+            .setTranslation(2, 1.5, -2)
+            .setCollisionGroups(PhysicsCollisionGroup.SPIRIT_PASSABLE);
+        this.physicsWorld.createCollider(gateDesc, gateBody);
+
+        const doorBody = this.physicsWorld.createRigidBody(RAPIER.RigidBodyDesc.fixed());
+        const doorBodyDesc = RAPIER.ColliderDesc.cuboid(1, 1.5, 0.25)
+            .setTranslation(0, 1.5, -2)
+            .setCollisionGroups(PhysicsCollisionGroup.WORLD);
+        this.physicsWorld.createCollider(doorBodyDesc, doorBody);
+        
     }
 }

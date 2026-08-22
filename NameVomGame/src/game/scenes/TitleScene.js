@@ -25,6 +25,7 @@ export class TitleScene extends BaseScene
         this.#createOverlay();
         this.audioManager.playMusic(AudioId.TITLE_MUSIC);
         this.audioManager.playAmbient(AudioId.TITLE_AMBIENT);
+        console.log('Enter Title Scene');
     }
 
     exit()
