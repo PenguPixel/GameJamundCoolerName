@@ -10,6 +10,9 @@ export const LevelObjectType = Object.freeze({
     STONE: 'stone',
     CACTUS_FLOWER: 'cactusFlower',
     SPIKE_TRAP: 'spikeTrap',
+    PRESSURE_PLATE: 'pressurePlate',
+    PITFALL: 'pitfall',
+    SPIRIT_LIGHT_CONE: 'spiritLightCone',
     CHEST: 'chest',
     WORLD_TILE_5X5: 'worldTile',
     WORLD_TILE_1X1: 'worldTile1x1'
@@ -58,7 +61,7 @@ export const LevelObjectCatalog = Object.freeze([
         defaultScale: [1, 1, 1],
         defaultRotation: [0, 0, 0],
         centerOnGround: true,
-        physicsCollisionGroup: PhysicsCollisionGroup.WORLD,
+        runtimeObject: LevelObjectType.DOOR,
         placementY: 0
     }),
     Object.freeze({
@@ -89,7 +92,72 @@ export const LevelObjectCatalog = Object.freeze([
         defaultScale: [1, 1, 1],
         defaultRotation: [0, 0, 0],
         surfaceMeshName: 'plate',
-        placementY: 0
+        runtimeObject: LevelObjectType.SPIKE_TRAP,
+        defaultProperties: Object.freeze({
+            startDelay: 0,
+            interval: 2,
+            activeDuration: 1,
+            damage: 1
+        }),
+        placementY: 0.01
+    }),
+    Object.freeze({
+        type: LevelObjectType.PRESSURE_PLATE,
+        label: 'pressure plate',
+        primitive: Object.freeze({
+            shape: 'box',
+            size: [1.5, 0.12, 1.5],
+            color: 0x319db2
+        }),
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        runtimeObject: LevelObjectType.PRESSURE_PLATE,
+        defaultProperties: Object.freeze({
+            activator: 'body',
+            targetId: 'door-001'
+        }),
+        placementY: 0.01
+    }),
+    Object.freeze({
+        type: LevelObjectType.PITFALL,
+        label: 'trapdoor / pitfall',
+        primitive: Object.freeze({
+            shape: 'box',
+            size: [2, 0.02, 2],
+            color: 0x020403,
+            emissive: 0x020403,
+            emissiveIntensity: 1,
+            doubleSided: true
+        }),
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        runtimeObject: LevelObjectType.PITFALL,
+        placementY: 0.012
+    }),
+    Object.freeze({
+        type: LevelObjectType.SPIRIT_LIGHT_CONE,
+        label: 'spirit light cone',
+        primitive: Object.freeze({
+            shape: 'cone',
+            radius: 1.5,
+            height: 8,
+            color: 0x9defff,
+            opacity: 0.22,
+            emissive: 0x319db2,
+            emissiveIntensity: 1,
+            doubleSided: true
+        }),
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        runtimeObject: LevelObjectType.SPIRIT_LIGHT_CONE,
+        defaultProperties: Object.freeze({
+            path: '5,0',
+            speed: 2
+        }),
+        placementY: 0.01
     }),
     Object.freeze({
         type: LevelObjectType.WALL_ONE_SIDE_CLOSED,

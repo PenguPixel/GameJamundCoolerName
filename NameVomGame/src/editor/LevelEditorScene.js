@@ -212,6 +212,7 @@ export class LevelEditorScene extends BaseScene
         });
 
         this.#updateTransformButtons();
+        this.#updatePropertiesPanel();
     }
 
 
@@ -335,11 +336,13 @@ export class LevelEditorScene extends BaseScene
             this.#destroyPlacementPreview();
             this.transformControls.attach(object);
             this.#updateCatalogButtons();
+            this.#updatePropertiesPanel();
             this.#updateStatusForSelection();
             return;
         }
 
         this.transformControls.detach();
+        this.#updatePropertiesPanel();
         this.#setStatus('nothing selected.');
     }
 
@@ -366,6 +369,7 @@ export class LevelEditorScene extends BaseScene
         this.selectedObject = null;
         this.transformControls.detach();
         this.#updateCatalogButtons();
+        this.#updatePropertiesPanel();
 
         if (!type)
         {
@@ -505,6 +509,70 @@ export class LevelEditorScene extends BaseScene
     }
 
 
+    #updatePropertiesPanel()
+    {
+        if (!this.overlay) return;
+
+        const panel = this.overlay.querySelector('[data-editor-properties]');
+        const properties = this.selectedObject?.userData.levelObjectProperties;
+        panel.hidden = !properties;
+
+        if (!properties) return;
+
+        const definition = getLevelObjectDefinition(this.selectedObject.userData.levelObjectType);
+        const fields = panel.querySelector('[data-editor-properties-fields]');
+        panel.querySelector('[data-editor-properties-title]').textContent = definition.label;
+        fields.replaceChildren();
+
+        for (const [propertyName, value] of Object.entries(properties))
+        {
+            const label = document.createElement('label');
+            const text = document.createElement('span');
+            const input = propertyName === 'activator'
+                ? document.createElement('select')
+                : document.createElement('input');
+
+            label.className = 'level-editor__field';
+            text.textContent = propertyName === 'path'
+                ? 'path (relative x,z points)'
+                : propertyName.replace(/([A-Z])/g, ' $1').toLowerCase();
+            input.dataset.editorProperty = propertyName;
+
+            if (propertyName === 'activator')
+            {
+                input.append(new Option('body', 'body'), new Option('spirit', 'spirit'));
+            }
+            else
+            {
+                input.type = typeof value === 'number' ? 'number' : 'text';
+                if (typeof value === 'number') input.step = '0.1';
+                if (propertyName === 'path') input.placeholder = '5,0; 5,5; 0,5';
+            }
+
+            input.value = value;
+            input.addEventListener('change', event => this.#setSelectedObjectProperty(event));
+            label.append(text, input);
+            fields.append(label);
+        }
+    }
+
+
+    #setSelectedObjectProperty(event)
+    {
+        const properties = this.selectedObject?.userData.levelObjectProperties;
+        if (!properties) return;
+
+        const input = event.currentTarget;
+        const propertyName = input.dataset.editorProperty;
+        const value = typeof properties[propertyName] === 'number'
+            ? Number(input.value)
+            : input.value;
+
+        properties[propertyName] = value;
+        this.#setStatus(`${propertyName} set to ${value}.`);
+    }
+
+
     #deleteSelectedObject()
     {
         if (!this.selectedObject)
@@ -519,6 +587,7 @@ export class LevelEditorScene extends BaseScene
         this.editableRoot.remove(object);
         this.levelObjects.splice(this.levelObjects.indexOf(object), 1);
         this.#disposeLevelObject(object);
+        this.#updatePropertiesPanel();
         this.#setStatus('object deleted.');
     }
 
@@ -542,6 +611,7 @@ export class LevelEditorScene extends BaseScene
     {
         this.transformControls.detach();
         this.selectedObject = null;
+        this.#updatePropertiesPanel();
 
         for (const object of this.levelObjects)
         {

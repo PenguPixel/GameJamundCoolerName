@@ -5,7 +5,21 @@ import { CharacterController } from '../CharacterController.js';
 import { PhysicsCollisionGroup } from '../physics/PhysicsCollisionGroup.js';
 import { validateLevelData } from '../levels/LevelData.js';
 import { LevelObjectFactory } from '../levels/LevelObjectFactory.js';
-import { getLevelObjectDefinition } from '../levels/LevelObjectCatalog.js';
+import { getLevelObjectDefinition, LevelObjectType } from '../levels/LevelObjectCatalog.js';
+import { SpikeTrap } from '../templates/SpikeTrap.js';
+import { ControlledDoor } from '../runtime/ControlledDoor.js';
+import { PressurePlate } from '../runtime/PressurePlate.js';
+import { Pitfall } from '../runtime/Pitfall.js';
+import { SpiritLightCone } from '../runtime/SpiritLightCone.js';
+
+//add future traps and interactive level objects here using the same constructor parameters
+const RuntimeLevelObjectClasses = new Map([
+    [LevelObjectType.SPIKE_TRAP, SpikeTrap],
+    [LevelObjectType.DOOR, ControlledDoor],
+    [LevelObjectType.PRESSURE_PLATE, PressurePlate],
+    [LevelObjectType.PITFALL, Pitfall],
+    [LevelObjectType.SPIRIT_LIGHT_CONE, SpiritLightCone]
+]);
 
 export class BaseLevelScene extends BaseScene
 {
@@ -49,6 +63,7 @@ export class BaseLevelScene extends BaseScene
         this.characterPosition = new THREE.Vector3();
         this.levelObjectFactory = new LevelObjectFactory(this.assetManager);
         this.loadedLevelObjects = [];
+        this.runtimeLevelObjects = [];
 
         this.characterController = new CharacterController(
             this.inputManager,
@@ -79,6 +94,11 @@ export class BaseLevelScene extends BaseScene
         this.characterController.fixedUpdate(fixedDeltaTime);
         this.fixedUpdateLevel(fixedDeltaTime);
 
+        for (const object of this.runtimeLevelObjects)
+        {
+            object.fixedUpdate?.(fixedDeltaTime);
+        }
+
         this.physicsWorld.timestep = fixedDeltaTime;
         this.physicsWorld.step();
 
@@ -89,6 +109,12 @@ export class BaseLevelScene extends BaseScene
     update(deltaTime)
     {
         this.characterController.update(deltaTime);
+
+        for (const object of this.runtimeLevelObjects)
+        {
+            object.update(deltaTime);
+        }
+
         this.updateLevel(deltaTime);
     }
 
@@ -105,10 +131,12 @@ export class BaseLevelScene extends BaseScene
         for (const object of this.loadedLevelObjects)
         {
             this.scene.remove(object);
+            object.dispose?.();
             this.levelObjectFactory.dispose(object);
         }
 
         this.loadedLevelObjects.length = 0;
+        this.runtimeLevelObjects.length = 0;
         this.characterController.dispose();
         this.physicsWorld.free();
     }
@@ -119,43 +147,55 @@ export class BaseLevelScene extends BaseScene
         const createdVisuals = [];
         const objectsById = new Map();
         const staticObjectsByType = new Map();
+        const createdRuntimeObjects = [];
 
-        try
+        for (const objectData of validatedData.objects)
         {
-            for (const objectData of validatedData.objects)
+            const definition = getLevelObjectDefinition(objectData.type);
+            if (!definition) throw new Error(`Unknown level object type: ${objectData.type}`);
+
+            const RuntimeObjectClass = RuntimeLevelObjectClasses.get(definition.runtimeObject);
+
+            if (RuntimeObjectClass)
             {
-                const definition = getLevelObjectDefinition(objectData.type);
-                if (!definition) throw new Error(`Unknown level object type: ${objectData.type}`);
+                const model = this.levelObjectFactory.createFromData(objectData);
+                const object = new RuntimeObjectClass(
+                    this.physicsWorld,
+                    this.characterController,
+                    model,
+                    model.userData.levelObjectProperties,
+                    this.audioManager
+                );
 
-                if (definition.staticBatch)
-                {
-                    //runtime-only static objects are collected by type and rendered as instances
-                    const objectsData = staticObjectsByType.get(objectData.type) ?? [];
-                    objectsData.push(objectData);
-                    staticObjectsByType.set(objectData.type, objectsData);
-                    continue;
-                }
-
-                const object = this.levelObjectFactory.createFromData(objectData);
                 objectsById.set(objectData.id, object);
                 createdVisuals.push(object);
+                createdRuntimeObjects.push(object);
+                continue;
             }
 
-            for (const [type, objectsData] of staticObjectsByType)
+            if (definition.staticBatch)
             {
-                const { batch, colliderObjects } = this.levelObjectFactory.createStaticBatch(type, objectsData);
-                createdVisuals.push(batch);
-
-                for (const object of colliderObjects)
-                {
-                    objectsById.set(object.userData.levelObjectId, object);
-                }
+                //runtime-only static objects are collected by type and rendered as instances
+                const objectsData = staticObjectsByType.get(objectData.type) ?? [];
+                objectsData.push(objectData);
+                staticObjectsByType.set(objectData.type, objectsData);
+                continue;
             }
+
+            const object = this.levelObjectFactory.createFromData(objectData);
+            objectsById.set(objectData.id, object);
+            createdVisuals.push(object);
         }
-        catch (error)
+
+        for (const [type, objectsData] of staticObjectsByType)
         {
-            for (const object of createdVisuals) this.levelObjectFactory.dispose(object);
-            throw error;
+            const { batch, colliderObjects } = this.levelObjectFactory.createStaticBatch(type, objectsData);
+            createdVisuals.push(batch);
+
+            for (const object of colliderObjects)
+            {
+                objectsById.set(object.userData.levelObjectId, object);
+            }
         }
 
         for (const object of createdVisuals)
@@ -163,6 +203,13 @@ export class BaseLevelScene extends BaseScene
             this.scene.add(object);
             this.loadedLevelObjects.push(object);
         }
+
+        for (const object of createdRuntimeObjects)
+        {
+            object.connect?.(objectsById);
+        }
+
+        this.runtimeLevelObjects.push(...createdRuntimeObjects);
 
         return validatedData.objects.map(objectData => objectsById.get(objectData.id));
     }

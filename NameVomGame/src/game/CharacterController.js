@@ -17,7 +17,7 @@ export class CharacterController extends THREE.Group
 
         this.inputManager = inputManager;
         this.audioManager = audioManager;
-        this.speed = 6;
+        this.speed = 5;
         this.direction = new THREE.Vector3();
 
         this.bodyCharacter = new BodyCharacter(assetManager, audioManager, physicsWorld, bodyPosition);
@@ -30,7 +30,10 @@ export class CharacterController extends THREE.Group
     update(deltaTime)
     {
         this.bodyCharacter.updateAnimation(deltaTime);
-        this.spiritCharacter.updateAnimation(deltaTime);
+        this.spiritCharacter.updateAnimation(
+            deltaTime,
+            this.activeCharacter === this.spiritCharacter && this.direction.lengthSq() > 0
+        );
         this.bodyCharacter.updateFootsteps(deltaTime, this.activeCharacter === this.bodyCharacter);
 
         if (this.inputManager.justPressed(InputAction.SWAP_CHARACTER)) this.#swapCharacter();
