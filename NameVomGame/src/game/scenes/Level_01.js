@@ -4,20 +4,21 @@ import { Player } from '../Player.js';
 
 export class Level_01 extends BaseScene
 {
-    constructor(inputManager, updateManager, sceneManager)
+    constructor(inputManager, updateManager, sceneManager, assetManager)
     {
         super(updateManager);
 
         this.camera = new THREE.PerspectiveCamera(60,  window.innerWidth / window.innerHeight);
         this.inputManager = inputManager;
         this.sceneManager = sceneManager;
+        this.assetManager = assetManager;
 
         this.#init();
     }
 
     #init()
     {
-        this.player = new Player(this.inputManager);
+        this.player = new Player(this.inputManager, this.assetManager);
         this.add(this.player);
     }
 

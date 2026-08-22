@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { InputAction } from "../core/constants/InputAction.js";
+import { AssetId } from '../core/constants/AssetId.js';
 
 export class Player extends THREE.Group
 {
@@ -7,23 +7,26 @@ export class Player extends THREE.Group
      * Constructor
      */
 
-    constructor(inputManager)
+    constructor(inputManager, assetManager)
     {
         super();
 
         this.inputManager = inputManager;
+        this.assetManager = assetManager;
 
         this.speed = 3;
         this.direction = new THREE.Vector3();
-        this.#createMesh();
+        this.#createModel();
     }
 
-    #createMesh()
+    #createModel()
     {
-        const geometry = new THREE.CylinderGeometry(3, 3, 3, 12, 2, false);
-        const material = new THREE.MeshStandardMaterial( {color: 0xaa00ff});
-        const mesh = new THREE.Mesh(geometry, material);
-        mesh.position.set(0, 0.5, 0);
-        this.add(mesh);
+        this.model = this.assetManager.createInstance(AssetId.GHOST);
+
+        const bounds = new THREE.Box3().setFromObject(this.model);
+        const center = bounds.getCenter(new THREE.Vector3());
+
+        this.model.position.set(-center.x, -bounds.min.y, -center.z);
+        this.add(this.model);
     }
 }
