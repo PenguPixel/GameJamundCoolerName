@@ -13,9 +13,9 @@ export const AssetManifest = Object.freeze([
     {
         id: AssetId.GHOST,
         path: './assets/models/ghost.glb'
+    },
+    {
+        id: AssetId.WORLD1,
+        path: './assets/models/world1.glb'
     }
-    // {
-    //     id: AssetId.LEVEL-PLANE,
-    //     path: './assets/models/level-plane.glb'
-    // }
 ]);

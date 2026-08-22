@@ -25,6 +25,7 @@ export class Level_01 extends BaseScene
         this.#setupLights();
 
         this.#setupCamera();
+        this.#setupWorldPlane()
         this.#setupMeshes();
     }
 
@@ -44,7 +45,7 @@ export class Level_01 extends BaseScene
 
         const pointLight = new THREE.PointLight(0xff00ff, 8)
         pointLight.position.set(1, 1, 1);
-        this.scene.add(pointLight);
+        // this.scene.add(pointLight);
     }
 
     enter()
@@ -98,11 +99,54 @@ export class Level_01 extends BaseScene
         chest1.scale.setScalar(100)
         chest1.position.set(-2, 0, 0);
         chest1.rotation.y = Math.PI / 2;
-        this.scene.add(chest1);
+        this.scene.add(chest1);        
+    }
 
-        // const levelPlane = this.assetManager.createInstance(AssetId.LEVEL-PLANE);
-        // levelPlane.scale.setScalar(50);
-        // levelPlane.position.set(0, 0, 0);
-        // this.scene.add(levelPlane);
+    #setupWorldPlane()
+    {
+        // World Size
+        const worldTileSize = 10;
+        const cols = 5;
+        const rows = 5;
+
+        const worldTileMeshes = this.assetManager.createInstancedMeshes(AssetId.WORLD1, 25);
+
+        const gridSize = 5;
+        const dummy = new THREE.Object3D();
+
+        for (let i = 0; i < 25; i++)
+        {
+            const row = Math.floor(i / gridSize);
+            const column = i % gridSize;
+
+            dummy.position.set(column, 0, row);
+            dummy.scale.setScalar(0.001)
+            dummy.rotation.x = -Math.PI / 2;
+            dummy.updateMatrix();
+
+            worldTileMeshes.setMatrixAt(i, dummy.matrix);
+        }
+
+        worldTileMeshes.instanceMatrix.needsUpdate = true;
+
+        // console.log(worldTileMeshes);
+        // worldTileMeshes.scale.setScalar(0.1);
+
+        // const worldPlaneGroup = new THREE.Group();
+
+        // for(let x = 0; x < cols; x++)
+        // {
+        //     for(let z = 0; z < rows; z++)
+        //     {
+        //         const posX = (x - cols / 2) * worldTileSize;
+        //         const posZ = (z - rows / 2) * worldTileSize;
+
+        //         worldTileMeshes.position.set(posX, 0, posZ);
+
+        //         worldPlaneGroup.add(worldTileMeshes);
+        //     }
+        // }
+
+        this.scene.add(worldTileMeshes);
     }
 }
