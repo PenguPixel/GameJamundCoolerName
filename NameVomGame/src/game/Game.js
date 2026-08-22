@@ -72,7 +72,7 @@ export class Game
                 this.audioManager
             ));
 
-        this.sceneManager.changeScene(TITLE);
+        this.sceneManager.changeScene(SceneId.TITLE);
     }
 
 }
