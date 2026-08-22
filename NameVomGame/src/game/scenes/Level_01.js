@@ -17,6 +17,7 @@ export class Level_01 extends BaseLevelScene
         this.#setupLights();
         this.#setupEnvironment();
         this.#setupAssets();
+        this.#setupWorldPlane();
         this.createGroundCollider(20, 20);
     }
 
@@ -53,5 +54,53 @@ export class Level_01 extends BaseLevelScene
         chest.rotation.y = Math.PI / 2;
 
         this.scene.add(chest);
+    }
+
+    #setupWorldPlane()
+    {
+        // World Size
+        const worldTileSize = 10;
+        const cols = 5;
+        const rows = 5;
+
+        const worldTileMeshes = this.assetManager.createInstancedMeshes(AssetId.WORLD1, 25);
+
+        const gridSize = 5;
+        const dummy = new THREE.Object3D();
+
+        for (let i = 0; i < 25; i++)
+        {
+            const row = Math.floor(i / gridSize);
+            const column = i % gridSize;
+
+            dummy.position.set(column, 0, row);
+            dummy.scale.setScalar(0.001)
+            dummy.rotation.x = -Math.PI / 2;
+            dummy.updateMatrix();
+
+            worldTileMeshes.setMatrixAt(i, dummy.matrix);
+        }
+
+        worldTileMeshes.instanceMatrix.needsUpdate = true;
+
+        // console.log(worldTileMeshes);
+        // worldTileMeshes.scale.setScalar(0.1);
+
+        // const worldPlaneGroup = new THREE.Group();
+
+        // for(let x = 0; x < cols; x++)
+        // {
+        //     for(let z = 0; z < rows; z++)
+        //     {
+        //         const posX = (x - cols / 2) * worldTileSize;
+        //         const posZ = (z - rows / 2) * worldTileSize;
+
+        //         worldTileMeshes.position.set(posX, 0, posZ);
+
+        //         worldPlaneGroup.add(worldTileMeshes);
+        //     }
+        // }
+
+        this.scene.add(worldTileMeshes);
     }
 }
