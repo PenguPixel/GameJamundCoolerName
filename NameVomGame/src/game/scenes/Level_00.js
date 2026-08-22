@@ -172,6 +172,12 @@ export class Level_00 extends BaseLevelScene
     });
     console.log(trapDoor);
 
+    const ghostPlatform = this.dynamicFactory.createGhostPlatform({
+        position: {x: 2, y: 0.2, z: 2 },
+        size: { x: 2, y: 2, z: 0.5 }
+    });
+    console.log(ghostPlatform);
+
 
     }
 

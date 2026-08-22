@@ -9,32 +9,29 @@ export class DynamicObjects
         this.physicsWorld = physicsWorld;
     }
 
+    // Trap Door
     createTrapDoor({ 
         position = { x:0, y: 0, z: 0 }, 
         size = { x: 2, y: 0.5, z:2}, 
         mesh = null
     } = {})
     {
-        mesh = new THREE.Mesh(
-            new THREE.BoxGeometry(size.x, size.y, size.z),
-            new THREE.MeshStandardMaterial({color: 0xaaffaa})
-        );
-        mesh.position.set(position.x, position.y + 0.05, position.z);
+        mesh?.position.set(position.x, position.y + 0.05, position.z);
 
         // Rigidbody
         const bodyDesc = RAPIER.RigidBodyDesc.fixed()
             .setTranslation(position.x, position.y + 0.05, position.z)
         
-        const trapDoorBody = this.physicsWorld.createRigidBody(bodyDesc);
+        const rigidBody = this.physicsWorld.createRigidBody(bodyDesc);
 
         // Physical Collider
-        const trapDoorDesc = RAPIER.ColliderDesc.cuboid(size.x / 2, size.y / 2, size.z / 2)
+        const physicalDesc = RAPIER.ColliderDesc.cuboid(size.x / 2, size.y / 2, size.z / 2)
             .setCollisionGroups(PhysicsCollisionGroup.WORLD);
 
-        const solidCollider = this.physicsWorld.createCollider(trapDoorDesc, trapDoorBody);
+        const solidCollider = this.physicsWorld.createCollider(physicalDesc, rigidBody);
 
         // Proximity Sensor
-        const trapDoorTriggerDesc = RAPIER.ColliderDesc.ball(2)
+        const proximityDesc = RAPIER.ColliderDesc.ball(2)
             .setSensor(true)
             .setCollisionGroups(PhysicsCollisionGroup.BODY_TRIGGER)
             .setActiveCollisionTypes(
@@ -42,12 +39,180 @@ export class DynamicObjects
                 RAPIER.ActiveCollisionTypes.KINEMATIC_FIXED
             );
         
-        const triggerCollider = this.physicsWorld.createCollider(trapDoorTriggerDesc, trapDoorBody);
+        const triggerCollider = this.physicsWorld.createCollider(proximityDesc, rigidBody);
 
         return {
             type: 'trapDoor',
             mesh,
-            rigidBody: trapDoorBody,
+            rigidBody: rigidBody,
+            solidCollider,
+            triggerCollider,
+            isTriggered: false
+        };
+    }
+
+    // Spike Trap
+    createSpikeTrap({ 
+        position = { x:0, y: 0, z: 0 }, 
+        size = { x: 2, y: 0.5, z:2}, 
+        mesh = null
+    } = {})
+    {
+        mesh?.position.set(position.x, position.y + 0.05, position.z);
+
+        // Rigidbody
+        const bodyDesc = RAPIER.RigidBodyDesc.fixed()
+            .setTranslation(position.x, position.y + 0.05, position.z)
+        
+        const rigidBody = this.physicsWorld.createRigidBody(bodyDesc);
+
+        // Physical Collider
+        const physicalDesc = RAPIER.ColliderDesc.cuboid(size.x / 2, size.y / 2, size.z / 2)
+            .setCollisionGroups(PhysicsCollisionGroup.WORLD);
+
+        const solidCollider = this.physicsWorld.createCollider(physicalDesc, rigidBody);
+
+        // Proximity Sensor
+        const proximityDesc = RAPIER.ColliderDesc.ball(2)
+            .setSensor(true)
+            .setCollisionGroups(PhysicsCollisionGroup.BODY_TRIGGER)
+            .setActiveCollisionTypes(
+                RAPIER.ActiveCollisionTypes.DEFAULT |
+                RAPIER.ActiveCollisionTypes.KINEMATIC_FIXED
+            );
+        
+        const triggerCollider = this.physicsWorld.createCollider(proximityDesc, rigidBody);
+
+        return {
+            type: 'spikeTrap',
+            mesh,
+            rigidBody: rigidBody,
+            solidCollider,
+            triggerCollider,
+            isTriggered: false
+        };
+    }
+
+    // Spirit Starter
+    createGhostPlatform({ 
+        position = { x:0, y: 0, z: 0 }, 
+        size = { x: 2, y: 0.5, z:2}, 
+        mesh = null
+    } = {})
+    {
+        mesh?.position.set(position.x, position.y + 0.05, position.z);
+
+        // Rigidbody
+        const bodyDesc = RAPIER.RigidBodyDesc.fixed()
+            .setTranslation(position.x, position.y + 0.05, position.z)
+        
+        const rigidBody = this.physicsWorld.createRigidBody(bodyDesc);
+
+        // Physical Collider
+        const physicalDesc = RAPIER.ColliderDesc.cuboid(size.x / 2, size.y / 2, size.z / 2)
+            .setCollisionGroups(PhysicsCollisionGroup.WORLD);
+
+        const solidCollider = this.physicsWorld.createCollider(physicalDesc, rigidBody);
+
+        // Proximity Sensor
+        const proximityDesc = RAPIER.ColliderDesc.ball(2)
+            .setSensor(true)
+            .setCollisionGroups(PhysicsCollisionGroup.SPIRIT_TRIGGER)
+            .setActiveCollisionTypes(
+                RAPIER.ActiveCollisionTypes.DEFAULT |
+                RAPIER.ActiveCollisionTypes.KINEMATIC_FIXED
+            );
+        
+        const triggerCollider = this.physicsWorld.createCollider(proximityDesc, rigidBody);
+
+        return {
+            type: 'spiritPlatform',
+            mesh,
+            rigidBody: rigidBody,
+            solidCollider,
+            triggerCollider,
+            isTriggered: false
+        };
+    }
+
+    // Body Trigger Plate
+    createTriggerPlate({ 
+        position = { x:0, y: 0, z: 0 }, 
+        size = { x: 2, y: 0.5, z:2}, 
+        mesh = null
+    } = {})
+    {
+        mesh?.position.set(position.x, position.y + 0.05, position.z);
+
+        // Rigidbody
+        const bodyDesc = RAPIER.RigidBodyDesc.fixed()
+            .setTranslation(position.x, position.y + 0.05, position.z)
+        
+        const rigidBody = this.physicsWorld.createRigidBody(bodyDesc);
+
+        // Physical Collider
+        const physicalDesc = RAPIER.ColliderDesc.cuboid(size.x / 2, size.y / 2, size.z / 2)
+            .setCollisionGroups(PhysicsCollisionGroup.WORLD);
+
+        const solidCollider = this.physicsWorld.createCollider(physicalDesc, rigidBody);
+
+        // Proximity Sensor
+        const proximityDesc = RAPIER.ColliderDesc.ball(2)
+            .setSensor(true)
+            .setCollisionGroups(PhysicsCollisionGroup.BODY_TRIGGER)
+            .setActiveCollisionTypes(
+                RAPIER.ActiveCollisionTypes.DEFAULT |
+                RAPIER.ActiveCollisionTypes.KINEMATIC_FIXED
+            );
+        
+        const triggerCollider = this.physicsWorld.createCollider(proximityDesc, rigidBody);
+
+        return {
+            type: 'bodyTriggerPlate',
+            mesh,
+            rigidBody: rigidBody,
+            solidCollider,
+            triggerCollider,
+            isTriggered: false
+        };
+    }
+
+    // Spirit Trigger Plate
+    createSpiritTriggerPlate({ 
+        position = { x:0, y: 0, z: 0 }, 
+        size = { x: 2, y: 0.5, z:2}, 
+        mesh = null
+    } = {})
+    {
+        mesh?.position.set(position.x, position.y + 0.05, position.z);
+
+        // Rigidbody
+        const bodyDesc = RAPIER.RigidBodyDesc.fixed()
+            .setTranslation(position.x, position.y + 0.05, position.z)
+        
+        const rigidBody = this.physicsWorld.createRigidBody(bodyDesc);
+
+        // Physical Collider
+        const physicalDesc = RAPIER.ColliderDesc.cuboid(size.x / 2, size.y / 2, size.z / 2)
+            .setCollisionGroups(PhysicsCollisionGroup.WORLD);
+
+        const solidCollider = this.physicsWorld.createCollider(physicalDesc, rigidBody);
+
+        // Proximity Sensor
+        const proximityDesc = RAPIER.ColliderDesc.ball(2)
+            .setSensor(true)
+            .setCollisionGroups(PhysicsCollisionGroup.SPIRIT_TRIGGER)
+            .setActiveCollisionTypes(
+                RAPIER.ActiveCollisionTypes.DEFAULT |
+                RAPIER.ActiveCollisionTypes.KINEMATIC_FIXED
+            );
+        
+        const triggerCollider = this.physicsWorld.createCollider(proximityDesc, rigidBody);
+
+        return {
+            type: 'spiritTriggerPlate',
+            mesh,
+            rigidBody: rigidBody,
             solidCollider,
             triggerCollider,
             isTriggered: false
