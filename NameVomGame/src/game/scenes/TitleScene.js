@@ -45,6 +45,7 @@ export class TitleScene extends BaseScene
         this.overlay.innerHTML = titleSceneOverlay;
 
         document.body.append(this.overlay);
+        this.#setupMenuSounds();
 
         this.overlay.querySelector('[data-action="start"]')
             .addEventListener('click', () => this.#startGame());
@@ -68,7 +69,6 @@ export class TitleScene extends BaseScene
         if (this.isStarting) return;
         this.isStarting = true;
 
-        this.audioManager.playSfx(AudioId.ITEM_PICKUP);
         this.sceneManager.changeScene(SceneId.LEVEL_01);
     }
 
@@ -77,6 +77,18 @@ export class TitleScene extends BaseScene
         for (const panel of this.overlay.querySelectorAll('[data-panel]'))
         {
             panel.hidden = panel.dataset.panel !== panelName;
+        }
+    }
+
+    #setupMenuSounds()
+    {
+        for (const button of this.overlay.querySelectorAll('.title-menu__button'))
+        {
+            button.addEventListener('mouseenter', () =>
+                this.audioManager.playSfx(AudioId.MENU_HOVER));
+
+            button.addEventListener('click', () =>
+                this.audioManager.playSfx(AudioId.MENU_CLICK));
         }
     }
 
@@ -104,6 +116,8 @@ export class TitleScene extends BaseScene
             input.value = initialValue;
             output.textContent = `${Math.round(initialValue * 100)}%`;
             input.addEventListener('input', updateVolume);
+            input.addEventListener('change', () =>
+                this.audioManager.playSfx(AudioId.MENU_CLICK));
         }
     }
 }

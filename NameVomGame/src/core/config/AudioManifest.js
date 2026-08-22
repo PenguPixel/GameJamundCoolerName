@@ -22,6 +22,20 @@ export const AudioManifest = Object.freeze([
         loop: true
     },
     {
+        id: AudioId.MENU_HOVER,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/menu-hover.wav'],
+        volume: 0.35,
+        loop: false
+    },
+    {
+        id: AudioId.MENU_CLICK,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/menu-click sound.wav'],
+        volume: 0.6,
+        loop: false
+    },
+    {
         id: AudioId.ITEM_PICKUP,
         type: AudioType.SFX,
         src: ['./assets/audio/sfx/item-pickup.wav'],
