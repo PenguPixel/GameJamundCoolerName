@@ -25,7 +25,7 @@ export class Level_01 extends BaseScene
         this.#setupLights();
 
         this.#setupCamera();
-        this.#setupAssets();
+        this.#setupMeshes();
     }
 
     #setupCamera()
@@ -92,12 +92,17 @@ export class Level_01 extends BaseScene
         this.camera.lookAt(this.cameraFollowPoint);
     }
 
-    #setupAssets()
+    #setupMeshes()
     {
         const chest1 = this.assetManager.createInstance(AssetId.CHEST);
         chest1.scale.setScalar(100)
         chest1.position.set(-2, 0, 0);
         chest1.rotation.y = Math.PI / 2;
         this.scene.add(chest1);
+
+        // const levelPlane = this.assetManager.createInstance(AssetId.LEVEL-PLANE);
+        // levelPlane.scale.setScalar(50);
+        // levelPlane.position.set(0, 0, 0);
+        // this.scene.add(levelPlane);
     }
 }
