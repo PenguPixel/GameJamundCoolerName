@@ -1,12 +1,9 @@
-import * as THREE from "three";
-import { Player } from "./Player.js";
-import { AssetId } from "../core/constants/AssetId";
 import { InputAction } from "../core/constants/InputAction.js";
-import { AnimationController } from "../core/animation/AnimationController.js";
 import { SceneId } from "../core/constants/SceneId.js";
 import { EndScene } from "./scenes/EndScene.js";
 import { Level_01 } from "./scenes/Level_01.js";
 import { TitleScene } from "./scenes/TitleScene.js";
+import { Level_00 } from "./scenes/Level_00.js";
 
 export class Game
 {
@@ -43,8 +40,8 @@ export class Game
         this.inputManager.addAction(InputAction.MOVE_BACKWARD, ['KeyS', 'ArrowDown']);
         this.inputManager.addAction(InputAction.MOVE_LEFT, ['KeyA', 'ArrowLeft']);
         this.inputManager.addAction(InputAction.MOVE_RIGHT, ['KeyD', 'ArrowRight']);
-        this.inputManager.addAction(InputAction.ACTION, ['Space']);
         this.inputManager.addAction(InputAction.SWAP_CHARACTER, ['KeyR']);
+        this.inputManager.addAction(InputAction.ACTION, ['Space']);
     }
 
     #setupScenes()
@@ -58,13 +55,35 @@ export class Game
                 this.audioManager
             ));
 
+        this.sceneManager.registerScene(SceneId.LEVEL_00, () =>
+            new Level_00(
+                this.inputManager,
+                this.updateManager,
+                this.sceneManager,
+                this.assetManager,
+                this.audioManager
+            ));
+
         this.sceneManager.registerScene(SceneId.LEVEL_01, () =>
             new Level_01(
                 this.inputManager,
                 this.updateManager,
                 this.sceneManager,
-                this.assetManager
+                this.assetManager,
+                this.audioManager
             ));
+
+        //das unter mir kopieren, entkommentieren, sceneid und klassenname der LevelScene ändern
+        /*
+        this.sceneManager.registerScene(SceneId.LEVEL_TEMPLATE, () =>
+            new LevelSceneTemplate(
+                this.inputManager,
+                this.updateManager,
+                this.sceneManager,
+                this.assetManager,
+                this.audioManager
+            ));
+        */
 
         this.sceneManager.registerScene(SceneId.END, () =>
             new EndScene(
