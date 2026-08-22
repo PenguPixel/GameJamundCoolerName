@@ -53,6 +53,12 @@ export class PostProcessingManager
         // Ziel-Werte für den Geist-Modus
         this.targetBloomStrength = 0.8;
         this.targetVignetteIntensity = 0.85;
+        this.targetFogDensity = 0.035;
+
+        // Farben für Überblenden
+        this.bodyBgColor = new THREE.Color(0x101218);
+        this.spiritBgColor = new THREE.Color(0x1e0b36);
+        this.spiritFogColor = new THREE.Color(0x280e46);
 
         // 1. Vignette Pass (bleibt aktiv, Stärke wird über intensity gesteuert)
         this.vignettePass = new ShaderPass(DarkVioletVignetteShader);
@@ -70,6 +76,12 @@ export class PostProcessingManager
 
     setSceneAndCamera(scene, camera)
     {
+        this.currentScene = scene;
+        
+        if(!this.currentScene.fog)
+        {
+            this.currentScene.fog = new THREE.FogExp2(this.spiritFogColor, 0.0);
+        }
         if (this.renderPass) {
             this.renderPass.scene = scene;
             this.renderPass.camera = camera;
@@ -88,13 +100,28 @@ export class PostProcessingManager
     {
         const target = this.isSpiritActive ? 1.0 : 0.0;
 
-        // Sanftes Interpolieren des Übergangswerts
         const alpha = 1 - Math.exp(-this.transitionSpeed * deltaTime);
         this.currentTransition = THREE.MathUtils.lerp(this.currentTransition, target, alpha);
 
-        // Werte in die Passes schreiben
+        // 1. Post-Processing anpassen
         this.vignettePass.uniforms.intensity.value = this.currentTransition * this.targetVignetteIntensity;
         this.bloomPass.strength = this.currentTransition * this.targetBloomStrength;
+
+        // 2. Nebel & Hintergrundfarbe weich interpolieren
+        if (this.currentScene)
+        {
+            if (this.currentScene.fog) {
+                this.currentScene.fog.density = this.currentTransition * this.targetFogDensity;
+            }
+
+            if (this.currentScene.background instanceof THREE.Color) {
+                this.currentScene.background.lerpColors(
+                    this.bodyBgColor,
+                    this.spiritBgColor,
+                    this.currentTransition
+                );
+            }
+        }
     }
 
     render()
