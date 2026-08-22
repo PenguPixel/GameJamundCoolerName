@@ -88,7 +88,7 @@ export class TitleScene extends BaseScene
         if (this.isStarting) return;
         this.isStarting = true;
 
-        this.sceneManager.changeScene(SceneId.LEVEL_00);
+        this.sceneManager.changeScene(SceneId.LEVEL_05);
     }
 
 

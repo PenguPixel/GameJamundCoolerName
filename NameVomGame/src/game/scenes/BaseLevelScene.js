@@ -53,6 +53,7 @@ export class BaseLevelScene extends BaseScene
         this.characterController = new CharacterController(
             this.inputManager,
             this.assetManager,
+            this.audioManager,
             this.physicsWorld,
             { bodyPosition, spiritPosition }
         );
@@ -63,6 +64,7 @@ export class BaseLevelScene extends BaseScene
 
     enter()
     {
+        this.characterController.startAudio();
         this.enterLevel();
     }
 
@@ -176,14 +178,15 @@ export class BaseLevelScene extends BaseScene
 
             colliders.push(this.createBoxColliderForObject(
                 object,
-                definition.physicsCollisionGroup
+                definition.physicsCollisionGroup,
+                definition.colliderHeight
             ));
         }
 
         return colliders;
     }
 
-    createBoxColliderForObject(object, collisionGroups)
+    createBoxColliderForObject(object, collisionGroups, minimumHeight = 0)
     {
         const bounds = this.#getObjectLocalBounds(object);
         if (bounds.isEmpty()) throw new Error('Cannot create a collider for an object without mesh geometry.');
@@ -194,11 +197,22 @@ export class BaseLevelScene extends BaseScene
         const worldCenter = object.localToWorld(localCenter.clone());
         const worldRotation = object.getWorldQuaternion(new THREE.Quaternion());
 
-        const halfExtents = new THREE.Vector3(
-            Math.abs(size.x * worldScale.x) / 2,
-            Math.abs(size.y * worldScale.y) / 2,
-            Math.abs(size.z * worldScale.z) / 2
+        const worldSize = new THREE.Vector3(
+            Math.abs(size.x * worldScale.x),
+            Math.abs(size.y * worldScale.y),
+            Math.abs(size.z * worldScale.z)
         );
+
+        if (worldSize.y < minimumHeight)
+        {
+            //extends flat level objects downward so their visible top surface stays unchanged
+            const missingHeight = minimumHeight - worldSize.y;
+            const localDown = new THREE.Vector3(0, -1, 0).applyQuaternion(worldRotation);
+            worldCenter.addScaledVector(localDown, missingHeight / 2);
+            worldSize.y = minimumHeight;
+        }
+
+        const halfExtents = worldSize.multiplyScalar(0.5);
 
         const rigidBodyDescription = RAPIER.RigidBodyDesc
             .fixed()

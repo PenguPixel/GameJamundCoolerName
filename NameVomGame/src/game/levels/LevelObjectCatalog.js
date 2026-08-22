@@ -8,6 +8,8 @@ export const LevelObjectType = Object.freeze({
     BARS: 'bars',
     DOOR: 'door',
     STONE: 'stone',
+    CACTUS_FLOWER: 'cactusFlower',
+    SPIKE_TRAP: 'spikeTrap',
     CHEST: 'chest',
     WORLD_TILE_5X5: 'worldTile',
     WORLD_TILE_1X1: 'worldTile1x1'
@@ -71,6 +73,25 @@ export const LevelObjectCatalog = Object.freeze([
         placementY: 0
     }),
     Object.freeze({
+        type: LevelObjectType.CACTUS_FLOWER,
+        label: 'cactus flower',
+        assetId: AssetId.CACTUS_FLOWER,
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        staticBatch: true,
+        placementY: 0
+    }),
+    Object.freeze({
+        type: LevelObjectType.SPIKE_TRAP,
+        label: 'spike trap',
+        assetId: AssetId.SPIKES,
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        placementY: 0
+    }),
+    Object.freeze({
         type: LevelObjectType.WALL_ONE_SIDE_CLOSED,
         label: 'wall one side closed',
         assetId: AssetId.WALL_ONE_SIDE_CLOSED,
@@ -97,6 +118,8 @@ export const LevelObjectCatalog = Object.freeze([
         defaultRotation: [0, 0, 0],
         textureRepeat: [5, 5],
         staticBatch: true,
+        colliderHeight: 0.2,
+        physicsCollisionGroup: PhysicsCollisionGroup.WORLD,
         placementY: 0
     }),
     Object.freeze({
@@ -107,6 +130,8 @@ export const LevelObjectCatalog = Object.freeze([
         defaultRotation: [0, 0, 0],
         textureRepeat: [1, 1],
         staticBatch: true,
+        colliderHeight: 0.2,
+        physicsCollisionGroup: PhysicsCollisionGroup.WORLD,
         placementY: 0
     })
 ]);

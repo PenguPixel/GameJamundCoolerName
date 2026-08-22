@@ -2,7 +2,7 @@
   "version": 1,
   "name": "new_level",
   "editor": {
-    "gridSize": 1
+    "gridSize": 0.5
   },
   "objects": [
     {
@@ -581,7 +581,7 @@
       "position": [
         -2,
         0,
-        -5
+        -6
       ],
       "rotation": [
         0,
@@ -1279,25 +1279,6 @@
       ]
     },
     {
-      "id": "wall-068",
-      "type": "wall",
-      "position": [
-        6,
-        0,
-        -5
-      ],
-      "rotation": [
-        0,
-        1.5708,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
       "id": "wall-072",
       "type": "wall",
       "position": [
@@ -1336,8 +1317,27 @@
       ]
     },
     {
-      "id": "wall-076",
-      "type": "wall",
+      "id": "wallOneSideClosed-001",
+      "type": "wallOneSideClosed",
+      "position": [
+        6,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-002",
+      "type": "wallOneSideClosed",
       "position": [
         6,
         0,
@@ -1345,7 +1345,7 @@
       ],
       "rotation": [
         0,
-        1.5708,
+        4.7124,
         0
       ],
       "scale": [
@@ -1355,12 +1355,12 @@
       ]
     },
     {
-      "id": "wall-078",
-      "type": "wall",
+      "id": "door-003",
+      "type": "door",
       "position": [
         6,
         0,
-        1
+        2.5
       ],
       "rotation": [
         0,
@@ -1374,7 +1374,45 @@
       ]
     },
     {
-      "id": "wall-079",
+      "id": "wallOneSideClosed-004",
+      "type": "wallOneSideClosed",
+      "position": [
+        6,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-005",
+      "type": "wallOneSideClosed",
+      "position": [
+        6,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-006",
       "type": "wall",
       "position": [
         6,

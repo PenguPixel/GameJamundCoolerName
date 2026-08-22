@@ -67,8 +67,7 @@ export class Level_05 extends BaseLevelScene
 
     #setupPhysics()
     {
-        //provides a temporary continuous floor while level-specific colliders are not generated yet
-        this.createGroundCollider(30, 30);
+        //creates colliders only where editor objects such as tiles and walls are placed
         this.createLevelObjectColliders(this.levelObjects);
     }
 }

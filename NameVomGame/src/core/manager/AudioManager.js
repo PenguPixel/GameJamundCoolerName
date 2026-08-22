@@ -23,9 +23,11 @@ export class AudioManager
 
         this.currentMusic = null;
         this.currentMusicId = null;
+        this.currentMusicPlaybackId = null;
 
         this.currentAmbient = null;
         this.currentAmbientId = null;
+        this.currentAmbientPlaybackId = null;
 
         //stores the global and channel-specific volume multipliers
 
@@ -70,7 +72,7 @@ export class AudioManager
 
 
     /**
-     * starts a music track after stopping the currently active music.
+     * starts a music track or resumes its paused playback instance.
      * @param {string} id - registered identifier of a music entry.
      * @returns {number|undefined} howler playback identifier, or undefined when the track is already playing.
      * @throws {Error} when the audio is missing or is not registered as music.
@@ -80,14 +82,19 @@ export class AudioManager
         const sound = this.#get(id);
         
         if (this.types.get(id) !== 'music') throw new Error ('Audio is not music: ' + id);
-        if (this.currentMusicId === id && sound.playing()) return;
+        if (this.currentMusicId === id && this.currentMusicPlaybackId !== null)
+        {
+            if (sound.playing(this.currentMusicPlaybackId)) return;
+            return sound.play(this.currentMusicPlaybackId);
+        }
 
         this.stopMusic();
 
         this.currentMusic = sound;
         this.currentMusicId = id;
+        this.currentMusicPlaybackId = sound.play();
 
-        return sound.play();
+        return this.currentMusicPlaybackId;
     }
 
 
@@ -104,7 +111,11 @@ export class AudioManager
         const previousMusic = this.currentMusic;
 
         if (this.types.get(id) !== 'music') throw new Error('Audio is not music: ' + id);
-        if (this.currentMusicId === id && nextMusic.playing()) return;
+        if (this.currentMusicId === id)
+        {
+            this.playMusic(id);
+            return;
+        }
 
         this.currentMusic = nextMusic;
         this.currentMusicId = id;
@@ -115,8 +126,8 @@ export class AudioManager
         //starts the incoming track silently and fades it to its configured volume
 
         nextMusic.volume(0);
-        nextMusic.play();
-        nextMusic.fade(0, targetVolume, duration);
+        this.currentMusicPlaybackId = nextMusic.play();
+        nextMusic.fade(0, targetVolume, duration, this.currentMusicPlaybackId);
 
         if (previousMusic)
         {
@@ -137,14 +148,26 @@ export class AudioManager
     {
         if (!this.currentMusic) return;
 
-        this.currentMusic.stop();
+        this.currentMusic.stop(this.currentMusicPlaybackId);
         this.currentMusic = null;
         this.currentMusicId = null;
+        this.currentMusicPlaybackId = null;
     }
 
 
     /**
-     * starts an ambient track after stopping the currently active ambience.
+     * pauses the active music while preserving its playback position.
+     * @returns {void}
+     */
+    pauseMusic()
+    {
+        if (!this.currentMusic || this.currentMusicPlaybackId === null) return;
+        this.currentMusic.pause(this.currentMusicPlaybackId);
+    }
+
+
+    /**
+     * starts an ambient track or resumes its paused playback instance.
      * @param {string} id - registered identifier of an ambient entry.
      * @returns {number|undefined} howler playback identifier, or undefined when the track is already playing.
      * @throws {Error} when the audio is missing or is not registered as ambient.
@@ -154,14 +177,19 @@ export class AudioManager
         const sound = this.#get(id);
 
         if (this.types.get(id) !== 'ambient') throw new Error ('Audio is not ambient: ' + id);
-        if (this.currentAmbientId === id && sound.playing()) return;
+        if (this.currentAmbientId === id && this.currentAmbientPlaybackId !== null)
+        {
+            if (sound.playing(this.currentAmbientPlaybackId)) return;
+            return sound.play(this.currentAmbientPlaybackId);
+        }
 
         this.stopAmbient();
 
         this.currentAmbient = sound;
         this.currentAmbientId = id;
+        this.currentAmbientPlaybackId = sound.play();
 
-        return sound.play();
+        return this.currentAmbientPlaybackId;
     }
 
 
@@ -178,7 +206,11 @@ export class AudioManager
         const previousAmbient = this.currentAmbient;
 
         if (this.types.get(id) !== 'ambient') throw new Error('Audio is not ambient: ' + id);
-        if (this.currentAmbientId === id && nextAmbient.playing()) return;
+        if (this.currentAmbientId === id)
+        {
+            this.playAmbient(id);
+            return;
+        }
 
         this.currentAmbient = nextAmbient;
         this.currentAmbientId = id;
@@ -189,8 +221,8 @@ export class AudioManager
         //starts the incoming track silently and fades it to its configured volume
 
         nextAmbient.volume(0);
-        nextAmbient.play();
-        nextAmbient.fade(0, targetVolume, duration);
+        this.currentAmbientPlaybackId = nextAmbient.play();
+        nextAmbient.fade(0, targetVolume, duration, this.currentAmbientPlaybackId);
 
         if (previousAmbient)
         {
@@ -211,9 +243,21 @@ export class AudioManager
     {
         if (!this.currentAmbient) return;
 
-        this.currentAmbient.stop();
+        this.currentAmbient.stop(this.currentAmbientPlaybackId);
         this.currentAmbient = null;
         this.currentAmbientId = null;
+        this.currentAmbientPlaybackId = null;
+    }
+
+
+    /**
+     * pauses the active ambience while preserving its playback position.
+     * @returns {void}
+     */
+    pauseAmbient()
+    {
+        if (!this.currentAmbient || this.currentAmbientPlaybackId === null) return;
+        this.currentAmbient.pause(this.currentAmbientPlaybackId);
     }
 
 
