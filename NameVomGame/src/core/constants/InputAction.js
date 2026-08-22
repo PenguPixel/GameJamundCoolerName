@@ -9,5 +9,6 @@ export const InputAction = Object.freeze(
         MOVE_BACKWARD: 'moveBackward',
         MOVE_LEFT: 'moveLeft',
         MOVE_RIGHT: 'moveRight',
+        SWAP_CHARACTER: 'swapCharacter',
         ACTION: 'action'
     });

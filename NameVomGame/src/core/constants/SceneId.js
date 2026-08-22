@@ -6,6 +6,7 @@
 export const SceneId = Object.freeze(
     {
         TITLE: 'title',
+        LEVEL_00: 'level_00',
         LEVEL_01: 'level_01',
         END: 'end'
     });

@@ -8,6 +8,7 @@ export class BaseScene
         this.camera = null;
         this.updateManager = updateManager;
         this.assetManager = assetManager;
+        this.registeredUpdateables = new Set();
     }
 
     /**
@@ -18,13 +19,23 @@ export class BaseScene
     {
         this.scene.add(object);
 
-        if (typeof object.update === 'function' || 
+        const isUpdateable = typeof object.update === 'function' ||
             typeof object.fixedUpdate === 'function' ||
             typeof object.preUpdate === 'function' ||
-            typeof object.lateUpdate === 'function' )
-            {
-                this.updateManager.add(object);
-            }
+            typeof object.lateUpdate === 'function';
+
+        if (!isUpdateable) return;
+
+        this.updateManager.add(object);
+        this.registeredUpdateables.add(object);
+    }
+
+
+    remove(object)
+    {
+        this.scene.remove(object);
+        this.updateManager.remove(object);
+        this.registeredUpdateables.delete(object);
     }
 
 
@@ -33,5 +44,16 @@ export class BaseScene
         if (!this.camera) return;
         this.camera.aspect = width / height;
         this.camera.updateProjectionMatrix();
+    }
+
+
+    destroy()
+    {
+        for (const object of this.registeredUpdateables)
+        {
+            this.updateManager.remove(object);
+        }
+
+        this.registeredUpdateables.clear();
     }
 }

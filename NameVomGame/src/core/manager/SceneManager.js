@@ -24,13 +24,46 @@ export class SceneManager
     //############################################
 
     /**
-     * updates the active scene when it provides an update method.
+     * runs preparation logic on the active scene when supported.
+     * @param {number} deltaTime - elapsed frame time in seconds.
+     * @returns {void}
+     */
+    preUpdate(deltaTime)
+    {
+        this.activeScene?.preUpdate?.(deltaTime);
+    }
+
+
+    /**
+     * runs fixed-step simulation logic on the active scene when supported.
+     * @param {number} fixedDeltaTime - fixed simulation step in seconds.
+     * @returns {void}
+     */
+    fixedUpdate(fixedDeltaTime)
+    {
+        this.activeScene?.fixedUpdate?.(fixedDeltaTime);
+    }
+
+
+    /**
+     * runs frame-based logic on the active scene when supported.
      * @param {number} deltaTime - elapsed frame time in seconds.
      * @returns {void}
      */
     update(deltaTime)
     {
         this.activeScene?.update?.(deltaTime);
+    }
+
+
+    /**
+     * runs follow-up logic on the active scene after regular updates when supported.
+     * @param {number} deltaTime - elapsed frame time in seconds.
+     * @returns {void}
+     */
+    lateUpdate(deltaTime)
+    {
+        this.activeScene?.lateUpdate?.(deltaTime);
     }
 
 
@@ -54,17 +87,22 @@ export class SceneManager
     changeScene(id)
     {
         const sceneFunction = this.scenes.get(id);
+        if (!sceneFunction) throw new Error(`Scene is not registered: ${id}`);
 
         //allows the previous scene to release scene-specific state
 
-        if (this.activeScene) this.activeScene.exit?.();
+        if (this.activeScene)
+        {
+            this.activeScene.exit?.();
+            this.activeScene.destroy?.();
+        }
 
         //creates and enters a fresh scene controller
 
         this.activeScene = sceneFunction();
         this.activeSceneId = id;
 
-        this.activeScene.enter();
+        this.activeScene.enter?.();
     }
 
 

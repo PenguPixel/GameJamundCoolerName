@@ -1,12 +1,11 @@
 import * as THREE from 'three';
+import RAPIER from '@dimforge/rapier3d-compat';
 import { Time } from './Time.js';
 import { InputManager } from './manager/InputManager.js';
-import { InputAction } from './constants/InputAction.js';
 import { UpdateManager } from "./manager/UpdateManager.js";
 import { AssetManager } from "./manager/AssetManager.js";
 import { AssetManifest } from "./config/AssetManifest.js";
 import { SceneManager } from './manager/SceneManager.js';
-import { SceneId } from './constants/SceneId.js';
 import { AudioManager } from './manager/AudioManager.js';
 import { AudioManifest } from './config/AudioManifest.js';
 import { Game } from '../game/Game.js';
@@ -24,12 +23,9 @@ export default class Engine
      */
     constructor(canvas)
     {
-        //creates the three.js rendering foundation
-        
+        //creates the three.js renderer
+
         this.canvas = canvas;
-        this.scene = new THREE.Scene();
-        this.scene.add(new THREE.AxesHelper);
-        this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
@@ -63,7 +59,11 @@ export default class Engine
      */
     async start()
     {
-        await Promise.all([this.assetManager.loadAll(), this.audioManager.loadAll()]);
+        await Promise.all([
+            RAPIER.init(),
+            this.assetManager.loadAll(),
+            this.audioManager.loadAll()
+        ]);
 
         this.game = new Game(
             this.inputManager,
@@ -72,8 +72,6 @@ export default class Engine
             this.sceneManager,
             this.audioManager
         );
-
-        this.updateManager.add(this.game);
 
         this.renderer.setAnimationLoop(() => this.#updateLoop());
     }
