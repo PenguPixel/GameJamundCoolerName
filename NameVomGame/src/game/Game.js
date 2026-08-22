@@ -47,7 +47,7 @@ export class Game
     {
         this.updateManager.add(this.sceneManager);
         this.sceneManager.registerScene(SceneId.LEVEL_01, () =>
-            new Level_01(this.inputManager, this.updateManager, this.sceneManager));
+            new Level_01(this.inputManager, this.updateManager, this.sceneManager, this.assetManager));
         this.sceneManager.changeScene(SceneId.LEVEL_01);
     }
 

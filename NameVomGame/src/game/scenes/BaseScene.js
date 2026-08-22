@@ -2,11 +2,12 @@ import * as THREE from 'three';
 
 export class BaseScene
 {
-    constructor(updateManager)
+    constructor(updateManager, assetManager)
     {
         this.scene = new THREE.Scene();
         this.camera = null;
         this.updateManager = updateManager;
+        this.assetManager = assetManager;
     }
 
     /**
