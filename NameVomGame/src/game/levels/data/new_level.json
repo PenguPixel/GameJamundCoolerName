@@ -2329,6 +2329,52 @@
         1,
         1
       ]
+    },
+    {
+      "id": "pressurePlate-002",
+      "type": "pressurePlate",
+      "position": [
+        -2,
+        0.01,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "body",
+        "targetId": "door-001"
+      }
+    },
+    {
+      "id": "pressurePlate-003",
+      "type": "pressurePlate",
+      "position": [
+        -3,
+        0.01,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "spirit",
+        "targetId": "door-001"
+      }
     }
   ]
 }
