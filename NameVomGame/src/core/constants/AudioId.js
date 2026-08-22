@@ -20,5 +20,6 @@ export const AudioId = Object.freeze(
         FOOTSTEP_SAND_6: 'footstepSand6',
         FOOTSTEP_SAND_7: 'footstepSand7',
         FOOTSTEP_SAND_8: 'footstepSand8',
-        CHAR_SWAP: 'charSwap'
+        CHAR_SWAP: 'charSwap',
+        DOOR_PRESSURE_PLATE: 'doorPressurePlate'
     });

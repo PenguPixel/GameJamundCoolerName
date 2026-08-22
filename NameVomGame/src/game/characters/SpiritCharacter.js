@@ -36,6 +36,17 @@ export class SpiritCharacter extends BaseCharacter
         this.position.copy(position);
     }
 
+    updateAnimation(deltaTime, isMoving)
+    {
+        this.animationController.activeAction.timeScale = isMoving ? 12 : 3;
+        super.updateAnimation(deltaTime);
+    }
+
+    takeDamage()
+    {
+        console.log("GEIST AUA!");
+    }
+
     move(direction, speed, fixedDeltaTime)
     {
         if (direction.lengthSq() === 0) return;
@@ -44,7 +55,13 @@ export class SpiritCharacter extends BaseCharacter
         const desiredMovement = {x: direction.x * speed * fixedDeltaTime, y: 0, z: direction.z * speed * fixedDeltaTime};
 
         //checks the desired movement if it will hit a obstacle
-        this.rapierCharacterController.computeColliderMovement(this.collider, desiredMovement, undefined, PhysicsCollisionGroup.SPIRIT);
+        //sensors must trigger gameplay without blocking the character controller movement
+        this.rapierCharacterController.computeColliderMovement(
+            this.collider,
+            desiredMovement,
+            RAPIER.QueryFilterFlags.EXCLUDE_SENSORS,
+            PhysicsCollisionGroup.SPIRIT
+        );
 
         //get the safe calculated movement
         const movement = this.rapierCharacterController.computedMovement();

@@ -26,19 +26,6 @@ export class Level_05 extends BaseLevelScene
         this.#setupPhysics();
     }
 
-
-    enterLevel()
-    {
-
-    }
-
-
-    exitLevel()
-    {
-
-    }
-
-
     #setupLights()
     {
         const ambientLight = new THREE.AmbientLight(0xffffff, 3);

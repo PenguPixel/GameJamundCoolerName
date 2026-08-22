@@ -14,7 +14,9 @@ export class LevelObjectFactory
         const definition = getLevelObjectDefinition(type);
         if (!definition) throw new Error(`Unknown level object type: ${type}`);
 
-        const instance = this.assetManager.createInstance(definition.assetId);
+        const instance = definition.primitive
+            ? this.#createPrimitive(definition.primitive)
+            : this.assetManager.createInstance(definition.assetId);
         const object = definition.surfaceMeshName
             ? this.#createSurfaceAlignedRoot(instance, definition.surfaceMeshName)
             : definition.centerOnGround
@@ -25,6 +27,11 @@ export class LevelObjectFactory
         object.rotation.fromArray(definition.defaultRotation);
         object.position.y = definition.placementY;
         object.userData.levelObjectType = definition.type;
+
+        if (definition.defaultProperties)
+        {
+            object.userData.levelObjectProperties = { ...definition.defaultProperties };
+        }
 
         if (definition.textureRepeat)
         {
@@ -49,6 +56,14 @@ export class LevelObjectFactory
         if (Array.isArray(data.position)) object.position.fromArray(data.position);
         if (Array.isArray(data.rotation)) object.rotation.fromArray(data.rotation);
         if (Array.isArray(data.scale)) object.scale.fromArray(data.scale);
+
+        if (data.properties)
+        {
+            object.userData.levelObjectProperties = {
+                ...object.userData.levelObjectProperties,
+                ...data.properties
+            };
+        }
 
         object.userData.levelObjectId = data.id;
         return object;
@@ -218,6 +233,41 @@ export class LevelObjectFactory
         root.animations = instance.animations ?? [];
 
         return root;
+    }
+
+
+    #createPrimitive(primitive)
+    {
+        let geometry;
+
+        if (primitive.shape === 'box')
+        {
+            geometry = new THREE.BoxGeometry(...primitive.size);
+        }
+        else if (primitive.shape === 'circle')
+        {
+            geometry = new THREE.CircleGeometry(primitive.radius, 32);
+            geometry.rotateX(-Math.PI / 2);
+        }
+        else
+        {
+            geometry = new THREE.ConeGeometry(primitive.radius, primitive.height, 32, 1, true);
+        }
+
+        const material = new THREE.MeshStandardMaterial({
+            color: primitive.color,
+            transparent: primitive.opacity < 1,
+            opacity: primitive.opacity ?? 1,
+            depthWrite: primitive.opacity === undefined || primitive.opacity === 1,
+            side: primitive.doubleSided ? THREE.DoubleSide : THREE.FrontSide,
+            emissive: primitive.emissive ?? 0x000000,
+            emissiveIntensity: primitive.emissiveIntensity ?? 0
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.userData.ownsLevelResources = true;
+        mesh.userData.ownsLevelMaterial = true;
+        return mesh;
     }
 
 

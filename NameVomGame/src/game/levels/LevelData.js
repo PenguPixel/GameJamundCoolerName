@@ -6,13 +6,21 @@ export function createLevelData(name, objects, gridSize)
         version: LEVEL_DATA_VERSION,
         name,
         editor: { gridSize },
-        objects: objects.map(object => ({
-            id: object.userData.levelObjectId,
-            type: object.userData.levelObjectType,
-            position: object.position.toArray().map(roundNumber),
-            rotation: object.rotation.toArray().slice(0, 3).map(roundNumber),
-            scale: object.scale.toArray().map(roundNumber)
-        }))
+        objects: objects.map(object =>
+        {
+            const objectData = {
+                id: object.userData.levelObjectId,
+                type: object.userData.levelObjectType,
+                position: object.position.toArray().map(roundNumber),
+                rotation: object.rotation.toArray().slice(0, 3).map(roundNumber),
+                scale: object.scale.toArray().map(roundNumber)
+            };
+
+            const properties = object.userData.levelObjectProperties;
+            if (properties) objectData.properties = { ...properties };
+
+            return objectData;
+        })
     };
 }
 

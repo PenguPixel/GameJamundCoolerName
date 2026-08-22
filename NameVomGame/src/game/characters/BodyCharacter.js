@@ -51,6 +51,11 @@ export class BodyCharacter extends BaseCharacter
         this.position.copy(position);
     }
 
+    takeDamage()
+    {
+        console.log("AUA!");
+    }
+
     updateFootsteps(deltaTime, isActive)
     {
         const velocity = this.rigidBody.linvel();

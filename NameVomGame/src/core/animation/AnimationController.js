@@ -11,13 +11,9 @@ export class AnimationController
      * creates one animation mixer and caches an action for every supplied clip.
      * @param {THREE.Object3D} root - object whose properties are animated.
      * @param {THREE.AnimationClip[]} clips - animation clips available to the object.
-     * @throws {Error} when the root or clip collection is invalid.
      */
     constructor(root, clips)
     {
-        if (!root?.isObject3D) throw new Error('AnimationController got no valid root');
-        if (!Array.isArray(clips)) throw new Error('AnimationController got no valid anim clips');
-        
         this.root = root;
         this.clips = clips;
         this.mixer = new THREE.AnimationMixer(this.root);

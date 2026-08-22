@@ -118,5 +118,12 @@ export const AudioManifest = Object.freeze([
         src: ['./assets/audio/sfx/character switch-sound.mp3'],
         volume: 0.8,
         loop: false
+    },
+    {
+        id: AudioId.DOOR_PRESSURE_PLATE,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/door pressure-plate activate.mp3'],
+        volume: 0.8,
+        loop: false
     }
 ]);

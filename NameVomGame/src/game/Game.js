@@ -20,7 +20,8 @@ export class Game
         this.sceneManager = sceneManager;
         this.audioManager = audioManager;
 
-        this.#init();
+        this.#setupInput();
+        this.#setupScenes();
     }
 
 
@@ -28,12 +29,6 @@ export class Game
     /**
      * Private Setup Methods
      */
-
-    #init()
-    {
-        this.#setupInput();
-        this.#setupScenes();
-    }
 
     #setupInput()
     {
