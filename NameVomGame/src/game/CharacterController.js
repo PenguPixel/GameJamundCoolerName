@@ -80,9 +80,6 @@ export class CharacterController extends THREE.Group
         this.audioManager.playSfx(AudioId.CHAR_SWAP);
         this.activeCharacter = this.activeCharacter === this.bodyCharacter ? this.spiritCharacter : this.bodyCharacter;
         this.#updateActiveCharacterAudio();
-
-
-        console.log('Swapped to:', this.activeCharacter === this.spiritCharacter ? 'SPIRIT' : 'BODY');
     }
 
 

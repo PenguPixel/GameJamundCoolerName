@@ -137,6 +137,8 @@ export class SceneManager
         const isSpirit = this.activeScene.characterController?.isSpiritActive ?? false;
         this.postProcessingManager.setSpiritMode(Boolean(isSpirit));
 
+        this.postProcessingManager.update();
+        
         this.postProcessingManager.render();
     }
 
