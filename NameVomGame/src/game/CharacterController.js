@@ -85,6 +85,8 @@ export class CharacterController extends THREE.Group
         this.#updateActiveCharacterAudio();
     }
 
+
+
     #updateActiveCharacterAudio()
     {
         if (this.activeCharacter === this.bodyCharacter)
@@ -99,4 +101,10 @@ export class CharacterController extends THREE.Group
         this.audioManager.pauseMusic();
         this.audioManager.pauseAmbient();
     }
+
+    get isSpiritActive()
+    {      
+        return this.activeCharacter === this.spiritCharacter;
+    }
 }
+

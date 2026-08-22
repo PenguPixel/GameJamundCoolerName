@@ -1,3 +1,5 @@
+import { PostProcessingManager } from './PostProcessingManager';
+
 export class SceneManager
 {
 
@@ -13,7 +15,7 @@ export class SceneManager
         this.scenes = new Map();
         this.activeScene = null;
         this.activeSceneId = null;
-
+        this.postProcessingManager = null;
     }
 
 
@@ -103,6 +105,12 @@ export class SceneManager
         this.activeSceneId = id;
 
         this.activeScene.enter?.();
+
+        // Wenn die neue Szene Camera und Scene hat, PostProcessing aktualisieren
+        if (this.postProcessingManager && this.activeScene?.scene && this.activeScene?.camera)
+        {
+            this.postProcessingManager.setSceneAndCamera(this.activeScene.scene, this.activeScene.camera);
+        }
     }
 
 
@@ -113,8 +121,25 @@ export class SceneManager
      */
     render(renderer)
     {
-        if (!this.activeScene) return;
-        renderer.render(this.activeScene.scene, this.activeScene.camera);
+        if (!this.activeScene ||
+            !this.activeScene.scene ||
+            !this.activeScene.camera 
+        ) return;
+
+        // renderer.render(this.activeScene.scene, this.activeScene.camera);
+
+        if(!this.postProcessingManager)
+        {
+            this.postProcessingManager = new PostProcessingManager(renderer);
+            this.postProcessingManager.setSceneAndCamera(this.activeScene.scene, this.activeScene.camera);
+        }
+
+        const isSpirit = this.activeScene.characterController?.isSpiritActive ?? false;
+        this.postProcessingManager.setSpiritMode(Boolean(isSpirit));
+
+        this.postProcessingManager.update();
+        
+        this.postProcessingManager.render();
     }
 
 
@@ -127,5 +152,6 @@ export class SceneManager
     resize(width, height)
     {
         this.activeScene?.resize?.(width, height);
+        this.postProcessingManager?.resize(width, height);
     }
 }
