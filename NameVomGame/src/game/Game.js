@@ -13,12 +13,13 @@ export class Game
      * Constructor
      */
 
-    constructor(inputManager, updateManager, assetManager, sceneManager)
+    constructor(inputManager, updateManager, assetManager, sceneManager, audioManager)
     {
         this.inputManager = inputManager;
         this.updateManager = updateManager;
         this.assetManager = assetManager;
         this.sceneManager = sceneManager;
+        this.audioManager = audioManager;
 
         this.#init();
     }
@@ -49,11 +50,21 @@ export class Game
         this.updateManager.add(this.sceneManager);
 
         this.sceneManager.registerScene(SceneId.TITLE, () =>
-            new TitleScene(this.inputManager, this.updateManager, this.sceneManager));
+            new TitleScene(
+                this.updateManager,
+                this.sceneManager,
+                this.audioManager
+            ));
 
         this.sceneManager.registerScene(SceneId.LEVEL_01, () =>
-            new Level_01(this.inputManager, this.updateManager, this.sceneManager, this.assetManager));
-        this.sceneManager.changeScene(SceneId.LEVEL_01);
+            new Level_01(
+                this.inputManager,
+                this.updateManager,
+                this.sceneManager,
+                this.assetManager
+            ));
+
+        this.sceneManager.changeScene(SceneId.TITLE);
     }
 
 }
