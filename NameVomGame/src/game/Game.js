@@ -5,6 +5,7 @@ import { Level_01 } from "./scenes/Level_01.js";
 import { TitleScene } from "./scenes/TitleScene.js";
 import { Level_00 } from "./scenes/Level_00.js";
 import { Level_05 } from "./scenes/Level_05.js";
+import { Level_End } from "./scenes/Level_End.js";
 import { BadEndScene } from "./scenes/BadEndScene.js";
 import { GameState } from "./GameState.js";
 
@@ -79,6 +80,16 @@ export class Game
 
         this.sceneManager.registerScene(SceneId.LEVEL_05, () =>
             new Level_05(
+                this.inputManager,
+                this.updateManager,
+                this.sceneManager,
+                this.assetManager,
+                this.audioManager,
+                this.gameState
+            ));
+
+        this.sceneManager.registerScene(SceneId.LEVEL_END, () =>
+            new Level_End(
                 this.inputManager,
                 this.updateManager,
                 this.sceneManager,

@@ -1,6 +1,33 @@
 <main class="pause-menu" data-pause-menu hidden>
     <section class="pause-menu__panel" aria-label="pause menu">
         <h1 class="pause-menu__title">paused</h1>
+
+        <div class="title-menu__volume-list pause-menu__volume-list">
+            <label class="title-menu__volume">
+                <span>master</span>
+                <input type="range" min="0" max="1" step="0.01" data-pause-volume="master">
+                <output data-pause-volume-output="master"></output>
+            </label>
+
+            <label class="title-menu__volume">
+                <span>music</span>
+                <input type="range" min="0" max="1" step="0.01" data-pause-volume="music">
+                <output data-pause-volume-output="music"></output>
+            </label>
+
+            <label class="title-menu__volume">
+                <span>ambient</span>
+                <input type="range" min="0" max="1" step="0.01" data-pause-volume="ambient">
+                <output data-pause-volume-output="ambient"></output>
+            </label>
+
+            <label class="title-menu__volume">
+                <span>sfx</span>
+                <input type="range" min="0" max="1" step="0.01" data-pause-volume="sfx">
+                <output data-pause-volume-output="sfx"></output>
+            </label>
+        </div>
+
         <button class="title-menu__button" type="button" data-pause-action="resume">resume</button>
         <button class="title-menu__button" type="button" data-pause-action="title">back to title</button>
     </section>

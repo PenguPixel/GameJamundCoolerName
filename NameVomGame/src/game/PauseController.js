@@ -32,6 +32,8 @@ export class PauseController
                 this.audioManager.playSfx(AudioId.MENU_HOVER)
             );
         }
+
+        this.#setupVolumeControls();
     }
 
 
@@ -52,5 +54,35 @@ export class PauseController
         this.overlay?.remove();
         this.overlay = null;
         this.menu = null;
+    }
+
+
+    #setupVolumeControls()
+    {
+        const controls = [
+            ['master', this.audioManager.masterVolume, value => this.audioManager.setMasterVolume(value)],
+            ['music', this.audioManager.musicVolume, value => this.audioManager.setMusicVolume(value)],
+            ['ambient', this.audioManager.ambientVolume, value => this.audioManager.setAmbientVolume(value)],
+            ['sfx', this.audioManager.sfxVolume, value => this.audioManager.setSfxVolume(value)]
+        ];
+
+        for (const [name, initialValue, setVolume] of controls)
+        {
+            const input = this.overlay.querySelector(`[data-pause-volume="${name}"]`);
+            const output = this.overlay.querySelector(`[data-pause-volume-output="${name}"]`);
+
+            const updateVolume = () =>
+            {
+                const volume = Number(input.value);
+                setVolume(volume);
+                output.textContent = `${Math.round(volume * 100)}%`;
+            };
+
+            input.value = initialValue;
+            output.textContent = `${Math.round(initialValue * 100)}%`;
+            input.addEventListener('input', updateVolume);
+            input.addEventListener('change', () =>
+                this.audioManager.playSfx(AudioId.MENU_CLICK));
+        }
     }
 }

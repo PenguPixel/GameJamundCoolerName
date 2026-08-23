@@ -18,7 +18,7 @@ export class Level_05 extends BaseLevelScene
             cameraFollowY: true,
             bodyPosition: new THREE.Vector3(-3, 0, 0),
             spiritPosition: new THREE.Vector3(2, 0, 0),
-            nextSceneId: SceneId.END,
+            nextSceneId: SceneId.LEVEL_END,
             gameState,
             levelTitle: 'The Awakening'
         });

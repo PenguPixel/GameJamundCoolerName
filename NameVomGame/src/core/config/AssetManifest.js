@@ -19,6 +19,10 @@ export const AssetManifest = Object.freeze([
         path: './assets/models/character.glb'
     },
     {
+        id: AssetId.CHARACTER_2,
+        path: './assets/models/character_2.glb'
+    },
+    {
         id: AssetId.WORLD1,
         path: './assets/models/world1.glb'
     },
@@ -53,6 +57,10 @@ export const AssetManifest = Object.freeze([
     {
         id: AssetId.CACTUS_FLOWER,
         path: './assets/models/cactus_flower.glb'
+    },
+    {
+        id: AssetId.PALM_TREE,
+        path: './assets/models/palmtree.glb'
     },
     {
         id: AssetId.TORCH,
