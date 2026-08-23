@@ -71,7 +71,8 @@ export class BodyCharacter extends BaseCharacter
 
         if (isMoving && !this.animationController.activeAction)
         {
-            this.animationController.playLoop(this.movementClipName);
+            const action = this.animationController.playLoop(this.movementClipName);
+            action.timeScale = 5;
         }
         else if (!isMoving && this.animationController.activeAction)
         {

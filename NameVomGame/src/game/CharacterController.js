@@ -21,6 +21,7 @@ export class CharacterController extends THREE.Group
         this.audioManager = audioManager;
         this.speed = 5;
         this.direction = new THREE.Vector3();
+        this.controlsEnabled = true;
         this.challengeAudioActive = false;
         this.healthController = new HealthController(gameState);
 
@@ -57,15 +58,16 @@ export class CharacterController extends THREE.Group
             !this.isDead && this.activeCharacter === this.bodyCharacter
         );
 
-        if (this.isDead) return;
+        if (this.isDead || !this.controlsEnabled) return;
 
         if (this.inputManager.justPressed(InputAction.SWAP_CHARACTER)) this.#swapCharacter();
     }
 
     fixedUpdate(fixedDeltaTime)
     {
-        if (this.isDead)
+        if (this.isDead || !this.controlsEnabled)
         {
+            this.direction.set(0, 0, 0);
             this.bodyCharacter.stopMovement();
             return;
         }
@@ -96,6 +98,12 @@ export class CharacterController extends THREE.Group
     restoreAudioState()
     {
         this.#updateActiveCharacterAudio();
+    }
+
+    setControlsEnabled(controlsEnabled)
+    {
+        this.controlsEnabled = controlsEnabled;
+        if (!this.controlsEnabled) this.direction.set(0, 0, 0);
     }
 
     resetSpirit(position)

@@ -56,6 +56,7 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
             1
         );
         this.defaultLightColor = this.light.color.clone();
+        this.defaultLightIntensity = this.light.intensity;
         const lightTarget = new THREE.Object3D();
         this.light.position.y = size.y;
         this.light.target = lightTarget;
@@ -114,7 +115,8 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
         if (shouldDisable === this.isDisabled) return;
 
         this.isDisabled = shouldDisable;
-        this.visible = !this.isDisabled;
+        this.model.visible = !this.isDisabled;
+        this.light.intensity = this.isDisabled ? 0 : this.defaultLightIntensity;
         this.collider.setEnabled(!this.isDisabled);
         this.hasDamaged = false;
     }

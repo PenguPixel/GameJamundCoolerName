@@ -75,7 +75,7 @@ export class PressurePlate extends BaseRuntimeLevelObject
 
     dispose()
     {
-        this.target?.setSourceActive?.(this.sourceId, false);
+        this.target = null;
         this.action.stop();
         this.mixer.uncacheRoot(this.model);
         this.physicsWorld.removeCollider(this.collider, true);
