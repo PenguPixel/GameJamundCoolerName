@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { BaseLevelScene } from './BaseLevelScene.js';
-import levelData from '../levels/data/level_00.json';
+import levelData from '../levels/data/level_01.json';
 import { SceneId } from '../../core/constants/SceneId.js';
 
 export class Level_01 extends BaseLevelScene
@@ -16,7 +16,7 @@ export class Level_01 extends BaseLevelScene
             cameraDeadZoneX: 0,
             cameraDeadZoneZ: 0,
             cameraFollowY: true,
-            bodyPosition: new THREE.Vector3(0, 0, 7),
+            bodyPosition: new THREE.Vector3(0, 0, 2),
             spiritPosition: new THREE.Vector3(2, 0, 0),
             nextSceneId: SceneId.LEVEL_05,
             gameState,
