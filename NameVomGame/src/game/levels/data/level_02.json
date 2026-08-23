@@ -2,27 +2,9900 @@
   "version": 1,
   "name": "level_02",
   "editor": {
-    "gridSize": 1
+    "gridSize": 0.25
   },
   "objects": [
     {
       "id": "spiritPlatform-001",
       "type": "spiritPlatform",
-      "position": [2, 0.01, 0],
-      "rotation": [0, 0, 0],
-      "scale": [1, 1, 1],
+      "position": [
+        -23,
+        0.01,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
       "properties": {
         "platformType": "start"
       }
     },
     {
-      "id": "spiritPlatform-002",
+      "id": "stone-002",
+      "type": "stone",
+      "position": [
+        9,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-003",
+      "type": "wallCorner",
+      "position": [
+        -26,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-004",
+      "type": "wallCorner",
+      "position": [
+        -26,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-005",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-006",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-007",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-008",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-009",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-010",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-011",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-012",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        9
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-013",
+      "type": "wall",
+      "position": [
+        -25,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-014",
+      "type": "wall",
+      "position": [
+        -24,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-015",
+      "type": "wall",
+      "position": [
+        -23,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-016",
+      "type": "wall",
+      "position": [
+        -22,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-017",
+      "type": "wall",
+      "position": [
+        -21,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-018",
+      "type": "wall",
+      "position": [
+        -20,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-019",
+      "type": "wall",
+      "position": [
+        -19,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-020",
+      "type": "wall",
+      "position": [
+        -25,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-025",
+      "type": "wall",
+      "position": [
+        -20,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-026",
+      "type": "wall",
+      "position": [
+        -19,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-027",
+      "type": "wallCorner",
+      "position": [
+        -18,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-028",
+      "type": "wallCorner",
+      "position": [
+        -18,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-029",
+      "type": "wall",
+      "position": [
+        -18,
+        0,
+        9
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-030",
+      "type": "wall",
+      "position": [
+        -18,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-031",
+      "type": "wall",
+      "position": [
+        -18,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-032",
+      "type": "wall",
+      "position": [
+        -17,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-033",
+      "type": "wall",
+      "position": [
+        -16,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-034",
+      "type": "wall",
+      "position": [
+        -18,
+        0,
+        2
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-035",
+      "type": "wall",
+      "position": [
+        -17,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-036",
+      "type": "wall",
+      "position": [
+        -16,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-037",
+      "type": "wall",
+      "position": [
+        -15,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-038",
+      "type": "wall",
+      "position": [
+        -14,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-039",
+      "type": "wall",
+      "position": [
+        -13,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-040",
+      "type": "wall",
+      "position": [
+        -12,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-041",
+      "type": "wall",
+      "position": [
+        -11,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-042",
+      "type": "wall",
+      "position": [
+        -10,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-043",
+      "type": "wall",
+      "position": [
+        -9,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-044",
+      "type": "wall",
+      "position": [
+        -15,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-045",
+      "type": "wall",
+      "position": [
+        -14,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-046",
+      "type": "wall",
+      "position": [
+        -13,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-047",
+      "type": "wall",
+      "position": [
+        -12,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-048",
+      "type": "wall",
+      "position": [
+        -11,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-049",
+      "type": "wall",
+      "position": [
+        -10,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-050",
+      "type": "wall",
+      "position": [
+        -9,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "bars-051",
+      "type": "bars",
+      "position": [
+        -18,
+        0,
+        4.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-052",
+      "type": "wallCorner",
+      "position": [
+        -18,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-053",
+      "type": "wallCorner",
+      "position": [
+        -18,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "spiritLightCone-054",
+      "type": "spiritLightCone",
+      "position": [
+        -18.5,
+        0.01,
+        4.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "path": "0,0;",
+        "speed": 0
+      }
+    },
+    {
+      "id": "spiritLightCone-055",
+      "type": "spiritLightCone",
+      "position": [
+        -10.5,
+        0.01,
+        4.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "path": "0,0;",
+        "speed": 0
+      }
+    },
+    {
+      "id": "wall-056",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-057",
+      "type": "wall",
+      "position": [
+        -7,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-058",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-059",
+      "type": "wall",
+      "position": [
+        -5,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-060",
+      "type": "wall",
+      "position": [
+        -5,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-061",
+      "type": "wall",
+      "position": [
+        -5,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-062",
+      "type": "wall",
+      "position": [
+        -5,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-063",
+      "type": "wall",
+      "position": [
+        -3,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-064",
+      "type": "wall",
+      "position": [
+        -4,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-065",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-066",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        9
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-067",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-068",
+      "type": "wall",
+      "position": [
+        -7,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-069",
+      "type": "wall",
+      "position": [
+        -6,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-070",
+      "type": "wall",
+      "position": [
+        -5,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-071",
+      "type": "wall",
+      "position": [
+        -4,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-072",
+      "type": "wall",
+      "position": [
+        -3,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-073",
+      "type": "wallCorner",
+      "position": [
+        -5,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-074",
+      "type": "wallCorner",
+      "position": [
+        -8,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-075",
+      "type": "wallCorner",
+      "position": [
+        -8,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-076",
+      "type": "wallCorner",
+      "position": [
+        -5,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-077",
+      "type": "wall",
+      "position": [
+        -6,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "spiritLightCone-078",
+      "type": "spiritLightCone",
+      "position": [
+        -3,
+        0.01,
+        9.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "path": "0,0;",
+        "speed": 0
+      }
+    },
+    {
+      "id": "pressurePlate-079",
+      "type": "pressurePlate",
+      "position": [
+        -6.5,
+        0.01,
+        7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "spirit",
+        "targetId": "door-085"
+      }
+    },
+    {
+      "id": "pressurePlate-080",
+      "type": "pressurePlate",
+      "position": [
+        -3,
+        0.01,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "body",
+        "targetId": "spiritLightCone-054"
+      }
+    },
+    {
+      "id": "bars-081",
+      "type": "bars",
+      "position": [
+        -2,
+        0,
+        9.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-082",
+      "type": "wallCorner",
+      "position": [
+        -2,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-083",
+      "type": "wallCorner",
+      "position": [
+        -2,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "pressurePlate-084",
+      "type": "pressurePlate",
+      "position": [
+        -11,
+        0.01,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "body",
+        "targetId": "spiritLightCone-078"
+      }
+    },
+    {
+      "id": "door-085",
+      "type": "door",
+      "position": [
+        -5,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-086",
+      "type": "wallOneSideClosed",
+      "position": [
+        -5,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-087",
+      "type": "wallCorner",
+      "position": [
+        -5,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-088",
+      "type": "wall",
+      "position": [
+        -6,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-089",
+      "type": "wall",
+      "position": [
+        -7,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-090",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-091",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-092",
+      "type": "wall",
+      "position": [
+        -9,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-093",
+      "type": "wall",
+      "position": [
+        -10,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-094",
+      "type": "wall",
+      "position": [
+        -11,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-095",
+      "type": "wall",
+      "position": [
+        -12,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-096",
+      "type": "wall",
+      "position": [
+        -13,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-097",
+      "type": "wall",
+      "position": [
+        -14,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-098",
+      "type": "wall",
+      "position": [
+        -15,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-102",
+      "type": "wall",
+      "position": [
+        -17,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-103",
+      "type": "wallCorner",
+      "position": [
+        -18,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-104",
+      "type": "wallCorner",
+      "position": [
+        -16,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-105",
+      "type": "wallCorner",
+      "position": [
+        -16,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-106",
+      "type": "wallCorner",
+      "position": [
+        -8,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-107",
+      "type": "wallCorner",
+      "position": [
+        -8,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-108",
+      "type": "wallOneSideClosed",
+      "position": [
+        -24,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-109",
+      "type": "wallOneSideClosed",
+      "position": [
+        -21,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "bars-110",
+      "type": "bars",
+      "position": [
+        -22.5,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-111",
+      "type": "wallOneSideClosed",
+      "position": [
+        -16,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "door-113",
+      "type": "door",
+      "position": [
+        -16,
+        0,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "pressurePlate-114",
+      "type": "pressurePlate",
+      "position": [
+        8,
+        0.01,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "spirit",
+        "targetId": "door-113"
+      }
+    },
+    {
+      "id": "bars-115",
+      "type": "bars",
+      "position": [
+        -17.5,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "bars-116",
+      "type": "bars",
+      "position": [
+        -19.5,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-117",
+      "type": "wallCorner",
+      "position": [
+        -21,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-118",
+      "type": "wall",
+      "position": [
+        -21,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-119",
+      "type": "wall",
+      "position": [
+        -21,
+        0,
+        -6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-120",
+      "type": "wall",
+      "position": [
+        -21,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-121",
+      "type": "wallCorner",
+      "position": [
+        -21,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-122",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-123",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-124",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-125",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-126",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-127",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-128",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-129",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-130",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-132",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -10
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-133",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -11
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-134",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -12
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-135",
+      "type": "wall",
+      "position": [
+        -25,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-136",
+      "type": "wall",
+      "position": [
+        -24,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-137",
+      "type": "wall",
+      "position": [
+        -23,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-138",
+      "type": "wall",
+      "position": [
+        -22,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-139",
+      "type": "wall",
+      "position": [
+        -21,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-140",
+      "type": "wall",
+      "position": [
+        -20,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-141",
+      "type": "wall",
+      "position": [
+        -19,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-142",
+      "type": "wall",
+      "position": [
+        -18,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-143",
+      "type": "wall",
+      "position": [
+        -17,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-144",
+      "type": "wall",
+      "position": [
+        -20,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-145",
+      "type": "wall",
+      "position": [
+        -19,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-146",
+      "type": "wall",
+      "position": [
+        -18,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-147",
+      "type": "wall",
+      "position": [
+        -17,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-151",
+      "type": "wallCorner",
+      "position": [
+        -26,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "pressurePlate-001",
+      "type": "pressurePlate",
+      "position": [
+        -7,
+        0.01,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "body",
+        "targetId": "spiritLightCone-055"
+      }
+    },
+    {
+      "id": "wall-002",
+      "type": "wall",
+      "position": [
+        -1,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-003",
+      "type": "wall",
+      "position": [
+        0,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-004",
+      "type": "wall",
+      "position": [
+        1,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-021",
+      "type": "wall",
+      "position": [
+        2,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-022",
+      "type": "wall",
+      "position": [
+        3,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-023",
+      "type": "wall",
+      "position": [
+        4,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-025",
+      "type": "wallOneSideClosed",
+      "position": [
+        -4,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "door-026",
+      "type": "door",
+      "position": [
+        -2.5,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-029",
+      "type": "wallCorner",
+      "position": [
+        -1,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-051",
+      "type": "wall",
+      "position": [
+        -1,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-055",
+      "type": "wallCorner",
+      "position": [
+        -1,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-056",
+      "type": "wallOneSideClosed",
+      "position": [
+        -1,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "door-057",
+      "type": "door",
+      "position": [
+        -1,
+        0,
+        6.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "pressurePlate-058",
+      "type": "pressurePlate",
+      "position": [
+        -14.5,
+        0.01,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "spirit",
+        "targetId": "door-057"
+      }
+    },
+    {
+      "id": "pressurePlate-059",
+      "type": "pressurePlate",
+      "position": [
+        -24,
+        0.01,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "spirit",
+        "targetId": "door-026"
+      }
+    },
+    {
+      "id": "worldTile25x25-060",
+      "type": "worldTile25x25",
+      "position": [
+        -22,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-061",
+      "type": "worldTile25x25",
+      "position": [
+        3,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-062",
+      "type": "worldTile25x25",
+      "position": [
+        -22,
+        0,
+        -17
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-063",
+      "type": "worldTile25x25",
+      "position": [
+        3,
+        0,
+        -17
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "wall-073",
+      "type": "wall",
+      "position": [
+        -7,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-074",
+      "type": "wall",
+      "position": [
+        -6,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-075",
+      "type": "wall",
+      "position": [
+        -5,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-076",
+      "type": "wall",
+      "position": [
+        -4,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-078",
+      "type": "wall",
+      "position": [
+        -3,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-079",
+      "type": "wall",
+      "position": [
+        -2,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "bars-080",
+      "type": "bars",
+      "position": [
+        -0.5,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "bars-082",
+      "type": "bars",
+      "position": [
+        1.5,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-084",
+      "type": "wallCorner",
+      "position": [
+        3,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-085",
+      "type": "wallCorner",
+      "position": [
+        -16,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "bars-086",
+      "type": "bars",
+      "position": [
+        -16,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-087",
+      "type": "wallOneSideClosed",
+      "position": [
+        -16,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-088",
+      "type": "wallOneSideClosed",
+      "position": [
+        -15,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-089",
+      "type": "wallOneSideClosed",
+      "position": [
+        -14,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-090",
+      "type": "wallOneSideClosed",
+      "position": [
+        -13,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-091",
+      "type": "wallOneSideClosed",
+      "position": [
+        -12,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-092",
+      "type": "wallOneSideClosed",
+      "position": [
+        -11,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-093",
+      "type": "wallOneSideClosed",
+      "position": [
+        -10,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-094",
+      "type": "wallOneSideClosed",
+      "position": [
+        -9,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-095",
+      "type": "wallOneSideClosed",
+      "position": [
+        -8,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-096",
+      "type": "wallOneSideClosed",
+      "position": [
+        -7,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-097",
+      "type": "wallOneSideClosed",
+      "position": [
+        -6,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-098",
+      "type": "wallOneSideClosed",
+      "position": [
+        -5,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-099",
+      "type": "wallOneSideClosed",
+      "position": [
+        -4,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-100",
+      "type": "wallOneSideClosed",
+      "position": [
+        -2,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-101",
+      "type": "wallOneSideClosed",
+      "position": [
+        -1,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-102",
+      "type": "wallOneSideClosed",
+      "position": [
+        0,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-103",
+      "type": "wallOneSideClosed",
+      "position": [
+        1,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-104",
+      "type": "wallOneSideClosed",
+      "position": [
+        2,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-105",
+      "type": "wallOneSideClosed",
+      "position": [
+        3,
+        0,
+        -6
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallOneSideClosed-106",
+      "type": "wallOneSideClosed",
+      "position": [
+        3,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-108",
+      "type": "wallCorner",
+      "position": [
+        3,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-109",
+      "type": "wallCorner",
+      "position": [
+        -3,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-110",
+      "type": "wallCorner",
+      "position": [
+        -3,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-111",
+      "type": "wall",
+      "position": [
+        5,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-112",
+      "type": "wall",
+      "position": [
+        6,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-113",
+      "type": "wall",
+      "position": [
+        7,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-114",
+      "type": "wall",
+      "position": [
+        8,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-115",
+      "type": "wall",
+      "position": [
+        9,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-116",
+      "type": "wall",
+      "position": [
+        10,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-117",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-121",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        9
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-148",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-149",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-150",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-151",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-152",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-153",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-154",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-155",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-156",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-157",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-158",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-159",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-160",
+      "type": "wall",
+      "position": [
+        10,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-161",
+      "type": "wall",
+      "position": [
+        9,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-162",
+      "type": "wall",
+      "position": [
+        8,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-163",
+      "type": "wall",
+      "position": [
+        7,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-164",
+      "type": "wall",
+      "position": [
+        6,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-165",
+      "type": "wall",
+      "position": [
+        5,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-166",
+      "type": "wall",
+      "position": [
+        4,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-167",
+      "type": "wallCorner",
+      "position": [
+        11,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-168",
+      "type": "wallCorner",
+      "position": [
+        11,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "spiritPlatform-169",
       "type": "spiritPlatform",
-      "position": [8, 0.01, 0],
-      "rotation": [0, 0, 0],
-      "scale": [1, 1, 1],
+      "position": [
+        9,
+        0.01,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
       "properties": {
         "platformType": "end"
+      }
+    },
+    {
+      "id": "wall-170",
+      "type": "wall",
+      "position": [
+        -16,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-171",
+      "type": "wall",
+      "position": [
+        -15,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-172",
+      "type": "wall",
+      "position": [
+        -14,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-173",
+      "type": "wall",
+      "position": [
+        -13,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-174",
+      "type": "wall",
+      "position": [
+        -12,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-175",
+      "type": "wall",
+      "position": [
+        -11,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-176",
+      "type": "wall",
+      "position": [
+        -10,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-177",
+      "type": "wall",
+      "position": [
+        -9,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-178",
+      "type": "wall",
+      "position": [
+        -8,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-179",
+      "type": "wall",
+      "position": [
+        -7,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-180",
+      "type": "wall",
+      "position": [
+        -6,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-181",
+      "type": "wall",
+      "position": [
+        -5,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-182",
+      "type": "wall",
+      "position": [
+        -4,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-183",
+      "type": "wall",
+      "position": [
+        -3,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-184",
+      "type": "wall",
+      "position": [
+        -2,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-185",
+      "type": "wall",
+      "position": [
+        -1,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-186",
+      "type": "wall",
+      "position": [
+        0,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-187",
+      "type": "wall",
+      "position": [
+        1,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-188",
+      "type": "wall",
+      "position": [
+        2,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-189",
+      "type": "wall",
+      "position": [
+        3,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-190",
+      "type": "wall",
+      "position": [
+        4,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-191",
+      "type": "wall",
+      "position": [
+        5,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-192",
+      "type": "wall",
+      "position": [
+        6,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-193",
+      "type": "wall",
+      "position": [
+        7,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-194",
+      "type": "wall",
+      "position": [
+        8,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-195",
+      "type": "wall",
+      "position": [
+        9,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-196",
+      "type": "wall",
+      "position": [
+        10,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-197",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-198",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-199",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-200",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-201",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -9
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-202",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -10
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-203",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -11
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-204",
+      "type": "wall",
+      "position": [
+        11,
+        0,
+        -12
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wallCorner-205",
+      "type": "wallCorner",
+      "position": [
+        11,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "spiritLightCone-003",
+      "type": "spiritLightCone",
+      "position": [
+        -25,
+        0.01,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "path": "6,0;",
+        "speed": 2
+      }
+    },
+    {
+      "id": "spiritLightCone-004",
+      "type": "spiritLightCone",
+      "position": [
+        -12,
+        0.01,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "path": "-5,0;5,0",
+        "speed": 3
+      }
+    },
+    {
+      "id": "spiritLightCone-005",
+      "type": "spiritLightCone",
+      "position": [
+        0,
+        0.01,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "path": "-2,0;4,0;",
+        "speed": 2
+      }
+    },
+    {
+      "id": "spikeTrap-006",
+      "type": "spikeTrap",
+      "position": [
+        -14,
+        0.01,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-007",
+      "type": "spikeTrap",
+      "position": [
+        -13,
+        0.01,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-008",
+      "type": "spikeTrap",
+      "position": [
+        -10,
+        0.01,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-009",
+      "type": "spikeTrap",
+      "position": [
+        -4,
+        0.01,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-010",
+      "type": "spikeTrap",
+      "position": [
+        3,
+        0.01,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-011",
+      "type": "spikeTrap",
+      "position": [
+        5,
+        0.01,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-012",
+      "type": "spikeTrap",
+      "position": [
+        5,
+        0.01,
+        7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-013",
+      "type": "spikeTrap",
+      "position": [
+        5,
+        0.01,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-014",
+      "type": "spikeTrap",
+      "position": [
+        2,
+        0.01,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-015",
+      "type": "spikeTrap",
+      "position": [
+        1,
+        0.01,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-016",
+      "type": "spikeTrap",
+      "position": [
+        -1,
+        0.01,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-017",
+      "type": "spikeTrap",
+      "position": [
+        -12,
+        0.01,
+        -6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-018",
+      "type": "spikeTrap",
+      "position": [
+        -8,
+        0.01,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-019",
+      "type": "spikeTrap",
+      "position": [
+        -5,
+        0.01,
+        -6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-020",
+      "type": "spikeTrap",
+      "position": [
+        -25,
+        0.01,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-021",
+      "type": "spikeTrap",
+      "position": [
+        -23,
+        0.01,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-022",
+      "type": "spikeTrap",
+      "position": [
+        -19,
+        0.01,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-023",
+      "type": "spikeTrap",
+      "position": [
+        -18,
+        0.01,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-024",
+      "type": "spikeTrap",
+      "position": [
+        -7,
+        0.01,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-025",
+      "type": "spikeTrap",
+      "position": [
+        -5,
+        0.01,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-026",
+      "type": "spikeTrap",
+      "position": [
+        4,
+        0.01,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-027",
+      "type": "spikeTrap",
+      "position": [
+        6,
+        0.01,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "spikeTrap-028",
+      "type": "spikeTrap",
+      "position": [
+        8,
+        0.01,
+        -6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "pressurePlate-029",
+      "type": "pressurePlate",
+      "position": [
+        10,
+        0.01,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "activator": "body",
+        "targetId": "spiritLightCone-004"
+      }
+    },
+    {
+      "id": "torch-030",
+      "type": "torch",
+      "position": [
+        3,
+        2,
+        -3.5
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-031",
+      "type": "torch",
+      "position": [
+        9.25,
+        2,
+        -3.75
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-032",
+      "type": "torch",
+      "position": [
+        10.75,
+        2,
+        1.25
+      ],
+      "rotation": [
+        -3.1416,
+        0,
+        2.618
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-033",
+      "type": "torch",
+      "position": [
+        10.75,
+        2,
+        7.75
+      ],
+      "rotation": [
+        -3.1416,
+        0,
+        2.618
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-034",
+      "type": "torch",
+      "position": [
+        3.5,
+        2,
+        10.75
+      ],
+      "rotation": [
+        -0.5236,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-035",
+      "type": "torch",
+      "position": [
+        -0.5,
+        2,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-036",
+      "type": "torch",
+      "position": [
+        -0.5,
+        2,
+        3
+      ],
+      "rotation": [
+        0,
+        0.2618,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-037",
+      "type": "torch",
+      "position": [
+        -4.75,
+        2,
+        6.75
+      ],
+      "rotation": [
+        0,
+        -0.2618,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-038",
+      "type": "torch",
+      "position": [
+        -4.75,
+        2,
+        3.75
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-039",
+      "type": "torch",
+      "position": [
+        -4.5,
+        2,
+        -1
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-040",
+      "type": "torch",
+      "position": [
+        -4.25,
+        2,
+        -3.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-041",
+      "type": "torch",
+      "position": [
+        -5.75,
+        2,
+        -7.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-042",
+      "type": "torch",
+      "position": [
+        -13,
+        2,
+        -7.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-043",
+      "type": "torch",
+      "position": [
+        -3,
+        2,
+        -6.5
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-044",
+      "type": "torch",
+      "position": [
+        1.5,
+        2,
+        -6.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-045",
+      "type": "torch",
+      "position": [
+        -9,
+        2,
+        -12.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-046",
+      "type": "torch",
+      "position": [
+        -3.5,
+        2,
+        -12.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-047",
+      "type": "torch",
+      "position": [
+        4,
+        2,
+        -12.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-048",
+      "type": "torch",
+      "position": [
+        9.5,
+        2,
+        -12.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-049",
+      "type": "torch",
+      "position": [
+        10.75,
+        2,
+        -10.25
+      ],
+      "rotation": [
+        -3.1416,
+        0.2618,
+        2.618
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-050",
+      "type": "torch",
+      "position": [
+        10.75,
+        2,
+        -6.5
+      ],
+      "rotation": [
+        -3.1416,
+        0.2618,
+        2.618
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-051",
+      "type": "torch",
+      "position": [
+        -18.5,
+        2,
+        -7.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-052",
+      "type": "torch",
+      "position": [
+        -20.75,
+        2,
+        -6
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-053",
+      "type": "torch",
+      "position": [
+        -21,
+        2,
+        -3.5
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-054",
+      "type": "torch",
+      "position": [
+        -22.5,
+        2,
+        -12.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-055",
+      "type": "torch",
+      "position": [
+        -25.75,
+        2,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-056",
+      "type": "torch",
+      "position": [
+        -25.75,
+        2,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-057",
+      "type": "torch",
+      "position": [
+        -24.75,
+        2,
+        1.25
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-058",
+      "type": "torch",
+      "position": [
+        -20.75,
+        2,
+        1.25
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-059",
+      "type": "torch",
+      "position": [
+        -25.75,
+        2,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-060",
+      "type": "torch",
+      "position": [
+        -16,
+        2,
+        3.25
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-061",
+      "type": "torch",
+      "position": [
+        -8,
+        2,
+        3.25
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-062",
+      "type": "torch",
+      "position": [
+        -5,
+        2,
+        8.5
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-063",
+      "type": "torch",
+      "position": [
+        -7.75,
+        2,
+        8.25
+      ],
+      "rotation": [
+        0,
+        0,
+        -0.5236
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-064",
+      "type": "torch",
+      "position": [
+        -5.25,
+        2,
+        5.5
+      ],
+      "rotation": [
+        -3.1416,
+        0,
+        2.618
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-065",
+      "type": "torch",
+      "position": [
+        -1.25,
+        2,
+        4.75
+      ],
+      "rotation": [
+        -3.1416,
+        -0.2618,
+        2.618
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-066",
+      "type": "torch",
+      "position": [
+        -8.25,
+        2,
+        -0.5
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-067",
+      "type": "torch",
+      "position": [
+        -14,
+        2,
+        -3.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-068",
+      "type": "torch",
+      "position": [
+        -10,
+        2,
+        -3.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "wall-080",
+      "type": "wall",
+      "position": [
+        -26,
+        0,
+        -9
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-081",
+      "type": "palmTree",
+      "position": [
+        15.5,
+        0,
+        13
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-082",
+      "type": "palmTree",
+      "position": [
+        14.75,
+        0,
+        16
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-083",
+      "type": "palmTree",
+      "position": [
+        -15.25,
+        0,
+        17.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-084",
+      "type": "palmTree",
+      "position": [
+        -38.75,
+        0,
+        6.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-085",
+      "type": "palmTree",
+      "position": [
+        -32.75,
+        0,
+        -2.25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-086",
+      "type": "palmTree",
+      "position": [
+        -27.5,
+        0,
+        -21.25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-087",
+      "type": "palmTree",
+      "position": [
+        -2,
+        0,
+        -23
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-088",
+      "type": "palmTree",
+      "position": [
+        -11,
+        0,
+        -18.25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-089",
+      "type": "palmTree",
+      "position": [
+        14.25,
+        0,
+        -18.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-090",
+      "type": "palmTree",
+      "position": [
+        23,
+        0,
+        -11.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-091",
+      "type": "palmTree",
+      "position": [
+        20,
+        0,
+        -3.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-092",
+      "type": "palmTree",
+      "position": [
+        24.75,
+        0,
+        3.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-093",
+      "type": "stone",
+      "position": [
+        9.25,
+        0,
+        -1.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-094",
+      "type": "stone",
+      "position": [
+        9.75,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-095",
+      "type": "stone",
+      "position": [
+        10,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-096",
+      "type": "stone",
+      "position": [
+        9,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-097",
+      "type": "stone",
+      "position": [
+        10.25,
+        0,
+        8.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-098",
+      "type": "stone",
+      "position": [
+        10.25,
+        0,
+        7.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-099",
+      "type": "stone",
+      "position": [
+        9.5,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-100",
+      "type": "stone",
+      "position": [
+        10,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-101",
+      "type": "stone",
+      "position": [
+        10,
+        0,
+        9.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-102",
+      "type": "stone",
+      "position": [
+        9.5,
+        0,
+        10.25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-103",
+      "type": "stone",
+      "position": [
+        9.25,
+        0,
+        9.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-104",
+      "type": "cactus",
+      "position": [
+        -16.5,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-105",
+      "type": "stone",
+      "position": [
+        -15.5,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-106",
+      "type": "stone",
+      "position": [
+        -16,
+        0,
+        1.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-107",
+      "type": "stone",
+      "position": [
+        -16,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-108",
+      "type": "stone",
+      "position": [
+        -25,
+        0,
+        -0.25
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-109",
+      "type": "stone",
+      "position": [
+        -24.25,
+        0,
+        -0.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-110",
+      "type": "stone",
+      "position": [
+        -24.75,
+        0,
+        -0.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-111",
+      "type": "stone",
+      "position": [
+        -24.5,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-112",
+      "type": "cactus",
+      "position": [
+        -25,
+        0,
+        -0.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-113",
+      "type": "cactus",
+      "position": [
+        -32,
+        0,
+        10.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-114",
+      "type": "cactus",
+      "position": [
+        -33.5,
+        0,
+        12.25
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-115",
+      "type": "cactus",
+      "position": [
+        -15.25,
+        0,
+        8.75
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-116",
+      "type": "cactus",
+      "position": [
+        -11.25,
+        0,
+        8.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-117",
+      "type": "stone",
+      "position": [
+        -14.5,
+        0,
+        7.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-118",
+      "type": "stone",
+      "position": [
+        -13.75,
+        0,
+        8.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-119",
+      "type": "stone",
+      "position": [
+        -16,
+        0,
+        10.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-120",
+      "type": "stone",
+      "position": [
+        -11.5,
+        0,
+        13.75
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-121",
+      "type": "stone",
+      "position": [
+        -10.75,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-122",
+      "type": "stone",
+      "position": [
+        -2,
+        0,
+        14.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-123",
+      "type": "stone",
+      "position": [
+        6,
+        0,
+        -11.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-124",
+      "type": "stone",
+      "position": [
+        5.5,
+        0,
+        -6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-125",
+      "type": "stone",
+      "position": [
+        9.75,
+        0,
+        -7.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-126",
+      "type": "stone",
+      "position": [
+        -20.25,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-127",
+      "type": "stone",
+      "position": [
+        -19.75,
+        0,
+        -7.25
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-128",
+      "type": "stone",
+      "position": [
+        -4.25,
+        0,
+        -21
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-129",
+      "type": "stone",
+      "position": [
+        -8.25,
+        0,
+        -17.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-130",
+      "type": "stone",
+      "position": [
+        5,
+        0,
+        -18.25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-131",
+      "type": "stone",
+      "position": [
+        -4,
+        0,
+        -17.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-132",
+      "type": "stone",
+      "position": [
+        -4,
+        0,
+        -18.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-133",
+      "type": "stone",
+      "position": [
+        -4.75,
+        0,
+        -17.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-134",
+      "type": "stone",
+      "position": [
+        -6.5,
+        0,
+        -17.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-135",
+      "type": "stone",
+      "position": [
+        4,
+        0,
+        -23.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-136",
+      "type": "stone",
+      "position": [
+        13.5,
+        0,
+        -8.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-137",
+      "type": "stone",
+      "position": [
+        14.75,
+        0,
+        -12.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-138",
+      "type": "stone",
+      "position": [
+        15.25,
+        0,
+        -0.75
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-139",
+      "type": "stone",
+      "position": [
+        14.5,
+        0,
+        3.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-140",
+      "type": "stone",
+      "position": [
+        16.25,
+        0,
+        2.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-141",
+      "type": "stone",
+      "position": [
+        13.5,
+        0,
+        13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-142",
+      "type": "stone",
+      "position": [
+        8.25,
+        0,
+        16.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-143",
+      "type": "stone",
+      "position": [
+        7.75,
+        0,
+        16.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-144",
+      "type": "stone",
+      "position": [
+        -27.75,
+        0,
+        13.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-145",
+      "type": "stone",
+      "position": [
+        -27.75,
+        0,
+        14
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-146",
+      "type": "stone",
+      "position": [
+        -28.25,
+        0,
+        13.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-147",
+      "type": "stone",
+      "position": [
+        -32.5,
+        0,
+        11.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-148",
+      "type": "stone",
+      "position": [
+        -32,
+        0,
+        12.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-149",
+      "type": "stone",
+      "position": [
+        -35,
+        0,
+        13.25
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-150",
+      "type": "stone",
+      "position": [
+        -36.25,
+        0,
+        11.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-151",
+      "type": "palmTree",
+      "position": [
+        3,
+        0,
+        1.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-152",
+      "type": "palmTree",
+      "position": [
+        -40.25,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-153",
+      "type": "cactus",
+      "position": [
+        -25,
+        0,
+        -11.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-154",
+      "type": "cactusFlower",
+      "position": [
+        -25,
+        0,
+        -1.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-155",
+      "type": "cactusFlower",
+      "position": [
+        -24.5,
+        0,
+        -1.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-156",
+      "type": "cactusFlower",
+      "position": [
+        -24.75,
+        0,
+        -1.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-157",
+      "type": "cactusFlower",
+      "position": [
+        -15.25,
+        0,
+        -0.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-158",
+      "type": "cactusFlower",
+      "position": [
+        -15,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-159",
+      "type": "cactusFlower",
+      "position": [
+        -15.25,
+        0,
+        0.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-160",
+      "type": "cactusFlower",
+      "position": [
+        2.75,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-161",
+      "type": "cactusFlower",
+      "position": [
+        3.25,
+        0,
+        2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-162",
+      "type": "cactusFlower",
+      "position": [
+        3.5,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-163",
+      "type": "cactusFlower",
+      "position": [
+        6,
+        0,
+        -3.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-164",
+      "type": "cactusFlower",
+      "position": [
+        9.5,
+        0,
+        -0.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-165",
+      "type": "cactusFlower",
+      "position": [
+        9.25,
+        0,
+        -0.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-166",
+      "type": "cactusFlower",
+      "position": [
+        9.5,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-167",
+      "type": "cactusFlower",
+      "position": [
+        13.75,
+        0,
+        2.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-168",
+      "type": "cactusFlower",
+      "position": [
+        14.75,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-169",
+      "type": "cactusFlower",
+      "position": [
+        17.25,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-170",
+      "type": "cactusFlower",
+      "position": [
+        13.75,
+        0,
+        7.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-171",
+      "type": "cactusFlower",
+      "position": [
+        18.5,
+        0,
+        4.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-172",
+      "type": "cactusFlower",
+      "position": [
+        4.75,
+        0,
+        14.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-173",
+      "type": "cactusFlower",
+      "position": [
+        4,
+        0,
+        18.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-174",
+      "type": "cactusFlower",
+      "position": [
+        -0.25,
+        0,
+        17.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-175",
+      "type": "cactusFlower",
+      "position": [
+        1,
+        0,
+        14.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-176",
+      "type": "cactusFlower",
+      "position": [
+        4.25,
+        0,
+        17
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-177",
+      "type": "cactusFlower",
+      "position": [
+        6,
+        0,
+        19.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-178",
+      "type": "cactusFlower",
+      "position": [
+        12.25,
+        0,
+        18.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-179",
+      "type": "cactusFlower",
+      "position": [
+        -8.5,
+        0,
+        14
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-180",
+      "type": "cactusFlower",
+      "position": [
+        -7.75,
+        0,
+        17.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-181",
+      "type": "cactusFlower",
+      "position": [
+        -5.25,
+        0,
+        15.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-182",
+      "type": "cactusFlower",
+      "position": [
+        -2.75,
+        0,
+        17.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-183",
+      "type": "cactusFlower",
+      "position": [
+        -6.5,
+        0,
+        20.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-184",
+      "type": "cactusFlower",
+      "position": [
+        -6,
+        0,
+        18.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-185",
+      "type": "cactusFlower",
+      "position": [
+        -16.75,
+        0,
+        14.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-186",
+      "type": "cactusFlower",
+      "position": [
+        -15.5,
+        0,
+        17.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-187",
+      "type": "cactusFlower",
+      "position": [
+        -16.5,
+        0,
+        17.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-188",
+      "type": "cactusFlower",
+      "position": [
+        -15,
+        0,
+        16
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-189",
+      "type": "cactusFlower",
+      "position": [
+        -15.5,
+        0,
+        15.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-190",
+      "type": "cactusFlower",
+      "position": [
+        -13,
+        0,
+        7.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-191",
+      "type": "cactusFlower",
+      "position": [
+        -11.75,
+        0,
+        9
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-192",
+      "type": "cactusFlower",
+      "position": [
+        -12.75,
+        0,
+        10.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-193",
+      "type": "cactusFlower",
+      "position": [
+        -13.5,
+        0,
+        10.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-194",
+      "type": "cactusFlower",
+      "position": [
+        -10,
+        0,
+        8.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-195",
+      "type": "cactusFlower",
+      "position": [
+        -9.25,
+        0,
+        9.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-196",
+      "type": "cactusFlower",
+      "position": [
+        2.75,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-197",
+      "type": "cactusFlower",
+      "position": [
+        5,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-198",
+      "type": "cactusFlower",
+      "position": [
+        9.5,
+        0,
+        5.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-199",
+      "type": "cactusFlower",
+      "position": [
+        -21.5,
+        0,
+        -3.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-200",
+      "type": "cactusFlower",
+      "position": [
+        -19.75,
+        0,
+        -3.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-201",
+      "type": "cactusFlower",
+      "position": [
+        -36.75,
+        0,
+        6.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-202",
+      "type": "cactusFlower",
+      "position": [
+        -37.25,
+        0,
+        1.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-203",
+      "type": "cactusFlower",
+      "position": [
+        -34.25,
+        0,
+        4.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-204",
+      "type": "cactusFlower",
+      "position": [
+        -33,
+        0,
+        11.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-205",
+      "type": "cactusFlower",
+      "position": [
+        -31,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-206",
+      "type": "stone",
+      "position": [
+        -42,
+        0,
+        -6.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-207",
+      "type": "stone",
+      "position": [
+        -37.25,
+        0,
+        -9.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-208",
+      "type": "stone",
+      "position": [
+        -30.25,
+        0,
+        -8.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-209",
+      "type": "stone",
+      "position": [
+        -32.5,
+        0,
+        -0.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-210",
+      "type": "stone",
+      "position": [
+        -38,
+        0,
+        0.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-211",
+      "type": "stone",
+      "position": [
+        -41.5,
+        0,
+        6.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-212",
+      "type": "stone",
+      "position": [
+        -37.25,
+        0,
+        6.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-213",
+      "type": "stone",
+      "position": [
+        -34.25,
+        0,
+        7.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-214",
+      "type": "stone",
+      "position": [
+        -35,
+        0,
+        4.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-215",
+      "type": "stone",
+      "position": [
+        -31.25,
+        0,
+        2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-216",
+      "type": "stone",
+      "position": [
+        -33,
+        0,
+        -11.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-217",
+      "type": "stone",
+      "position": [
+        -34.5,
+        0,
+        -12.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-218",
+      "type": "stone",
+      "position": [
+        -34,
+        0,
+        -10.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-219",
+      "type": "stone",
+      "position": [
+        -33.5,
+        0,
+        -11.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-220",
+      "type": "stone",
+      "position": [
+        -34,
+        0,
+        -8.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-221",
+      "type": "stone",
+      "position": [
+        -33,
+        0,
+        -10.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-222",
+      "type": "cactusFlower",
+      "position": [
+        -26.75,
+        0,
+        14.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-223",
+      "type": "cactusFlower",
+      "position": [
+        -23.75,
+        0,
+        15.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-224",
+      "type": "cactusFlower",
+      "position": [
+        -25.25,
+        0,
+        18
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-225",
+      "type": "cactusFlower",
+      "position": [
+        -26,
+        0,
+        12.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-226",
+      "type": "cactusFlower",
+      "position": [
+        -23,
+        0,
+        13.25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-227",
+      "type": "cactusFlower",
+      "position": [
+        -25.5,
+        0,
+        16.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-228",
+      "type": "cactusFlower",
+      "position": [
+        -31,
+        0,
+        15.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-229",
+      "type": "cactusFlower",
+      "position": [
+        -31.75,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-230",
+      "type": "cactusFlower",
+      "position": [
+        -29,
+        0,
+        11
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-231",
+      "type": "cactusFlower",
+      "position": [
+        -35.25,
+        0,
+        16.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-232",
+      "type": "cactusFlower",
+      "position": [
+        -36.5,
+        0,
+        -15.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-233",
+      "type": "cactusFlower",
+      "position": [
+        -30.5,
+        0,
+        -18
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-234",
+      "type": "cactusFlower",
+      "position": [
+        -34.25,
+        0,
+        -22.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-235",
+      "type": "cactusFlower",
+      "position": [
+        -32,
+        0,
+        -23.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-236",
+      "type": "cactusFlower",
+      "position": [
+        -31.25,
+        0,
+        -20
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-237",
+      "type": "cactusFlower",
+      "position": [
+        -33,
+        0,
+        -17.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-238",
+      "type": "cactusFlower",
+      "position": [
+        -27.5,
+        0,
+        -17.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-239",
+      "type": "cactusFlower",
+      "position": [
+        -21.75,
+        0,
+        -19.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-240",
+      "type": "cactusFlower",
+      "position": [
+        -21,
+        0,
+        -22.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-241",
+      "type": "cactusFlower",
+      "position": [
+        -18,
+        0,
+        -18.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-242",
+      "type": "cactusFlower",
+      "position": [
+        -17.25,
+        0,
+        -17.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-243",
+      "type": "cactusFlower",
+      "position": [
+        -14.5,
+        0,
+        -18.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-244",
+      "type": "cactusFlower",
+      "position": [
+        -14,
+        0,
+        -26.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-245",
+      "type": "cactusFlower",
+      "position": [
+        -10.25,
+        0,
+        -25
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-246",
+      "type": "cactusFlower",
+      "position": [
+        -10,
+        0,
+        -23
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-247",
+      "type": "cactusFlower",
+      "position": [
+        -18.75,
+        0,
+        -22.25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-248",
+      "type": "cactusFlower",
+      "position": [
+        -21,
+        0,
+        -25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-249",
+      "type": "cactusFlower",
+      "position": [
+        -26,
+        0,
+        -21
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-250",
+      "type": "cactusFlower",
+      "position": [
+        -31.5,
+        0,
+        -26.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-251",
+      "type": "cactusFlower",
+      "position": [
+        13.75,
+        0,
+        -25.25
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-252",
+      "type": "cactusFlower",
+      "position": [
+        8.75,
+        0,
+        -25.25
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-253",
+      "type": "cactusFlower",
+      "position": [
+        9.75,
+        0,
+        -26.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-254",
+      "type": "cactusFlower",
+      "position": [
+        10.75,
+        0,
+        -25
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-255",
+      "type": "cactusFlower",
+      "position": [
+        -1,
+        0,
+        -3.75
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-256",
+      "type": "cactusFlower",
+      "position": [
+        -1.25,
+        0,
+        -3.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-001",
+      "type": "cactus",
+      "position": [
+        -24.75,
+        0,
+        7.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-002",
+      "type": "cactus",
+      "position": [
+        -24.5,
+        0,
+        8.75
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-003",
+      "type": "cactusFlower",
+      "position": [
+        -23.75,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-004",
+      "type": "cactusFlower",
+      "position": [
+        -24,
+        0,
+        8.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-005",
+      "type": "cactusFlower",
+      "position": [
+        -24,
+        0,
+        8.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-009",
+      "type": "stone",
+      "position": [
+        -25,
+        0,
+        2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-010",
+      "type": "stone",
+      "position": [
+        -24.5,
+        0,
+        2.25
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "spiritPlatform-012",
+      "type": "spiritPlatform",
+      "position": [
+        0.5,
+        0.01,
+        9.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "platformType": "save"
       }
     }
   ]
