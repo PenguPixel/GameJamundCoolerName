@@ -11,6 +11,9 @@ export class BaseRuntimeLevelObject extends THREE.Group
         this.model = model;
         this.options = options;
         this.audioManager = audioManager;
+        this.sources = new Set();
+        this.activeSources = new Set();
+        this.isActivated = false;
 
         this.position.copy(model.position);
         this.quaternion.copy(model.quaternion);
@@ -21,5 +24,36 @@ export class BaseRuntimeLevelObject extends THREE.Group
         model.quaternion.identity();
         model.scale.set(1, 1, 1);
         this.add(model);
+    }
+
+
+    registerSource(sourceId)
+    {
+        this.sources.add(sourceId);
+        this.#updateActivationState();
+    }
+
+
+    setSourceActive(sourceId, isActive)
+    {
+        if (isActive) this.activeSources.add(sourceId);
+        else this.activeSources.delete(sourceId);
+
+        this.#updateActivationState();
+    }
+
+
+    onActivationChanged()
+    {
+    }
+
+
+    #updateActivationState()
+    {
+        const isActivated = this.sources.size > 0 && this.activeSources.size === this.sources.size;
+        if (isActivated === this.isActivated) return;
+
+        this.isActivated = isActivated;
+        this.onActivationChanged(this.isActivated);
     }
 }

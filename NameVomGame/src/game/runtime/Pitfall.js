@@ -13,6 +13,7 @@ export class Pitfall extends BaseRuntimeLevelObject
         super(physicsWorld, characterController, model, options);
 
         this.bodyCharacter = characterController.bodyCharacter;
+        this.isDisabled = false;
         this.hasTriggered = false;
         this.hasKilled = false;
         this.pitBottomY = this.position.y - PIT_DEPTH;
@@ -87,6 +88,8 @@ export class Pitfall extends BaseRuntimeLevelObject
             return;
         }
 
+        if (this.isDisabled) return;
+
         const position = this.bodyCharacter.rigidBody.translation();
         const isInside = this.physicsWorld.intersectionPair(this.triggerCollider, this.bodyCharacter.collider)
             && Math.abs(position.x - this.triggerCenter.x) <= TRIGGER_SIZE / 2
@@ -100,6 +103,16 @@ export class Pitfall extends BaseRuntimeLevelObject
         const velocity = this.bodyCharacter.rigidBody.linvel();
         this.bodyCharacter.rigidBody.setLinvel({ x: 0, y: velocity.y, z: 0 }, true);
         this.bodyCharacter.collider.setCollisionGroups(PhysicsCollisionGroup.FALLING_BODY);
+    }
+
+
+    onActivationChanged(isActivated)
+    {
+        const shouldDisable = isActivated;
+        if (shouldDisable === this.isDisabled) return;
+
+        this.isDisabled = shouldDisable;
+        if (!this.hasTriggered) this.triggerCollider.setEnabled(!this.isDisabled);
     }
 
 

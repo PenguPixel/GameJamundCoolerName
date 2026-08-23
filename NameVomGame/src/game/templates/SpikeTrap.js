@@ -24,6 +24,7 @@ export class SpikeTrap extends BaseRuntimeLevelObject
         } = options;
 
         this.bodyCharacter = characterController.bodyCharacter;
+        this.isDisabled = false;
         this.interval = interval;
         this.activeDuration = activeDuration;
         this.damage = damage;
@@ -50,6 +51,7 @@ export class SpikeTrap extends BaseRuntimeLevelObject
     update(deltaTime)
     {
         this.mixer.update(deltaTime);
+        if (this.isDisabled) return;
 
         if (this.state === SpikeTrapState.WAITING)
         {
@@ -63,6 +65,31 @@ export class SpikeTrap extends BaseRuntimeLevelObject
         this.#damageBodyIfIntersecting();
         this.activeTimeRemaining -= deltaTime;
         if (this.activeTimeRemaining <= 0) this.#lowerSpikes();
+    }
+
+
+    onActivationChanged(isActivated)
+    {
+        const shouldDisable = isActivated;
+        if (shouldDisable === this.isDisabled) return;
+
+        this.isDisabled = shouldDisable;
+        this.damageCollider.setEnabled(!this.isDisabled);
+        this.hasDamagedThisCycle = false;
+
+        if (!this.isDisabled) return;
+
+        if (this.state === SpikeTrapState.RISING)
+        {
+            this.state = SpikeTrapState.LOWERING;
+            this.action.timeScale = -1;
+            this.action.paused = false;
+            this.action.play();
+        }
+        else if (this.state === SpikeTrapState.ACTIVE)
+        {
+            this.#lowerSpikes();
+        }
     }
 
 

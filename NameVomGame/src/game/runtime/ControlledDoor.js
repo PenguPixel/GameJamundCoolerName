@@ -13,8 +13,6 @@ export class ControlledDoor extends BaseRuntimeLevelObject
     {
         super(physicsWorld, characterController, model, options, audioManager);
 
-        this.sources = new Set();
-        this.activeSources = new Set();
         this.isOpen = false;
         this.collider = null;
         this.colliderTimer = null;
@@ -37,12 +35,8 @@ export class ControlledDoor extends BaseRuntimeLevelObject
     }
 
 
-    setSourceActive(sourceId, isActive)
+    onActivationChanged(shouldOpen)
     {
-        if (isActive) this.activeSources.add(sourceId);
-        else this.activeSources.delete(sourceId);
-
-        const shouldOpen = this.sources.size > 0 && this.activeSources.size === this.sources.size;
         if (shouldOpen === this.isOpen) return;
 
         this.isOpen = shouldOpen;
@@ -60,12 +54,6 @@ export class ControlledDoor extends BaseRuntimeLevelObject
         this.action.paused = false;
         this.action.play();
         this.#scheduleColliderChange();
-    }
-
-
-    registerSource(sourceId)
-    {
-        this.sources.add(sourceId);
     }
 
 
