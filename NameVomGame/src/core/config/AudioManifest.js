@@ -38,7 +38,7 @@ export const AudioManifest = Object.freeze([
     {
         id: AudioId.FINAL_LEVEL_MUSIC,
         type: AudioType.MUSIC,
-        src: ['./assets/audio/music/Well-done/music_welldone_end_of_ level_variation2.mp3'],
+        src: ['./assets/audio/music/Well-done/music-ending.mp3'],
         volume: 0.5,
         loop: true
     },
