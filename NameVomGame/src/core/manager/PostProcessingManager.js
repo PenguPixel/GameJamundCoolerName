@@ -51,7 +51,7 @@ export class PostProcessingManager
         this.transitionSpeed = 4.0;   //controls how quickly the modes blend
 
         //target values for spirit mode
-        this.targetBloomStrength = 0.8;
+		this.targetBloomStrength = 0.17;
         this.targetVignetteIntensity = 0.85;
         this.targetFogDensity = 0.035;
 
@@ -69,7 +69,7 @@ export class PostProcessingManager
             new THREE.Vector2(window.innerWidth, window.innerHeight),
             0.0,  //starts disabled
             0.4,
-            0.15
+            0.25
         );
         this.composer.addPass(this.bloomPass);
     }
