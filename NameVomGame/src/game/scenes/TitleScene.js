@@ -86,7 +86,7 @@ export class TitleScene extends BaseScene
 
     #startGame()
     {
-        if (this.isStarting) return;
+        if (this.isStarting || this.sceneManager.isTransitioning) return;
         this.isStarting = true;
         this.gameState.reset();
 

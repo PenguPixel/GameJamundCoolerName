@@ -77,5 +77,9 @@ export const AssetManifest = Object.freeze([
     {
         id: AssetId.PLATFORM,
         path: './assets/models/platform.glb'
+    },
+    {
+        id: AssetId.PLATFORM_END,
+        path: './assets/models/platform_2.glb'
     }
 ]);

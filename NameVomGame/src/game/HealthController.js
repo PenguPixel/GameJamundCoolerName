@@ -13,6 +13,7 @@ export class HealthController
         document.body.append(this.overlay);
 
         const healthElement = this.overlay.querySelector('[data-health]');
+        this.hitFeedback = this.overlay.querySelector('[data-hit-feedback]');
         for (let index = 0; index < this.gameState.maxHealth; index++)
         {
             const heart = document.createElement('span');
@@ -28,14 +29,18 @@ export class HealthController
 
     takeDamage(amount = 1)
     {
+        const previousHealth = this.gameState.health;
         this.gameState.takeDamage(amount);
+        if (this.gameState.health < previousHealth) this.#playHitFeedback();
         this.#updateOverlay();
     }
 
 
     kill()
     {
+        const wasAlive = !this.gameState.isDead;
         this.gameState.kill();
+        if (wasAlive) this.#playHitFeedback();
         this.#updateOverlay();
     }
 
@@ -65,5 +70,13 @@ export class HealthController
 
         this.overlay.querySelector('[data-health]').ariaLabel =
             `${this.gameState.health} of ${this.gameState.maxHealth} health remaining`;
+    }
+
+
+    #playHitFeedback()
+    {
+        this.hitFeedback.classList.remove('health-overlay__hit-flash--active');
+        void this.hitFeedback.offsetWidth;
+        this.hitFeedback.classList.add('health-overlay__hit-flash--active');
     }
 }

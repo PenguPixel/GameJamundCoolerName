@@ -103,6 +103,7 @@ export class SceneManager
 
         this.#createTransitionOverlay();
         this.isTransitioning = true;
+        this.transitionOverlay.classList.add('scene-transition--active');
 
         if (!this.activeScene)
         {
@@ -169,6 +170,7 @@ export class SceneManager
         window.setTimeout(() =>
         {
             this.isTransitioning = false;
+            this.transitionOverlay.classList.remove('scene-transition--active');
             this.activeScene?.onTransitionInComplete?.();
         }, FADE_DURATION);
     }

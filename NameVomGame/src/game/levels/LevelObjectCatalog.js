@@ -128,6 +128,7 @@ export const LevelObjectCatalog = Object.freeze([
         type: LevelObjectType.PRESSURE_PLATE,
         label: 'pressure plate',
         assetId: AssetId.BUTTON,
+        assetVariantProperty: 'activator',
         assetVariants: Object.freeze({
             spirit: AssetId.BUTTON_SPIRIT
         }),
@@ -178,6 +179,10 @@ export const LevelObjectCatalog = Object.freeze([
         type: LevelObjectType.SPIRIT_PLATFORM,
         label: 'spirit platform',
         assetId: AssetId.PLATFORM,
+        assetVariantProperty: 'platformType',
+        assetVariants: Object.freeze({
+            end: AssetId.PLATFORM_END
+        }),
         defaultScale: [1, 1, 1],
         defaultRotation: [0, 0, 0],
         centerOnGround: true,

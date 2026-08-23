@@ -15,6 +15,17 @@ const FOOTSTEP_AUDIO_IDS = Object.freeze([
     AudioId.FOOTSTEP_SAND_8
 ]);
 
+const HIT_AUDIO_IDS = Object.freeze([
+    AudioId.BODY_HIT_1,
+    AudioId.BODY_HIT_2,
+    AudioId.BODY_HIT_3,
+    AudioId.BODY_HIT_4,
+    AudioId.BODY_HIT_5,
+    AudioId.BODY_HIT_6,
+    AudioId.BODY_HIT_7,
+    AudioId.BODY_HIT_8
+]);
+
 const FOOTSTEP_INTERVAL = 0.25;
 const MINIMUM_WALKING_SPEED = 0.1;
 const MAXIMUM_GROUNDED_VERTICAL_SPEED = 0.15;
@@ -23,11 +34,12 @@ export class BodyCharacter extends BaseCharacter
 {
     constructor(assetManager, audioManager, physicsWorld, position, healthController)
     {
-        super(assetManager, AssetId.CHARACTER);
+        super(assetManager, AssetId.CHARACTER, false);
 
         this.audioManager = audioManager;
         this.healthController = healthController;
         this.footstepTimer = 0;
+        this.movementClipName = this.model.animations[0].name;
 
         //a dynamic rigid body is affected by gravity, contacts, forces, and impulses
         const rigidBodyDescription = RAPIER.RigidBodyDesc
@@ -52,9 +64,29 @@ export class BodyCharacter extends BaseCharacter
         this.position.copy(position);
     }
 
+    updateAnimation(deltaTime, isActive)
+    {
+        const velocity = this.rigidBody.linvel();
+        const isMoving = isActive && Math.hypot(velocity.x, velocity.z) >= MINIMUM_WALKING_SPEED;
+
+        if (isMoving && !this.animationController.activeAction)
+        {
+            this.animationController.playLoop(this.movementClipName);
+        }
+        else if (!isMoving && this.animationController.activeAction)
+        {
+            this.animationController.stopAll();
+        }
+
+        super.updateAnimation(deltaTime);
+    }
+
     takeDamage(amount = 1)
     {
+        if (this.healthController.isDead || amount <= 0) return;
+
         this.healthController.takeDamage(amount);
+        this.#playRandomHitSound();
     }
 
     updateFootsteps(deltaTime, isActive)
@@ -102,5 +134,12 @@ export class BodyCharacter extends BaseCharacter
     {
         const randomIndex = Math.floor(Math.random() * FOOTSTEP_AUDIO_IDS.length);
         this.audioManager.playSfx(FOOTSTEP_AUDIO_IDS[randomIndex]);
+    }
+
+
+    #playRandomHitSound()
+    {
+        const randomIndex = Math.floor(Math.random() * HIT_AUDIO_IDS.length);
+        this.audioManager.playSfx(HIT_AUDIO_IDS[randomIndex]);
     }
 }

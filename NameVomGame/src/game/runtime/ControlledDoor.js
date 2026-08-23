@@ -4,8 +4,8 @@ import { AudioId } from '../../core/constants/AudioId.js';
 import { PhysicsCollisionGroup } from '../physics/PhysicsCollisionGroup.js';
 import { BaseRuntimeLevelObject } from './BaseRuntimeLevelObject.js';
 
-const OPEN_COLLIDER_DELAY = 2000;
-const CLOSE_COLLIDER_DELAY = 1000;
+const OPEN_COLLIDER_DELAY = 2;
+const CLOSE_COLLIDER_DELAY = 1;
 
 export class ControlledDoor extends BaseRuntimeLevelObject
 {
@@ -15,7 +15,7 @@ export class ControlledDoor extends BaseRuntimeLevelObject
 
         this.isOpen = false;
         this.collider = null;
-        this.colliderTimer = null;
+        this.colliderChangeTime = null;
 
         const [clip] = this.model.animations;
         this.mixer = new THREE.AnimationMixer(this.model);
@@ -32,6 +32,20 @@ export class ControlledDoor extends BaseRuntimeLevelObject
     update(deltaTime)
     {
         this.mixer.update(deltaTime);
+        if (this.colliderChangeTime === null) return;
+
+        this.colliderChangeTime -= deltaTime;
+        if (this.colliderChangeTime > 0) return;
+
+        this.colliderChangeTime = null;
+
+        if (this.isOpen)
+        {
+            this.#removeCollider();
+            return;
+        }
+
+        if (!this.collider) this.#createCollider(this.closedColliderBounds);
     }
 
 
@@ -59,7 +73,6 @@ export class ControlledDoor extends BaseRuntimeLevelObject
 
     dispose()
     {
-        clearTimeout(this.colliderTimer);
         this.action.stop();
         this.mixer.uncacheRoot(this.model);
         this.#removeCollider();
@@ -68,21 +81,7 @@ export class ControlledDoor extends BaseRuntimeLevelObject
 
     #scheduleColliderChange()
     {
-        clearTimeout(this.colliderTimer);
-        const delay = this.isOpen ? OPEN_COLLIDER_DELAY : CLOSE_COLLIDER_DELAY;
-
-        this.colliderTimer = setTimeout(() =>
-        {
-            this.colliderTimer = null;
-
-            if (this.isOpen)
-            {
-                this.#removeCollider();
-                return;
-            }
-
-            if (!this.collider) this.#createCollider(this.closedColliderBounds);
-        }, delay);
+        this.colliderChangeTime = this.isOpen ? OPEN_COLLIDER_DELAY : CLOSE_COLLIDER_DELAY;
     }
 
 

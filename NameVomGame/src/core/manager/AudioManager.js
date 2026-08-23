@@ -94,6 +94,40 @@ export class AudioManager
 
 
     /**
+     * pauses one playback instance of a loaded sound effect.
+     * @param {string} id - registered identifier of an sfx entry.
+     * @param {number} playbackId - howler playback identifier returned by playsfx.
+     * @returns {void}
+     * @throws {Error} when the audio is missing or is not registered as sfx.
+     */
+    pauseSfx(id, playbackId)
+    {
+        const sound = this.#get(id);
+
+        if (this.types.get(id) !== 'sfx') throw new Error('Audio is not SFX: ' + id);
+
+        sound.pause(playbackId);
+    }
+
+
+    /**
+     * resumes one paused playback instance of a loaded sound effect.
+     * @param {string} id - registered identifier of an sfx entry.
+     * @param {number} playbackId - howler playback identifier returned by playsfx.
+     * @returns {void}
+     * @throws {Error} when the audio is missing or is not registered as sfx.
+     */
+    resumeSfx(id, playbackId)
+    {
+        const sound = this.#get(id);
+
+        if (this.types.get(id) !== 'sfx') throw new Error('Audio is not SFX: ' + id);
+
+        sound.play(playbackId);
+    }
+
+
+    /**
      * starts a music track or resumes its paused playback instance.
      * @param {string} id - registered identifier of a music entry.
      * @returns {number|undefined} howler playback identifier, or undefined when the track is already playing.

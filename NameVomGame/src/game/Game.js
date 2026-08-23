@@ -40,6 +40,7 @@ export class Game
         this.inputManager.addAction(InputAction.MOVE_LEFT, ['KeyA', 'ArrowLeft']);
         this.inputManager.addAction(InputAction.MOVE_RIGHT, ['KeyD', 'ArrowRight']);
         this.inputManager.addAction(InputAction.SWAP_CHARACTER, ['KeyR']);
+        this.inputManager.addAction(InputAction.PAUSE, ['KeyP']);
         this.inputManager.addAction(InputAction.ACTION, ['Space']);
     }
 

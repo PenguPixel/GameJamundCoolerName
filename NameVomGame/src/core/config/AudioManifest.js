@@ -45,7 +45,7 @@ export const AudioManifest = Object.freeze([
     {
         id: AudioId.SPIRIT_LEVEL_AMBIENT,
         type: AudioType.AMBIENT,
-        src: ['./assets/audio/music/ghost perspective/music_ghostified_ambient_loop_level1.mp3'],
+        src: ['./assets/audio/sfx/sfx_ghost-moving.mp3'],
         volume: 0.4,
         loop: true
     },
@@ -144,13 +144,83 @@ export const AudioManifest = Object.freeze([
         id: AudioId.SPIRIT_TIMER,
         type: AudioType.SFX,
         src: ['./assets/audio/sfx/sfx_timer-clock is going crazy.mp3'],
-        volume: 0.8,
+        volume: 0.6,
         loop: true
     },
     {
         id: AudioId.LEVEL_TITLE_SCRIBBLE,
         type: AudioType.SFX,
         src: ['./assets/audio/sfx/sfx_schreibfeder-scribble.mp3'],
+        volume: 1,
+        loop: false
+    },
+    {
+        id: AudioId.SPIRIT_SPOTTED,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/alarm/sfx_alarm-spotted.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.LEVEL_SUCCESS,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/sfx_success.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_1,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_2,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound-2.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_3,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound-3.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_4,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound-4.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_5,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound-5.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_6,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound-6.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_7,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound-7.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.BODY_HIT_8,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/hit sound/sfx_hit-sound-8.mp3'],
         volume: 0.8,
         loop: false
     }
