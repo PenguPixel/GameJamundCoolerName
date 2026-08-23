@@ -63,7 +63,7 @@ export class SpiritCharacter extends BaseCharacter
             PhysicsCollisionGroup.SPIRIT
         );
 
-        console.log(RAPIER.QueryFilterFlags.EXCLUDE_SENSORS);
+        // console.log(RAPIER.QueryFilterFlags.EXCLUDE_SENSORS);
         
         //get the safe calculated movement
         const movement = this.rapierCharacterController.computedMovement();
