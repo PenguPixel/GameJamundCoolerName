@@ -6,13 +6,17 @@ const TIMER_DURATION = 33;
 
 export class SpiritChallengeController
 {
-    constructor(characterController, audioManager, sceneManager, startPlatform, endPlatform, nextSceneId)
+    constructor(characterController, audioManager, sceneManager, platforms, nextSceneId)
     {
         this.characterController = characterController;
         this.audioManager = audioManager;
         this.sceneManager = sceneManager;
-        this.startPlatform = startPlatform;
-        this.endPlatform = endPlatform;
+        this.startPlatform = platforms.find(platform => platform.platformType === 'start');
+        this.endPlatform = platforms.find(platform => platform.platformType === 'end');
+        this.checkpointPlatforms = platforms.filter(platform =>
+            platform.platformType === 'start' || platform.platformType === 'save'
+        );
+        this.respawnPlatform = this.startPlatform;
         this.nextSceneId = nextSceneId;
         this.remainingTime = TIMER_DURATION;
         this.isArmed = false;
@@ -28,7 +32,7 @@ export class SpiritChallengeController
     update(deltaTime)
     {
         const spirit = this.characterController.spiritCharacter;
-        const isOnStartPlatform = this.startPlatform.containsCharacter(spirit);
+        const checkpoint = this.checkpointPlatforms.find(platform => platform.containsCharacter(spirit));
         const isOnEndPlatform = this.endPlatform?.containsCharacter(spirit) ?? false;
 
         if (isOnEndPlatform && this.#bothCharactersReachedEnd())
@@ -37,8 +41,9 @@ export class SpiritChallengeController
             return true;
         }
 
-        if (isOnStartPlatform || isOnEndPlatform)
+        if (checkpoint || isOnEndPlatform)
         {
+            if (checkpoint) this.respawnPlatform = checkpoint;
             this.#resetTimer();
             this.isArmed = true;
             return false;
@@ -73,6 +78,20 @@ export class SpiritChallengeController
     }
 
 
+    pauseAudio()
+    {
+        if (this.timerPlaybackId === null) return;
+        this.audioManager.pauseSfx(AudioId.SPIRIT_TIMER, this.timerPlaybackId);
+    }
+
+
+    resumeAudio()
+    {
+        if (this.timerPlaybackId === null) return;
+        this.audioManager.resumeSfx(AudioId.SPIRIT_TIMER, this.timerPlaybackId);
+    }
+
+
     #createOverlay()
     {
         this.overlay = document.createElement('div');
@@ -97,7 +116,7 @@ export class SpiritChallengeController
     #resetSpirit(restoreAudio = true)
     {
         this.#resetTimer(restoreAudio);
-        this.characterController.resetSpirit(this.startPlatform.getSpawnPosition());
+        this.characterController.resetSpirit(this.respawnPlatform.getSpawnPosition());
         this.isArmed = false;
     }
 
@@ -128,6 +147,7 @@ export class SpiritChallengeController
         this.isComplete = true;
         this.isRunning = false;
         this.#stopTimerSound();
+        this.audioManager.playSfx(AudioId.LEVEL_SUCCESS);
         this.timer.hidden = true;
         this.sceneManager.changeScene(this.nextSceneId);
     }

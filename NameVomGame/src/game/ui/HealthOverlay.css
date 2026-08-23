@@ -19,3 +19,36 @@
     opacity: 0.18;
     transform: scale(0.85);
 }
+
+.health-overlay__hit-flash {
+    position: fixed;
+    inset: 0;
+    z-index: 19;
+    background:
+        radial-gradient(circle, transparent 25%, rgb(185 0 25 / 42%) 100%),
+        rgb(150 0 15 / 12%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.health-overlay__hit-flash--active {
+    animation: health-hit-flash 400ms ease-out;
+}
+
+@keyframes health-hit-flash {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    42% {
+        opacity: 0.2;
+    }
+
+    62% {
+        opacity: 0.7;
+    }
+}

@@ -3,7 +3,7 @@ import { AnimationController } from '../../core/animation/AnimationController.js
 
 export class BaseCharacter extends THREE.Group
 {
-    constructor(assetManager, assetId)
+    constructor(assetManager, assetId, playDefaultAnimation = true)
     {
         super();
 
@@ -13,7 +13,7 @@ export class BaseCharacter extends THREE.Group
         this.collider = null;
 
         this.#createModel(assetId);
-        this.#setupAnimation();
+        this.#setupAnimation(playDefaultAnimation);
     }
 
     updateAnimation(deltaTime)
@@ -75,12 +75,12 @@ export class BaseCharacter extends THREE.Group
         this.add(this.model);
     }
 
-    #setupAnimation()
+    #setupAnimation(playDefaultAnimation)
     {
-        const idleClip = this.model.animations[0];
-        if (!idleClip) throw new Error('Character model has no idle animation');
+        const defaultClip = this.model.animations[0];
+        if (!defaultClip) throw new Error('Character model has no animation');
 
         this.animationController = new AnimationController(this.model, this.model.animations);
-        this.animationController.playLoop(idleClip.name);
+        if (playDefaultAnimation) this.animationController.playLoop(defaultClip.name);
     }
 }

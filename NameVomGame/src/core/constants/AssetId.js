@@ -22,5 +22,6 @@ export const AssetId = Object.freeze(
         BUTTON: 'button',
         BUTTON_SPIRIT: 'buttonSpirit',
         TRAPDOOR: 'trapdoor',
-        PLATFORM: 'platform'
+        PLATFORM: 'platform',
+        PLATFORM_END: 'platformEnd'
     });

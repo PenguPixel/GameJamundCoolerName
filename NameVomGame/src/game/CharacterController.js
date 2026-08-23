@@ -44,7 +44,10 @@ export class CharacterController extends THREE.Group
 
     update(deltaTime)
     {
-        this.bodyCharacter.updateAnimation(deltaTime);
+        this.bodyCharacter.updateAnimation(
+            deltaTime,
+            this.activeCharacter === this.bodyCharacter
+        );
         this.spiritCharacter.updateAnimation(
             deltaTime,
             this.activeCharacter === this.spiritCharacter && this.direction.lengthSq() > 0
@@ -87,6 +90,11 @@ export class CharacterController extends THREE.Group
     setChallengeAudioActive(isActive)
     {
         this.challengeAudioActive = isActive;
+        this.#updateActiveCharacterAudio();
+    }
+
+    restoreAudioState()
+    {
         this.#updateActiveCharacterAudio();
     }
 

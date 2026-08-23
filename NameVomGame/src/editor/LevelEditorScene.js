@@ -545,7 +545,11 @@ export class LevelEditorScene extends BaseScene
             }
             else if (propertyName === 'platformType')
             {
-                input.append(new Option('start', 'start'), new Option('end', 'end'));
+                input.append(
+                    new Option('start', 'start'),
+                    new Option('save', 'save'),
+                    new Option('end', 'end')
+                );
             }
             else
             {
@@ -574,7 +578,30 @@ export class LevelEditorScene extends BaseScene
             : input.value;
 
         properties[propertyName] = value;
+
+        const definition = getLevelObjectDefinition(this.selectedObject.userData.levelObjectType);
+        if (definition.assetVariantProperty === propertyName) this.#refreshSelectedObject();
+
         this.#setStatus(`${propertyName} set to ${value}.`);
+    }
+
+
+    #refreshSelectedObject()
+    {
+        const currentObject = this.selectedObject;
+        const index = this.levelObjects.indexOf(currentObject);
+        const [objectData] = createLevelData('', [currentObject], this.gridSize).objects;
+        const replacement = this.objectFactory.createFromData(objectData);
+
+        this.transformControls.detach();
+        this.editableRoot.remove(currentObject);
+        this.#disposeLevelObject(currentObject);
+
+        this.levelObjects[index] = replacement;
+        this.editableRoot.add(replacement);
+        this.selectedObject = replacement;
+        this.transformControls.attach(replacement);
+        this.#updatePropertiesPanel();
     }
 
 

@@ -2,24 +2,32 @@ import * as THREE from 'three';
 import RAPIER from '@dimforge/rapier3d-compat';
 import { PhysicsCollisionGroup } from '../physics/PhysicsCollisionGroup.js';
 import { BaseRuntimeLevelObject } from './BaseRuntimeLevelObject.js';
+import { AudioId } from '../../core/constants/AudioId.js';
+
+const HIT_TINT_DURATION = 0.4;
+const HIT_COLOR = new THREE.Color(0xff2020);
 
 export class SpiritLightCone extends BaseRuntimeLevelObject
 {
-    constructor(physicsWorld, characterController, model, options = {})
+    constructor(physicsWorld, characterController, model, options = {}, audioManager = null)
     {
-        super(physicsWorld, characterController, model, options);
+        super(physicsWorld, characterController, model, options, audioManager);
 
         this.spiritCharacter = characterController.spiritCharacter;
         this.isDisabled = false;
         this.hasDamaged = false;
+        this.hitTintRemaining = 0;
         this.speed = options.speed ?? 2;
         this.pathDirection = new THREE.Vector3();
         this.pathPoints = this.#createPath(options.path ?? '5,0');
         this.pathIndex = this.pathPoints.length > 1 ? 1 : 0;
 
-        const mesh = this.model.getObjectByProperty('isMesh', true);
-        mesh.castShadow = false;
-        mesh.receiveShadow = false;
+        this.mesh = this.model.getObjectByProperty('isMesh', true);
+        this.mesh.material = this.mesh.material.clone();
+        this.defaultColor = this.mesh.material.color.clone();
+        this.defaultEmissive = this.mesh.material.emissive.clone();
+        this.mesh.castShadow = false;
+        this.mesh.receiveShadow = false;
 
         this.updateWorldMatrix(true, true);
         const bounds = new THREE.Box3().setFromObject(this.model);
@@ -39,7 +47,7 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
 
         this.collider = this.physicsWorld.createCollider(description);
 
-        const light = new THREE.SpotLight(
+        this.light = new THREE.SpotLight(
             0x9defff,
             20,
             size.y + 2,
@@ -47,10 +55,11 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
             0.5,
             1
         );
+        this.defaultLightColor = this.light.color.clone();
         const lightTarget = new THREE.Object3D();
-        light.position.y = size.y;
-        light.target = lightTarget;
-        this.add(light, lightTarget);
+        this.light.position.y = size.y;
+        this.light.target = lightTarget;
+        this.add(this.light, lightTarget);
     }
 
 
@@ -82,13 +91,19 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
     }
 
 
-    update()
+    update(deltaTime)
     {
+        this.#updateHitTint(deltaTime);
         if (this.isDisabled) return;
 
         const isInside = this.physicsWorld.intersectionPair(this.collider, this.spiritCharacter.collider);
 
-        if (isInside && !this.hasDamaged) this.spiritCharacter.takeDamage(1);
+        if (isInside && !this.hasDamaged)
+        {
+            this.spiritCharacter.takeDamage(1);
+            this.audioManager.playSfx(AudioId.SPIRIT_SPOTTED);
+            this.#startHitTint();
+        }
         this.hasDamaged = isInside;
     }
 
@@ -124,5 +139,26 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
             });
 
         return [start, ...points];
+    }
+
+
+    #startHitTint()
+    {
+        this.hitTintRemaining = HIT_TINT_DURATION;
+        this.mesh.material.color.copy(HIT_COLOR);
+        this.mesh.material.emissive.copy(HIT_COLOR);
+        this.light.color.copy(HIT_COLOR);
+    }
+
+
+    #updateHitTint(deltaTime)
+    {
+        if (this.hitTintRemaining <= 0) return;
+
+        this.hitTintRemaining = Math.max(0, this.hitTintRemaining - deltaTime);
+        const progress = 1 - this.hitTintRemaining / HIT_TINT_DURATION;
+        this.mesh.material.color.lerpColors(HIT_COLOR, this.defaultColor, progress);
+        this.mesh.material.emissive.lerpColors(HIT_COLOR, this.defaultEmissive, progress);
+        this.light.color.lerpColors(HIT_COLOR, this.defaultLightColor, progress);
     }
 }

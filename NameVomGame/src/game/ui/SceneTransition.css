@@ -10,5 +10,8 @@
 
 .scene-transition--visible {
     opacity: 1;
+}
+
+.scene-transition--active {
     pointer-events: auto;
 }

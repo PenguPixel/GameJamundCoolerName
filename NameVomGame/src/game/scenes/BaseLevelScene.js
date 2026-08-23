@@ -15,7 +15,10 @@ import { SpiritPlatform } from '../runtime/SpiritPlatform.js';
 import { Torch } from '../runtime/Torch.js';
 import { SpiritChallengeController } from '../SpiritChallengeController.js';
 import { SceneId } from '../../core/constants/SceneId.js';
+import { AudioId } from '../../core/constants/AudioId.js';
+import { InputAction } from '../../core/constants/InputAction.js';
 import { LevelIntroController } from '../LevelIntroController.js';
+import { PauseController } from '../PauseController.js';
 
 //add future traps and interactive level objects here using the same constructor parameters
 const RuntimeLevelObjectClasses = new Map([
@@ -79,7 +82,13 @@ export class BaseLevelScene extends BaseScene
         this.runtimeLevelObjects = [];
         this.spiritChallengeController = null;
         this.deathEndTimer = 0;
+        this.isPaused = false;
         this.levelIntroController = new LevelIntroController(levelTitle, this.audioManager);
+        this.pauseController = new PauseController(
+            this.audioManager,
+            () => this.#resumeGame(),
+            () => this.#returnToTitle()
+        );
 
         this.characterController = new CharacterController(
             this.inputManager,
@@ -101,13 +110,13 @@ export class BaseLevelScene extends BaseScene
 
     preUpdate(deltaTime)
     {
-        if (!this.levelIntroController.isComplete) return;
+        if (this.isPaused || !this.levelIntroController.isComplete) return;
         this.preUpdateLevel(deltaTime);
     }
 
     fixedUpdate(fixedDeltaTime)
     {
-        if (!this.levelIntroController.isComplete) return;
+        if (this.isPaused || !this.levelIntroController.isComplete) return;
 
         //movement must be prepared before rapier advances the physics simulation
         this.characterController.fixedUpdate(fixedDeltaTime);
@@ -127,6 +136,15 @@ export class BaseLevelScene extends BaseScene
 
     update(deltaTime)
     {
+        if (this.levelIntroController.isComplete && this.inputManager.justPressed(InputAction.PAUSE))
+        {
+            if (this.isPaused) this.#resumeGame();
+            else this.#pauseGame();
+            return;
+        }
+
+        if (this.isPaused) return;
+
         if (!this.levelIntroController.isComplete)
         {
             this.levelIntroController.update(deltaTime);
@@ -151,7 +169,7 @@ export class BaseLevelScene extends BaseScene
 
     lateUpdate(deltaTime)
     {
-        if (!this.levelIntroController.isComplete) return;
+        if (this.isPaused || !this.levelIntroController.isComplete) return;
         this.lateUpdateLevel(deltaTime);
         this.#followCamera(deltaTime);
     }
@@ -160,6 +178,7 @@ export class BaseLevelScene extends BaseScene
     {
         this.exitLevel();
         this.levelIntroController.dispose();
+        this.pauseController.dispose();
         this.spiritChallengeController?.dispose();
         this.spiritChallengeController = null;
 
@@ -363,7 +382,6 @@ export class BaseLevelScene extends BaseScene
     {
         const platforms = runtimeObjects.filter(object => object instanceof SpiritPlatform);
         const startPlatform = platforms.find(platform => platform.platformType === 'start');
-        const endPlatform = platforms.find(platform => platform.platformType === 'end');
 
         if (!startPlatform) return;
 
@@ -372,10 +390,32 @@ export class BaseLevelScene extends BaseScene
             this.characterController,
             this.audioManager,
             this.sceneManager,
-            startPlatform,
-            endPlatform,
+            platforms,
             this.nextSceneId
         );
+    }
+
+    #pauseGame()
+    {
+        this.isPaused = true;
+        this.pauseController.show();
+        this.spiritChallengeController?.pauseAudio();
+        this.audioManager.pauseAmbient();
+        this.audioManager.playMusic(AudioId.BODY_LEVEL_MUSIC);
+    }
+
+    #resumeGame()
+    {
+        this.isPaused = false;
+        this.pauseController.hide();
+        this.characterController.restoreAudioState();
+        this.spiritChallengeController?.resumeAudio();
+    }
+
+    #returnToTitle()
+    {
+        this.pauseController.hide();
+        this.sceneManager.changeScene(SceneId.TITLE);
     }
 
     #updateDeathEnding(deltaTime)

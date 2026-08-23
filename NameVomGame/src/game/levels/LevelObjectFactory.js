@@ -52,7 +52,8 @@ export class LevelObjectFactory
     createFromData(data)
     {
         const definition = getLevelObjectDefinition(data.type);
-        const assetId = definition?.assetVariants?.[data.properties?.activator];
+        const variant = data.properties?.[definition?.assetVariantProperty];
+        const assetId = definition?.assetVariants?.[variant];
         const object = this.create(data.type, assetId);
 
         if (Array.isArray(data.position)) object.position.fromArray(data.position);
