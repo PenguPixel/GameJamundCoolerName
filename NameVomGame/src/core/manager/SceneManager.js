@@ -69,12 +69,13 @@ export class SceneManager
     /**
      * runs follow-up logic on the active scene after regular updates when supported.
      * @param {number} deltaTime - elapsed frame time in seconds.
+     * @param {number} interpolationAlpha - remaining fraction between fixed simulation steps.
      * @returns {void}
      */
-    lateUpdate(deltaTime)
+    lateUpdate(deltaTime, interpolationAlpha)
     {
         if (this.isTransitioning) return;
-        this.activeScene?.lateUpdate?.(deltaTime);
+        this.activeScene?.lateUpdate?.(deltaTime, interpolationAlpha);
     }
 
 

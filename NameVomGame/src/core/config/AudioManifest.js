@@ -36,6 +36,13 @@ export const AudioManifest = Object.freeze([
         loop: true
     },
     {
+        id: AudioId.FINAL_LEVEL_MUSIC,
+        type: AudioType.MUSIC,
+        src: ['./assets/audio/music/Well-done/music_welldone_end_of_ level_variation2.mp3'],
+        volume: 0.5,
+        loop: true
+    },
+    {
         id: AudioId.SPIRIT_LEVEL_MUSIC,
         type: AudioType.MUSIC,
         src: ['./assets/audio/music/ghost perspective/music_ghostified_main_ theme.mp3'],

@@ -9,6 +9,7 @@ export const AudioId = Object.freeze(
         TITLE_AMBIENT: 'titleAmbient',
         BODY_LEVEL_MUSIC: 'bodyLevelMusic',
         BODY_LEVEL_AMBIENT: 'bodyLevelAmbient',
+        FINAL_LEVEL_MUSIC: 'finalLevelMusic',
         SPIRIT_LEVEL_MUSIC: 'spiritLevelMusic',
         SPIRIT_LEVEL_AMBIENT: 'spiritLevelAmbient',
         MENU_HOVER: 'menuHover',

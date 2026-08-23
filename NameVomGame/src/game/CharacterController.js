@@ -14,6 +14,8 @@ export class CharacterController extends THREE.Group
         const {
             bodyPosition = new THREE.Vector3(-2, 3, 0),
             spiritPosition = new THREE.Vector3(2, 3, 0),
+            bodyMusicId = AudioId.BODY_LEVEL_MUSIC,
+            bodyAmbientId = AudioId.BODY_LEVEL_AMBIENT,
             gameState
         } = options;
 
@@ -23,6 +25,8 @@ export class CharacterController extends THREE.Group
         this.direction = new THREE.Vector3();
         this.controlsEnabled = true;
         this.challengeAudioActive = false;
+        this.bodyMusicId = bodyMusicId;
+        this.bodyAmbientId = bodyAmbientId;
         this.healthController = new HealthController(gameState);
 
         this.bodyCharacter = new BodyCharacter(
@@ -84,6 +88,12 @@ export class CharacterController extends THREE.Group
         this.spiritCharacter.syncPhysics();
     }
 
+    interpolatePhysics(interpolationAlpha)
+    {
+        this.bodyCharacter.interpolatePhysics(interpolationAlpha);
+        this.spiritCharacter.interpolatePhysics(interpolationAlpha);
+    }
+
     startAudio()
     {
         this.#updateActiveCharacterAudio();
@@ -110,7 +120,7 @@ export class CharacterController extends THREE.Group
     {
         this.spiritCharacter.rigidBody.setTranslation(position, true);
         this.spiritCharacter.rigidBody.setNextKinematicTranslation(position);
-        this.spiritCharacter.syncPhysics();
+        this.spiritCharacter.syncPhysics(true);
     }
 
     takeDamage(amount = 1)
@@ -165,8 +175,8 @@ export class CharacterController extends THREE.Group
         if (this.activeCharacter === this.bodyCharacter)
         {
             //music and ambience use separate channels so both body layers play together
-            this.audioManager.playMusic(AudioId.BODY_LEVEL_MUSIC);
-            this.audioManager.playAmbient(AudioId.BODY_LEVEL_AMBIENT);
+            this.audioManager.playMusic(this.bodyMusicId);
+            this.audioManager.playAmbient(this.bodyAmbientId);
             return;
         }
 

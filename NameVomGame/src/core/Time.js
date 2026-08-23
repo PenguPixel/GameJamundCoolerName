@@ -41,4 +41,14 @@ export class Time
     }
 
 
+    /**
+     * returns the remaining fraction between the two latest fixed simulation steps.
+     * @returns {number} normalized interpolation value from zero to one.
+     */
+    get interpolationAlpha()
+    {
+        return this.accumulator / this.fixedDeltaTime;
+    }
+
+
 }
