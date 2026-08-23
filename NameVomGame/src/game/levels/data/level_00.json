@@ -6024,6 +6024,348 @@
         0.05,
         0.05
       ]
+    },
+    {
+      "id": "worldTile25x25-001",
+      "type": "worldTile25x25",
+      "position": [
+        25,
+        0,
+        9
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-002",
+      "type": "worldTile25x25",
+      "position": [
+        25,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile-064",
+      "type": "worldTile",
+      "position": [
+        10,
+        0,
+        -11
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-065",
+      "type": "worldTile",
+      "position": [
+        10,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-066",
+      "type": "worldTile",
+      "position": [
+        10,
+        0,
+        -21
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-067",
+      "type": "worldTile",
+      "position": [
+        10,
+        0,
+        -26
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-068",
+      "type": "worldTile",
+      "position": [
+        5,
+        0,
+        -22
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-070",
+      "type": "worldTile",
+      "position": [
+        5,
+        0,
+        -26
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-077",
+      "type": "worldTile",
+      "position": [
+        -20,
+        0,
+        -37
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-078",
+      "type": "worldTile",
+      "position": [
+        -15,
+        0,
+        -37
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-079",
+      "type": "worldTile",
+      "position": [
+        -10,
+        0,
+        -37
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-080",
+      "type": "worldTile",
+      "position": [
+        -5,
+        0,
+        -37
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-081",
+      "type": "worldTile",
+      "position": [
+        0,
+        0,
+        -37
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-082",
+      "type": "worldTile",
+      "position": [
+        5,
+        0,
+        -31
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-083",
+      "type": "worldTile",
+      "position": [
+        5,
+        0,
+        -36
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-084",
+      "type": "worldTile",
+      "position": [
+        10,
+        0,
+        -31
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-085",
+      "type": "worldTile",
+      "position": [
+        10,
+        0,
+        -36
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "worldTile-086",
+      "type": "worldTile",
+      "position": [
+        15,
+        0,
+        -31
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
     }
   ]
 }

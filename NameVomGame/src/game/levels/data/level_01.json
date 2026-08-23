@@ -2,7 +2,7 @@
   "version": 1,
   "name": "level_01",
   "editor": {
-    "gridSize": 0.25
+    "gridSize": 0.5
   },
   "objects": [
     {
@@ -7956,6 +7956,196 @@
         1,
         1,
         1
+      ]
+    },
+    {
+      "id": "worldTile25x25-001",
+      "type": "worldTile25x25",
+      "position": [
+        -22.5,
+        0,
+        2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-002",
+      "type": "worldTile25x25",
+      "position": [
+        -22.5,
+        0,
+        -22.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-003",
+      "type": "worldTile25x25",
+      "position": [
+        -22,
+        0,
+        -47.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-004",
+      "type": "worldTile25x25",
+      "position": [
+        3,
+        0,
+        -47.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-005",
+      "type": "worldTile25x25",
+      "position": [
+        28,
+        0,
+        -47.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-006",
+      "type": "worldTile25x25",
+      "position": [
+        42.5,
+        0,
+        -22.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-007",
+      "type": "worldTile25x25",
+      "position": [
+        42.5,
+        0,
+        2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-008",
+      "type": "worldTile25x25",
+      "position": [
+        -15.5,
+        0,
+        27.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-009",
+      "type": "worldTile25x25",
+      "position": [
+        9.5,
+        0,
+        27.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "worldTile25x25-010",
+      "type": "worldTile25x25",
+      "position": [
+        34.5,
+        0,
+        27.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
       ]
     }
   ]
