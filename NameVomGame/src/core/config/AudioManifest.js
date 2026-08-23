@@ -36,6 +36,20 @@ export const AudioManifest = Object.freeze([
         loop: true
     },
     {
+        id: AudioId.SPIRIT_LEVEL_MUSIC,
+        type: AudioType.MUSIC,
+        src: ['./assets/audio/music/ghost perspective/music_ghostified_main_ theme.mp3'],
+        volume: 0.5,
+        loop: true
+    },
+    {
+        id: AudioId.SPIRIT_LEVEL_AMBIENT,
+        type: AudioType.AMBIENT,
+        src: ['./assets/audio/music/ghost perspective/music_ghostified_ambient_loop_level1.mp3'],
+        volume: 0.4,
+        loop: true
+    },
+    {
         id: AudioId.MENU_HOVER,
         type: AudioType.SFX,
         src: ['./assets/audio/sfx/ui/sfx_ui-menu-hover.mp3'],
@@ -123,6 +137,20 @@ export const AudioManifest = Object.freeze([
         id: AudioId.DOOR_PRESSURE_PLATE,
         type: AudioType.SFX,
         src: ['./assets/audio/sfx/doors/sfx_door_pressure-plate_ activate.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.SPIRIT_TIMER,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/sfx_timer-clock is going crazy.mp3'],
+        volume: 0.8,
+        loop: true
+    },
+    {
+        id: AudioId.LEVEL_TITLE_SCRIBBLE,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/sfx_schreibfeder-scribble.mp3'],
         volume: 0.8,
         loop: false
     }

@@ -9,6 +9,7 @@ import { SceneManager } from './manager/SceneManager.js';
 import { AudioManager } from './manager/AudioManager.js';
 import { AudioManifest } from './config/AudioManifest.js';
 import { Game } from '../game/Game.js';
+import { LoadingScreen } from './LoadingScreen.js';
 
 export default class Engine
 {
@@ -40,6 +41,7 @@ export default class Engine
         this.assetManager = new AssetManager(AssetManifest);
         this.audioManager = new AudioManager(AudioManifest);
         this.sceneManager =  new SceneManager();
+        this.loadingScreen = new LoadingScreen();
 
 
         //register resize event
@@ -61,11 +63,29 @@ export default class Engine
      */
     async start()
     {
-        await Promise.all([
-            RAPIER.init(),
-            this.assetManager.loadAll(),
-            this.audioManager.loadAll()
-        ]);
+        const totalItems = AssetManifest.length + AudioManifest.length + 1;
+        let loadedItems = 0;
+        const itemLoaded = () =>
+        {
+            loadedItems += 1;
+            this.loadingScreen.setProgress(loadedItems / totalItems);
+        };
+
+        try
+        {
+            await Promise.all([
+                RAPIER.init().then(itemLoaded),
+                this.assetManager.loadAll(itemLoaded),
+                this.audioManager.loadAll(itemLoaded)
+            ]);
+        }
+        catch (error)
+        {
+            this.loadingScreen.showError();
+            throw error;
+        }
+
+        await this.loadingScreen.finish();
 
         this.game = new Game(
             this.inputManager,

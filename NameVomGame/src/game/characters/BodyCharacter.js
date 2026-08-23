@@ -21,11 +21,12 @@ const MAXIMUM_GROUNDED_VERTICAL_SPEED = 0.15;
 
 export class BodyCharacter extends BaseCharacter
 {
-    constructor(assetManager, audioManager, physicsWorld, position)
+    constructor(assetManager, audioManager, physicsWorld, position, healthController)
     {
         super(assetManager, AssetId.CHARACTER);
 
         this.audioManager = audioManager;
+        this.healthController = healthController;
         this.footstepTimer = 0;
 
         //a dynamic rigid body is affected by gravity, contacts, forces, and impulses
@@ -51,9 +52,9 @@ export class BodyCharacter extends BaseCharacter
         this.position.copy(position);
     }
 
-    takeDamage()
+    takeDamage(amount = 1)
     {
-        console.log("AUA!");
+        this.healthController.takeDamage(amount);
     }
 
     updateFootsteps(deltaTime, isActive)

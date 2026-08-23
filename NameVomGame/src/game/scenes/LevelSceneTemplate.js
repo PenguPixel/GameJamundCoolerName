@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { BaseLevelScene } from './BaseLevelScene.js';
 import levelData from '../levels/data/LevelSceneTemplate.json';
+import { SceneId } from '../../core/constants/SceneId.js';
 
 
 //############################################
@@ -12,12 +13,13 @@ import levelData from '../levels/data/LevelSceneTemplate.json';
 //3. update the levelData import above to use the renamed json file
 //4. rename the class and add its identifier to SceneId.js
 //5. import and register the scene in Game.js
-//6. add level-specific physics and gameplay through the methods below
+//6. set nextsceneid to the level that should load after both characters reach the end platform
+//7. add level-specific physics and gameplay through the methods below
 
 
 export class LevelSceneTemplate extends BaseLevelScene
 {
-    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager)
+    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager, gameState)
     {
         //configures the shared level camera, characters, spawn points, and physics world
         super(inputManager, updateManager, sceneManager, assetManager, audioManager, {
@@ -30,7 +32,10 @@ export class LevelSceneTemplate extends BaseLevelScene
             cameraDeadZoneZ: 0,
             cameraFollowY: true,
             bodyPosition: new THREE.Vector3(-2, 0, 0),
-            spiritPosition: new THREE.Vector3(2, 0, 0)
+            spiritPosition: new THREE.Vector3(2, 0, 0),
+            nextSceneId: SceneId.END,
+            gameState,
+            levelTitle: 'level title'
         });
 
         this.scene.background = new THREE.Color(0x101218);

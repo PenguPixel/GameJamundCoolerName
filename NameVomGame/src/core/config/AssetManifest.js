@@ -53,5 +53,21 @@ export const AssetManifest = Object.freeze([
     {
         id: AssetId.SPIKES,
         path: './assets/models/spikes.glb'
+    },
+    {
+        id: AssetId.BUTTON,
+        path: './assets/models/button.glb'
+    },
+    {
+        id: AssetId.BUTTON_SPIRIT,
+        path: './assets/models/button_2.glb'
+    },
+    {
+        id: AssetId.TRAPDOOR,
+        path: './assets/models/trapdoor.glb'
+    },
+    {
+        id: AssetId.PLATFORM,
+        path: './assets/models/platform.glb'
     }
 ]);

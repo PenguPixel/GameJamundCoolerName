@@ -4,5 +4,26 @@
   "editor": {
     "gridSize": 1
   },
-  "objects": []
+  "objects": [
+    {
+      "id": "spiritPlatform-001",
+      "type": "spiritPlatform",
+      "position": [2, 0.01, 0],
+      "rotation": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "properties": {
+        "platformType": "start"
+      }
+    },
+    {
+      "id": "spiritPlatform-002",
+      "type": "spiritPlatform",
+      "position": [8, 0.01, 0],
+      "rotation": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "properties": {
+        "platformType": "end"
+      }
+    }
+  ]
 }

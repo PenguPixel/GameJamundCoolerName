@@ -9,6 +9,8 @@ export const AudioId = Object.freeze(
         TITLE_AMBIENT: 'titleAmbient',
         BODY_LEVEL_MUSIC: 'bodyLevelMusic',
         BODY_LEVEL_AMBIENT: 'bodyLevelAmbient',
+        SPIRIT_LEVEL_MUSIC: 'spiritLevelMusic',
+        SPIRIT_LEVEL_AMBIENT: 'spiritLevelAmbient',
         MENU_HOVER: 'menuHover',
         MENU_CLICK: 'menuClick',
         ITEM_PICKUP: 'itemPickup',
@@ -21,5 +23,7 @@ export const AudioId = Object.freeze(
         FOOTSTEP_SAND_7: 'footstepSand7',
         FOOTSTEP_SAND_8: 'footstepSand8',
         CHAR_SWAP: 'charSwap',
-        DOOR_PRESSURE_PLATE: 'doorPressurePlate'
+        DOOR_PRESSURE_PLATE: 'doorPressurePlate',
+        SPIRIT_TIMER: 'spiritTimer',
+        LEVEL_TITLE_SCRIBBLE: 'levelTitleScribble'
     });

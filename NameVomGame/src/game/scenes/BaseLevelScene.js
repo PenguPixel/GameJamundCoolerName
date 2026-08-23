@@ -11,6 +11,10 @@ import { ControlledDoor } from '../runtime/ControlledDoor.js';
 import { PressurePlate } from '../runtime/PressurePlate.js';
 import { Pitfall } from '../runtime/Pitfall.js';
 import { SpiritLightCone } from '../runtime/SpiritLightCone.js';
+import { SpiritPlatform } from '../runtime/SpiritPlatform.js';
+import { SpiritChallengeController } from '../SpiritChallengeController.js';
+import { SceneId } from '../../core/constants/SceneId.js';
+import { LevelIntroController } from '../LevelIntroController.js';
 
 //add future traps and interactive level objects here using the same constructor parameters
 const RuntimeLevelObjectClasses = new Map([
@@ -18,8 +22,11 @@ const RuntimeLevelObjectClasses = new Map([
     [LevelObjectType.DOOR, ControlledDoor],
     [LevelObjectType.PRESSURE_PLATE, PressurePlate],
     [LevelObjectType.PITFALL, Pitfall],
-    [LevelObjectType.SPIRIT_LIGHT_CONE, SpiritLightCone]
+    [LevelObjectType.SPIRIT_LIGHT_CONE, SpiritLightCone],
+    [LevelObjectType.SPIRIT_PLATFORM, SpiritPlatform]
 ]);
+
+const DEATH_END_DELAY = 1;
 
 export class BaseLevelScene extends BaseScene
 {
@@ -38,12 +45,16 @@ export class BaseLevelScene extends BaseScene
             cameraDeadZoneZ = 0,
             cameraFollowY = true,
             bodyPosition = new THREE.Vector3(-2, 3, 0),
-            spiritPosition = new THREE.Vector3(2, 3, 0)
+            spiritPosition = new THREE.Vector3(2, 3, 0),
+            nextSceneId = SceneId.END,
+            gameState,
+            levelTitle = 'level'
         } = options;
 
         this.inputManager = inputManager;
         this.sceneManager = sceneManager;
         this.audioManager = audioManager;
+        this.nextSceneId = nextSceneId;
 
         this.physicsWorld = new RAPIER.World(gravity);
         this.camera = new THREE.PerspectiveCamera(
@@ -64,13 +75,16 @@ export class BaseLevelScene extends BaseScene
         this.levelObjectFactory = new LevelObjectFactory(this.assetManager);
         this.loadedLevelObjects = [];
         this.runtimeLevelObjects = [];
+        this.spiritChallengeController = null;
+        this.deathEndTimer = 0;
+        this.levelIntroController = new LevelIntroController(levelTitle, this.audioManager);
 
         this.characterController = new CharacterController(
             this.inputManager,
             this.assetManager,
             this.audioManager,
             this.physicsWorld,
-            { bodyPosition, spiritPosition }
+            { bodyPosition, spiritPosition, gameState }
         );
         this.scene.add(this.characterController);
 
@@ -85,11 +99,14 @@ export class BaseLevelScene extends BaseScene
 
     preUpdate(deltaTime)
     {
+        if (!this.levelIntroController.isComplete) return;
         this.preUpdateLevel(deltaTime);
     }
 
     fixedUpdate(fixedDeltaTime)
     {
+        if (!this.levelIntroController.isComplete) return;
+
         //movement must be prepared before rapier advances the physics simulation
         this.characterController.fixedUpdate(fixedDeltaTime);
         this.fixedUpdateLevel(fixedDeltaTime);
@@ -108,18 +125,31 @@ export class BaseLevelScene extends BaseScene
 
     update(deltaTime)
     {
+        if (!this.levelIntroController.isComplete)
+        {
+            this.levelIntroController.update(deltaTime);
+            return;
+        }
+
         this.characterController.update(deltaTime);
 
         for (const object of this.runtimeLevelObjects)
         {
-            object.update(deltaTime);
+            object.update?.(deltaTime);
+            if (this.characterController.isDead) break;
         }
+
+        if (this.#updateDeathEnding(deltaTime)) return;
+
+        if (this.spiritChallengeController?.update(deltaTime)) return;
+        if (this.#updateDeathEnding(deltaTime)) return;
 
         this.updateLevel(deltaTime);
     }
 
     lateUpdate(deltaTime)
     {
+        if (!this.levelIntroController.isComplete) return;
         this.lateUpdateLevel(deltaTime);
         this.#followCamera(deltaTime);
     }
@@ -127,6 +157,9 @@ export class BaseLevelScene extends BaseScene
     exit()
     {
         this.exitLevel();
+        this.levelIntroController.dispose();
+        this.spiritChallengeController?.dispose();
+        this.spiritChallengeController = null;
 
         for (const object of this.loadedLevelObjects)
         {
@@ -210,6 +243,7 @@ export class BaseLevelScene extends BaseScene
         }
 
         this.runtimeLevelObjects.push(...createdRuntimeObjects);
+        this.#setupSpiritChallenge(createdRuntimeObjects);
 
         return validatedData.objects.map(objectData => objectsById.get(objectData.id));
     }
@@ -287,6 +321,11 @@ export class BaseLevelScene extends BaseScene
         return this.physicsWorld.createCollider(colliderDescription, rigidBody);
     }
 
+    onTransitionInComplete()
+    {
+        this.levelIntroController.start();
+    }
+
     enterLevel()
     {
     }
@@ -316,6 +355,38 @@ export class BaseLevelScene extends BaseScene
         this.characterController.activeCharacter.getWorldPosition(this.cameraFollowPoint);
         this.camera.position.copy(this.cameraFollowPoint).add(this.cameraOffset);
         this.camera.lookAt(this.cameraFollowPoint);
+    }
+
+    #setupSpiritChallenge(runtimeObjects)
+    {
+        const platforms = runtimeObjects.filter(object => object instanceof SpiritPlatform);
+        const startPlatform = platforms.find(platform => platform.platformType === 'start');
+        const endPlatform = platforms.find(platform => platform.platformType === 'end');
+
+        if (!startPlatform) return;
+
+        this.spiritChallengeController?.dispose();
+        this.spiritChallengeController = new SpiritChallengeController(
+            this.characterController,
+            this.audioManager,
+            this.sceneManager,
+            startPlatform,
+            endPlatform,
+            this.nextSceneId
+        );
+    }
+
+    #updateDeathEnding(deltaTime)
+    {
+        if (!this.characterController.isDead) return false;
+
+        this.deathEndTimer += deltaTime;
+        if (this.deathEndTimer >= DEATH_END_DELAY)
+        {
+            this.sceneManager.changeScene(SceneId.BAD_END);
+        }
+
+        return true;
     }
 
     #getObjectLocalBounds(object)

@@ -7,13 +7,14 @@ import { isLevelEditorEnabled, openLevelEditor } from 'virtual:level-editor-laun
 
 export class TitleScene extends BaseScene
 {
-    constructor(updateManager, sceneManager, audioManager, assetManager)
+    constructor(updateManager, sceneManager, audioManager, assetManager, gameState)
     {
         super(updateManager);
 
         this.sceneManager = sceneManager;
         this.audioManager = audioManager;
         this.assetManager = assetManager;
+        this.gameState = gameState;
 
         this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
 
@@ -87,6 +88,7 @@ export class TitleScene extends BaseScene
     {
         if (this.isStarting) return;
         this.isStarting = true;
+        this.gameState.reset();
 
         this.sceneManager.changeScene(SceneId.LEVEL_05);
     }

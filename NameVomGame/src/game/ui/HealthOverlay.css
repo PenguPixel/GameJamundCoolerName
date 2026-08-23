@@ -1,0 +1,21 @@
+.health-overlay {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 20;
+    display: flex;
+    gap: 0.45rem;
+    pointer-events: none;
+}
+
+.health-overlay__heart {
+    color: #765a7c;
+    font: 700 2rem/1 sans-serif;
+    text-shadow: 0 0 0.7rem rgb(118 90 124 / 65%);
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.health-overlay__heart--lost {
+    opacity: 0.18;
+    transform: scale(0.85);
+}
