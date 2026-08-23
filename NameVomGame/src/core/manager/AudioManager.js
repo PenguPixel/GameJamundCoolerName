@@ -197,6 +197,32 @@ export class AudioManager
 
 
     /**
+     * fades out and stops the currently active music track.
+     * @param {number} [duration=1000] - fade duration in milliseconds.
+     * @returns {void}
+     */
+    fadeOutMusic(duration = 1000)
+    {
+        if (!this.currentMusic || this.currentMusicPlaybackId === null) return;
+
+        const music = this.currentMusic;
+        const playbackId = this.currentMusicPlaybackId;
+        const currentVolume = music.volume(playbackId);
+
+        music.fade(currentVolume, 0, duration, playbackId);
+        music.once('fade', () =>
+        {
+            if (this.currentMusic !== music || this.currentMusicPlaybackId !== playbackId) return;
+
+            music.stop(playbackId);
+            this.currentMusic = null;
+            this.currentMusicId = null;
+            this.currentMusicPlaybackId = null;
+        }, playbackId);
+    }
+
+
+    /**
      * stops the currently active music track.
      * @returns {void}
      */

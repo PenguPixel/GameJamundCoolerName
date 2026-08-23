@@ -23,7 +23,7 @@ export class LevelIntroController
         this.showControls = showControls;
         this.state = IntroState.WAITING;
         this.stateTime = 0;
-        this.scribblePlaybackId = null;
+        this.introPlaybackId = null;
 
         this.overlay = document.createElement('div');
         this.overlay.innerHTML = levelIntroOverlay;
@@ -64,7 +64,7 @@ export class LevelIntroController
         this.state = IntroState.FADING_IN;
         this.stateTime = 0;
         this.intro.hidden = false;
-        this.scribblePlaybackId = this.audioManager.playSfx(AudioId.LEVEL_TITLE_SCRIBBLE);
+        this.introPlaybackId = this.audioManager.playSfx(AudioId.LEVEL_TITLE_APPEARS);
     }
 
 
@@ -84,7 +84,7 @@ export class LevelIntroController
 
             if (this.stateTime >= FADE_IN_DURATION)
             {
-                this.#stopScribble();
+                this.#stopIntroSound();
                 this.state = IntroState.HOLDING;
                 this.stateTime = 0;
             }
@@ -112,7 +112,7 @@ export class LevelIntroController
 
     dispose()
     {
-        this.#stopScribble();
+        this.#stopIntroSound();
         this.continueButton?.removeEventListener('click', this.onContinue);
         this.overlay?.remove();
         this.overlay = null;
@@ -125,11 +125,11 @@ export class LevelIntroController
     }
 
 
-    #stopScribble()
+    #stopIntroSound()
     {
-        if (this.scribblePlaybackId === null) return;
+        if (this.introPlaybackId === null) return;
 
-        this.audioManager.stopSfx(AudioId.LEVEL_TITLE_SCRIBBLE, this.scribblePlaybackId);
-        this.scribblePlaybackId = null;
+        this.audioManager.stopSfx(AudioId.LEVEL_TITLE_APPEARS, this.introPlaybackId);
+        this.introPlaybackId = null;
     }
 }

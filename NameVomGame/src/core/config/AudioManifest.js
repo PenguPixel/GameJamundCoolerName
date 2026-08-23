@@ -169,9 +169,9 @@ export const AudioManifest = Object.freeze([
         loop: true
     },
     {
-        id: AudioId.LEVEL_TITLE_SCRIBBLE,
+        id: AudioId.LEVEL_TITLE_APPEARS,
         type: AudioType.SFX,
-        src: ['./assets/audio/sfx/sfx_schreibfeder-scribble.mp3'],
+        src: ['./assets/audio/sfx/font/sfx_font-appears.mp3'],
         volume: 1,
         loop: false
     },

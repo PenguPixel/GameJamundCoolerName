@@ -28,7 +28,7 @@ export const AudioId = Object.freeze(
         PRESSURE_PLATE_ACTIVATE: 'pressurePlateActivate',
         DOOR_ACTIVATE: 'doorActivate',
         SPIRIT_TIMER: 'spiritTimer',
-        LEVEL_TITLE_SCRIBBLE: 'levelTitleScribble',
+        LEVEL_TITLE_APPEARS: 'levelTitleAppears',
         SPIRIT_SPOTTED: 'spiritSpotted',
         LEVEL_SUCCESS: 'levelSuccess',
         BODY_HIT_1: 'bodyHit1',

@@ -28,6 +28,7 @@ const COLOR_RESTORE_DURATION = 1.25;
 const LOOK_DURATION = 2.8;
 const HEART_FADE_DURATION = 1;
 const HEART_HOLD_DURATION = 1;
+const MUSIC_FADE_DURATION = 2000;
 const HEART_SCREEN_OFFSET_X = -12;
 const PALE_CHARACTER_COLOR = new THREE.Color(0xaaa0b2);
 
@@ -67,6 +68,7 @@ export class Level_End extends BaseLevelScene
         this.rescuedMaterials = [];
         this.overlay = null;
         this.heart = null;
+        this.musicFadeStarted = false;
 
         this.#setupLights();
         this.#setupAssets();
@@ -332,6 +334,12 @@ export class Level_End extends BaseLevelScene
     {
         const fadeOutStart = HEART_FADE_DURATION + HEART_HOLD_DURATION;
         const totalDuration = fadeOutStart + HEART_FADE_DURATION;
+
+        if (this.stateTime >= fadeOutStart && !this.musicFadeStarted)
+        {
+            this.musicFadeStarted = true;
+            this.audioManager.fadeOutMusic(MUSIC_FADE_DURATION);
+        }
 
         if (this.stateTime < HEART_FADE_DURATION)
         {
