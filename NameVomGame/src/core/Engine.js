@@ -11,6 +11,8 @@ import { AudioManifest } from './config/AudioManifest.js';
 import { Game } from '../game/Game.js';
 import { LoadingScreen } from './LoadingScreen.js';
 
+const GAME_ASPECT_RATIO = 16 / 9;
+
 export default class Engine
 {
 
@@ -141,8 +143,17 @@ export default class Engine
      */
     #resize()
     {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        if (width / height > GAME_ASPECT_RATIO) width = height * GAME_ASPECT_RATIO;
+        else height = width / GAME_ASPECT_RATIO;
+
+        width = Math.floor(width);
+        height = Math.floor(height);
+
+        document.documentElement.style.setProperty('--game-width', `${width}px`);
+        document.documentElement.style.setProperty('--game-height', `${height}px`);
 
         this.renderer.setSize(width, height);
         this.sceneManager.resize(width, height);

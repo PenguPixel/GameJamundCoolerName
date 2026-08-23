@@ -365,8 +365,9 @@ export class Level_End extends BaseLevelScene
         bodyPosition.y += 2.8;
         bodyPosition.project(this.camera);
 
-        this.heart.style.left = `${(bodyPosition.x * 0.5 + 0.5) * window.innerWidth + HEART_SCREEN_OFFSET_X}px`;
-        this.heart.style.top = `${(-bodyPosition.y * 0.5 + 0.5) * window.innerHeight}px`;
+        const canvas = document.querySelector('#canvas-threeJs');
+        this.heart.style.left = `${(bodyPosition.x * 0.5 + 0.5) * canvas.clientWidth + HEART_SCREEN_OFFSET_X}px`;
+        this.heart.style.top = `${(-bodyPosition.y * 0.5 + 0.5) * canvas.clientHeight}px`;
     }
 
 

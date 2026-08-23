@@ -2,7 +2,7 @@
   "version": 1,
   "name": "new_level",
   "editor": {
-    "gridSize": 1
+    "gridSize": 0.25
   },
   "objects": [
     {
@@ -2059,6 +2059,462 @@
       "properties": {
         "platformType": "save"
       }
+    },
+    {
+      "id": "worldTile25x25-001",
+      "type": "worldTile25x25",
+      "position": [
+        -25,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "palmTree-002",
+      "type": "palmTree",
+      "position": [
+        -13,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-003",
+      "type": "palmTree",
+      "position": [
+        -12,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-004",
+      "type": "palmTree",
+      "position": [
+        10,
+        0,
+        -4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-005",
+      "type": "palmTree",
+      "position": [
+        5,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-006",
+      "type": "palmTree",
+      "position": [
+        11,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-007",
+      "type": "palmTree",
+      "position": [
+        -7,
+        0,
+        9
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-008",
+      "type": "palmTree",
+      "position": [
+        -14,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-009",
+      "type": "cactus",
+      "position": [
+        2,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-010",
+      "type": "cactus",
+      "position": [
+        -7,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-011",
+      "type": "cactus",
+      "position": [
+        -12,
+        0,
+        7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-012",
+      "type": "stone",
+      "position": [
+        -12,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-013",
+      "type": "stone",
+      "position": [
+        -3,
+        0,
+        6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-014",
+      "type": "stone",
+      "position": [
+        1,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-015",
+      "type": "cactusFlower",
+      "position": [
+        1.5,
+        0,
+        4.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-016",
+      "type": "cactusFlower",
+      "position": [
+        2,
+        0,
+        4.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-017",
+      "type": "cactusFlower",
+      "position": [
+        2.5,
+        0,
+        5.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-018",
+      "type": "cactusFlower",
+      "position": [
+        -1,
+        0,
+        -2.25
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-019",
+      "type": "cactusFlower",
+      "position": [
+        -7.5,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-020",
+      "type": "cactusFlower",
+      "position": [
+        -6.75,
+        0,
+        -7.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-021",
+      "type": "cactusFlower",
+      "position": [
+        -6.25,
+        0,
+        -8.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-022",
+      "type": "cactusFlower",
+      "position": [
+        2.75,
+        0,
+        -4.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-023",
+      "type": "cactusFlower",
+      "position": [
+        6.25,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-024",
+      "type": "cactusFlower",
+      "position": [
+        7,
+        0,
+        5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
     }
   ]
 }

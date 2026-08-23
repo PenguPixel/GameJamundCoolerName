@@ -21,6 +21,8 @@ export class SceneManager
         this.postProcessingManager = null;
         this.isTransitioning = false;
         this.transitionOverlay = null;
+        this.viewportWidth = window.innerWidth;
+        this.viewportHeight = window.innerHeight;
     }
 
 
@@ -144,6 +146,7 @@ export class SceneManager
         this.activeScene = sceneFunction();
         this.activeSceneId = id;
 
+        this.activeScene.resize?.(this.viewportWidth, this.viewportHeight);
         this.activeScene.enter?.();
 
         //updates post-processing when the new scene provides a scene and camera
@@ -195,6 +198,7 @@ export class SceneManager
         {
             this.postProcessingManager = new PostProcessingManager(renderer);
             this.postProcessingManager.setSceneAndCamera(this.activeScene.scene, this.activeScene.camera);
+            this.postProcessingManager.resize(this.viewportWidth, this.viewportHeight);
         }
 
         const isSpirit = this.activeScene.characterController?.isSpiritActive ?? false;
@@ -214,6 +218,8 @@ export class SceneManager
      */
     resize(width, height)
     {
+        this.viewportWidth = width;
+        this.viewportHeight = height;
         this.activeScene?.resize?.(width, height);
         this.postProcessingManager?.resize(width, height);
     }

@@ -43,6 +43,13 @@ export const AudioManifest = Object.freeze([
         loop: true
     },
     {
+        id: AudioId.DEATH_MUSIC,
+        type: AudioType.MUSIC,
+        src: ['./assets/audio/music/music_you-failed_layered.mp3'],
+        volume: 0.7,
+        loop: false
+    },
+    {
         id: AudioId.SPIRIT_LEVEL_MUSIC,
         type: AudioType.MUSIC,
         src: ['./assets/audio/music/ghost perspective/music_ghostified_main_ theme.mp3'],
@@ -141,9 +148,16 @@ export const AudioManifest = Object.freeze([
         loop: false
     },
     {
-        id: AudioId.DOOR_PRESSURE_PLATE,
+        id: AudioId.PRESSURE_PLATE_ACTIVATE,
         type: AudioType.SFX,
         src: ['./assets/audio/sfx/doors/sfx_door_pressure-plate_ activate.mp3'],
+        volume: 0.8,
+        loop: false
+    },
+    {
+        id: AudioId.DOOR_ACTIVATE,
+        type: AudioType.SFX,
+        src: ['./assets/audio/sfx/doors/sfx_door_activated from pressure-plate opens.mp3'],
         volume: 0.8,
         loop: false
     },

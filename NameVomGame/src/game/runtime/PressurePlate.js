@@ -1,13 +1,14 @@
 import * as THREE from 'three';
 import RAPIER from '@dimforge/rapier3d-compat';
+import { AudioId } from '../../core/constants/AudioId.js';
 import { PhysicsCollisionGroup } from '../physics/PhysicsCollisionGroup.js';
 import { BaseRuntimeLevelObject } from './BaseRuntimeLevelObject.js';
 
 export class PressurePlate extends BaseRuntimeLevelObject
 {
-    constructor(physicsWorld, characterController, model, options = {})
+    constructor(physicsWorld, characterController, model, options = {}, audioManager = null)
     {
-        super(physicsWorld, characterController, model, options);
+        super(physicsWorld, characterController, model, options, audioManager);
 
         this.activator = options.activator ?? 'body';
         this.targetId = options.targetId ?? '';
@@ -69,6 +70,7 @@ export class PressurePlate extends BaseRuntimeLevelObject
         this.action.timeScale = this.isPressed ? 1 : -1;
         this.action.paused = false;
         this.action.play();
+        if (this.isPressed) this.audioManager?.playSfx(AudioId.PRESSURE_PLATE_ACTIVATE);
         this.target?.setSourceActive?.(this.sourceId, this.isPressed);
     }
 

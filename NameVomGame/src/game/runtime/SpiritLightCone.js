@@ -5,6 +5,7 @@ import { BaseRuntimeLevelObject } from './BaseRuntimeLevelObject.js';
 import { AudioId } from '../../core/constants/AudioId.js';
 
 const HIT_TINT_DURATION = 0.4;
+const DAMAGE_INTERVAL = 0.8;
 const HIT_COLOR = new THREE.Color(0xff2020);
 
 export class SpiritLightCone extends BaseRuntimeLevelObject
@@ -15,7 +16,7 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
 
         this.spiritCharacter = characterController.spiritCharacter;
         this.isDisabled = false;
-        this.hasDamaged = false;
+        this.damageCooldown = 0;
         this.hitTintRemaining = 0;
         this.speed = options.speed ?? 2;
         this.pathDirection = new THREE.Vector3();
@@ -95,21 +96,24 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
     update(deltaTime)
     {
         this.#updateHitTint(deltaTime);
+        this.damageCooldown = Math.max(0, this.damageCooldown - deltaTime);
         if (this.isDisabled) return;
 
         const isInside = this.physicsWorld.intersectionPair(this.collider, this.spiritCharacter.collider);
 
-        if (isInside && !this.hasDamaged)
+        if (isInside && this.damageCooldown === 0)
         {
             const tookDamage = this.spiritCharacter.takeDamage(1);
 
             if (tookDamage)
             {
+                this.damageCooldown = DAMAGE_INTERVAL;
                 this.audioManager.playSfx(AudioId.SPIRIT_SPOTTED);
                 this.#startHitTint();
             }
         }
-        this.hasDamaged = isInside;
+
+        if (!isInside) this.damageCooldown = 0;
     }
 
 
@@ -122,7 +126,7 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
         this.model.visible = !this.isDisabled;
         this.light.intensity = this.isDisabled ? 0 : this.defaultLightIntensity;
         this.collider.setEnabled(!this.isDisabled);
-        this.hasDamaged = false;
+        this.damageCooldown = 0;
     }
 
 
