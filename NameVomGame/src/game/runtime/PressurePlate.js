@@ -18,11 +18,11 @@ export class PressurePlate extends BaseRuntimeLevelObject
             ? characterController.spiritCharacter
             : characterController.bodyCharacter;
 
-        const mesh = this.model.getObjectByProperty('isMesh', true);
-        this.material = mesh.material;
-        this.defaultColor = this.activator === 'spirit' ? 0x765a7c : 0x319db2;
-        this.pressedColor = 0xe8d7ed;
-        this.material.color.setHex(this.defaultColor);
+        const [clip] = this.model.animations;
+        this.mixer = new THREE.AnimationMixer(this.model);
+        this.action = this.mixer.clipAction(clip);
+        this.action.setLoop(THREE.LoopOnce, 1);
+        this.action.clampWhenFinished = true;
 
         this.updateWorldMatrix(true, true);
         const bounds = new THREE.Box3().setFromObject(this.model);
@@ -58,14 +58,17 @@ export class PressurePlate extends BaseRuntimeLevelObject
     }
 
 
-    update()
+    update(deltaTime)
     {
+        this.mixer.update(deltaTime);
+
         const isPressed = this.physicsWorld.intersectionPair(this.collider, this.character.collider);
         if (isPressed === this.isPressed) return;
 
         this.isPressed = isPressed;
-        this.model.position.y = this.isPressed ? -0.05 : 0;
-        this.material.color.setHex(this.isPressed ? this.pressedColor : this.defaultColor);
+        this.action.timeScale = this.isPressed ? 1 : -1;
+        this.action.paused = false;
+        this.action.play();
         this.target?.setSourceActive?.(this.sourceId, this.isPressed);
     }
 
@@ -73,6 +76,8 @@ export class PressurePlate extends BaseRuntimeLevelObject
     dispose()
     {
         this.target?.setSourceActive?.(this.sourceId, false);
+        this.action.stop();
+        this.mixer.uncacheRoot(this.model);
         this.physicsWorld.removeCollider(this.collider, true);
     }
 }

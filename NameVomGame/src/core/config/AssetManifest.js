@@ -47,11 +47,35 @@ export const AssetManifest = Object.freeze([
         path: './assets/models/stone.glb'
     },
     {
+        id: AssetId.CACTUS,
+        path: './assets/models/cactus.glb'
+    },
+    {
         id: AssetId.CACTUS_FLOWER,
         path: './assets/models/cactus_flower.glb'
     },
     {
+        id: AssetId.TORCH,
+        path: './assets/models/torch.glb'
+    },
+    {
         id: AssetId.SPIKES,
         path: './assets/models/spikes.glb'
+    },
+    {
+        id: AssetId.BUTTON,
+        path: './assets/models/button.glb'
+    },
+    {
+        id: AssetId.BUTTON_SPIRIT,
+        path: './assets/models/button_2.glb'
+    },
+    {
+        id: AssetId.TRAPDOOR,
+        path: './assets/models/trapdoor.glb'
+    },
+    {
+        id: AssetId.PLATFORM,
+        path: './assets/models/platform.glb'
     }
 ]);

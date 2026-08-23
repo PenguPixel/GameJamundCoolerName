@@ -4,14 +4,16 @@ import { AssetId } from '../../core/constants/AssetId.js';
 
 export class Level_01 extends BaseLevelScene
 {
-    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager)
+    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager, gameState)
     {
         super(inputManager, updateManager, sceneManager, assetManager, audioManager, {
             cameraDeadZoneX: 3,
             cameraDeadZoneZ: 3,
             cameraFollowY: false,
             bodyPosition: new THREE.Vector3(0, 0, 0),
-            spiritPosition: new THREE.Vector3(2, 0, 0)
+            spiritPosition: new THREE.Vector3(2, 0, 0),
+            gameState,
+            levelTitle: 'level 01'
         });
 
         this.#setupLights();

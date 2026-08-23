@@ -6,7 +6,7 @@ import { DynamicObjects } from '../templates/DynamicObjects.js';
 
 export class Level_00 extends BaseLevelScene
 {
-    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager)
+    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager, gameState)
     {
         //configures the shared level camera, characters, spawn points, and physics world
         super(inputManager, updateManager, sceneManager, assetManager, audioManager, {
@@ -19,7 +19,9 @@ export class Level_00 extends BaseLevelScene
             cameraDeadZoneZ: 0,
             cameraFollowY: true,
             bodyPosition: new THREE.Vector3(-2, 0, 0),
-            spiritPosition: new THREE.Vector3(2, 0, 0)
+            spiritPosition: new THREE.Vector3(2, 0, 0),
+            gameState,
+            levelTitle: 'level 00'
         });
 
         this.scene.background = new THREE.Color(0x101218);
@@ -166,17 +168,15 @@ export class Level_00 extends BaseLevelScene
 
     this.dynamicFactory = new DynamicObjects(this.physicsWorld);
 
-    const trapDoor = this.dynamicFactory.createTrapDoor({
+    this.dynamicFactory.createTrapDoor({
         position: { x: 0, y: 0, z: 0 },
         size: { x: 1, y: 1, z: 1}
     });
-    console.log(trapDoor);
 
-    const ghostPlatform = this.dynamicFactory.createGhostPlatform({
+    this.dynamicFactory.createGhostPlatform({
         position: {x: 2, y: 0.2, z: 2 },
         size: { x: 2, y: 2, z: 0.5 }
     });
-    console.log(ghostPlatform);
 
 
     }

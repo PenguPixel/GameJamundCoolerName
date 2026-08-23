@@ -14,7 +14,9 @@ export const PhysicsGroup = Object.freeze({
     //1 << 5 produces binary 100000 and the decimal value 32 for sensors only the spirit should activate
     SPIRIT_TRIGGER: 1 << 5,
     //1 << 6 produces binary 1000000 and the decimal value 64 for sensors both characters should activate
-    TRIGGER: 1 << 6
+    TRIGGER: 1 << 6,
+    //1 << 7 produces binary 10000000 and the decimal value 128 for pit walls and pit floors
+    PIT: 1 << 7
 });
 
 //rapier stores two separate 16-bit masks inside one 32-bit number
@@ -81,5 +83,15 @@ export const PhysicsCollisionGroup = Object.freeze({
     TRIGGER: createCollisionGroups(
         PhysicsGroup.TRIGGER,
         PhysicsGroup.BODY | PhysicsGroup.SPIRIT
+    ),
+    //the falling body ignores normal world geometry but remains trapped by pit geometry
+    FALLING_BODY: createCollisionGroups(
+        PhysicsGroup.BODY,
+        PhysicsGroup.PIT
+    ),
+    //pit geometry collides only with the falling body
+    PIT: createCollisionGroups(
+        PhysicsGroup.PIT,
+        PhysicsGroup.BODY
     )
 });

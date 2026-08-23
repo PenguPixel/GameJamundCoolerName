@@ -2,9 +2,53 @@
   "version": 1,
   "name": "new_level",
   "editor": {
-    "gridSize": 1
+    "gridSize": 0.5
   },
   "objects": [
+    {
+      "id": "spiritPlatform-001",
+      "type": "spiritPlatform",
+      "position": [
+        2,
+        0.01,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "platformType": "start"
+      }
+    },
+    {
+      "id": "spiritPlatform-002",
+      "type": "spiritPlatform",
+      "position": [
+        20,
+        0.01,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "platformType": "end"
+      }
+    },
     {
       "id": "worldTile-001",
       "type": "worldTile",
@@ -1608,82 +1652,6 @@
       ]
     },
     {
-      "id": "worldTile1x1-023",
-      "type": "worldTile1x1",
-      "position": [
-        16,
-        0,
-        4
-      ],
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        0.01,
-        0.01,
-        0.01
-      ]
-    },
-    {
-      "id": "worldTile1x1-024",
-      "type": "worldTile1x1",
-      "position": [
-        16,
-        0,
-        3
-      ],
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        0.01,
-        0.01,
-        0.01
-      ]
-    },
-    {
-      "id": "worldTile1x1-025",
-      "type": "worldTile1x1",
-      "position": [
-        15,
-        0,
-        3
-      ],
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        0.01,
-        0.01,
-        0.01
-      ]
-    },
-    {
-      "id": "worldTile1x1-026",
-      "type": "worldTile1x1",
-      "position": [
-        15,
-        0,
-        4
-      ],
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        0.01,
-        0.01,
-        0.01
-      ]
-    },
-    {
       "id": "worldTile1x1-027",
       "type": "worldTile1x1",
       "position": [
@@ -2315,9 +2283,9 @@
       "id": "pitfall-001",
       "type": "pitfall",
       "position": [
-        16,
-        0.012,
-        2
+        15.5,
+        0.04,
+        3.5
       ],
       "rotation": [
         0,

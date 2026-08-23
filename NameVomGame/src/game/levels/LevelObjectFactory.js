@@ -9,14 +9,14 @@ export class LevelObjectFactory
     }
 
 
-    create(type)
+    create(type, assetId = null)
     {
         const definition = getLevelObjectDefinition(type);
         if (!definition) throw new Error(`Unknown level object type: ${type}`);
 
         const instance = definition.primitive
             ? this.#createPrimitive(definition.primitive)
-            : this.assetManager.createInstance(definition.assetId);
+            : this.assetManager.createInstance(assetId ?? definition.assetId);
         const object = definition.surfaceMeshName
             ? this.#createSurfaceAlignedRoot(instance, definition.surfaceMeshName)
             : definition.centerOnGround
@@ -51,7 +51,9 @@ export class LevelObjectFactory
 
     createFromData(data)
     {
-        const object = this.create(data.type);
+        const definition = getLevelObjectDefinition(data.type);
+        const assetId = definition?.assetVariants?.[data.properties?.activator];
+        const object = this.create(data.type, assetId);
 
         if (Array.isArray(data.position)) object.position.fromArray(data.position);
         if (Array.isArray(data.rotation)) object.rotation.fromArray(data.rotation);

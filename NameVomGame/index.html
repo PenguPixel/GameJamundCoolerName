@@ -8,6 +8,22 @@
   <title>Philipp</title>
 </head>
 <body>
+  <div class="loading-screen" data-loading-screen>
+    <div class="loading-screen__content">
+      <p class="loading-screen__text">Loading... please wait</p>
+      <div
+        class="loading-screen__track"
+        role="progressbar"
+        aria-label="Game loading progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        data-loading-progress
+      >
+        <div class="loading-screen__fill" data-loading-fill></div>
+      </div>
+    </div>
+  </div>
   <canvas id="canvas-threeJs"></canvas>
   <script type="module" src="./src/main.js"></script>
 </body>

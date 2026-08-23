@@ -1,4 +1,7 @@
 import { PostProcessingManager } from './PostProcessingManager';
+import '../../game/ui/SceneTransition.css';
+
+const FADE_DURATION = 1000;
 
 export class SceneManager
 {
@@ -16,6 +19,8 @@ export class SceneManager
         this.activeScene = null;
         this.activeSceneId = null;
         this.postProcessingManager = null;
+        this.isTransitioning = false;
+        this.transitionOverlay = null;
     }
 
 
@@ -32,6 +37,7 @@ export class SceneManager
      */
     preUpdate(deltaTime)
     {
+        if (this.isTransitioning) return;
         this.activeScene?.preUpdate?.(deltaTime);
     }
 
@@ -43,6 +49,7 @@ export class SceneManager
      */
     fixedUpdate(fixedDeltaTime)
     {
+        if (this.isTransitioning) return;
         this.activeScene?.fixedUpdate?.(fixedDeltaTime);
     }
 
@@ -54,6 +61,7 @@ export class SceneManager
      */
     update(deltaTime)
     {
+        if (this.isTransitioning) return;
         this.activeScene?.update?.(deltaTime);
     }
 
@@ -65,6 +73,7 @@ export class SceneManager
      */
     lateUpdate(deltaTime)
     {
+        if (this.isTransitioning) return;
         this.activeScene?.lateUpdate?.(deltaTime);
     }
 
@@ -90,6 +99,35 @@ export class SceneManager
     {
         const sceneFunction = this.scenes.get(id);
         if (!sceneFunction) throw new Error(`Scene is not registered: ${id}`);
+        if (this.isTransitioning) return;
+
+        this.#createTransitionOverlay();
+        this.isTransitioning = true;
+
+        if (!this.activeScene)
+        {
+            this.transitionOverlay.classList.add('scene-transition--visible');
+            this.#activateScene(id, sceneFunction);
+            this.transitionOverlay.getBoundingClientRect();
+            requestAnimationFrame(() => this.#fadeInActiveScene());
+            return;
+        }
+
+        requestAnimationFrame(() =>
+        {
+            this.transitionOverlay.classList.add('scene-transition--visible');
+
+            window.setTimeout(() =>
+            {
+                this.#activateScene(id, sceneFunction);
+                requestAnimationFrame(() => this.#fadeInActiveScene());
+            }, FADE_DURATION);
+        });
+    }
+
+
+    #activateScene(id, sceneFunction)
+    {
 
         //allows the previous scene to release scene-specific state
 
@@ -106,11 +144,33 @@ export class SceneManager
 
         this.activeScene.enter?.();
 
-        // Wenn die neue Szene Camera und Scene hat, PostProcessing aktualisieren
+        //updates post-processing when the new scene provides a scene and camera
         if (this.postProcessingManager && this.activeScene?.scene && this.activeScene?.camera)
         {
             this.postProcessingManager.setSceneAndCamera(this.activeScene.scene, this.activeScene.camera);
         }
+    }
+
+
+    #createTransitionOverlay()
+    {
+        if (this.transitionOverlay) return;
+
+        this.transitionOverlay = document.createElement('div');
+        this.transitionOverlay.className = 'scene-transition';
+        document.body.append(this.transitionOverlay);
+    }
+
+
+    #fadeInActiveScene()
+    {
+        this.transitionOverlay.classList.remove('scene-transition--visible');
+
+        window.setTimeout(() =>
+        {
+            this.isTransitioning = false;
+            this.activeScene?.onTransitionInComplete?.();
+        }, FADE_DURATION);
     }
 
 

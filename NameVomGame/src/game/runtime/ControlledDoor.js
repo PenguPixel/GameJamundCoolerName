@@ -4,6 +4,9 @@ import { AudioId } from '../../core/constants/AudioId.js';
 import { PhysicsCollisionGroup } from '../physics/PhysicsCollisionGroup.js';
 import { BaseRuntimeLevelObject } from './BaseRuntimeLevelObject.js';
 
+const OPEN_COLLIDER_DELAY = 2000;
+const CLOSE_COLLIDER_DELAY = 1000;
+
 export class ControlledDoor extends BaseRuntimeLevelObject
 {
     constructor(physicsWorld, characterController, model, options = {}, audioManager = null)
@@ -14,6 +17,7 @@ export class ControlledDoor extends BaseRuntimeLevelObject
         this.activeSources = new Set();
         this.isOpen = false;
         this.collider = null;
+        this.colliderTimer = null;
 
         const [clip] = this.model.animations;
         this.mixer = new THREE.AnimationMixer(this.model);
@@ -21,12 +25,9 @@ export class ControlledDoor extends BaseRuntimeLevelObject
         this.action.setLoop(THREE.LoopOnce, 1);
         this.action.clampWhenFinished = true;
 
-        this.handleAnimationFinished = () => this.#handleAnimationFinished();
-        this.mixer.addEventListener('finished', this.handleAnimationFinished);
-
         this.updateWorldMatrix(true, true);
-        const bounds = new THREE.Box3().setFromObject(this.model);
-        this.#createCollider(bounds);
+        this.closedColliderBounds = new THREE.Box3().setFromObject(this.model);
+        this.#createCollider(this.closedColliderBounds);
     }
 
 
@@ -58,6 +59,7 @@ export class ControlledDoor extends BaseRuntimeLevelObject
 
         this.action.paused = false;
         this.action.play();
+        this.#scheduleColliderChange();
     }
 
 
@@ -69,25 +71,30 @@ export class ControlledDoor extends BaseRuntimeLevelObject
 
     dispose()
     {
-        this.mixer.removeEventListener('finished', this.handleAnimationFinished);
+        clearTimeout(this.colliderTimer);
         this.action.stop();
         this.mixer.uncacheRoot(this.model);
         this.#removeCollider();
     }
 
 
-    #handleAnimationFinished()
+    #scheduleColliderChange()
     {
-        if (this.isOpen)
+        clearTimeout(this.colliderTimer);
+        const delay = this.isOpen ? OPEN_COLLIDER_DELAY : CLOSE_COLLIDER_DELAY;
+
+        this.colliderTimer = setTimeout(() =>
         {
-            this.#removeCollider();
-            return;
-        }
+            this.colliderTimer = null;
 
-        if (this.collider) return;
+            if (this.isOpen)
+            {
+                this.#removeCollider();
+                return;
+            }
 
-        this.updateWorldMatrix(true, true);
-        this.#createCollider(new THREE.Box3().setFromObject(this.model));
+            if (!this.collider) this.#createCollider(this.closedColliderBounds);
+        }, delay);
     }
 
 

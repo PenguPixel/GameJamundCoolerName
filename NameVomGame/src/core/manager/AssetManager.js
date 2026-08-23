@@ -32,12 +32,17 @@ export class AssetManager
 
     /**
      * loads every manifest entry in parallel and stores the resulting gltf assets.
+     * @param {Function|null} [onItemLoaded=null] - called whenever one manifest asset finishes loading.
      * @returns {Promise<void>} resolves after every asset has loaded.
      * @throws {Error} when one or more assets cannot be loaded.
      */
-    async loadAll()
+    async loadAll(onItemLoaded = null)
     {
-        const promises = this.manifest.map(asset => this.#loadGLB(asset));
+        const promises = this.manifest.map(async asset =>
+        {
+            await this.#loadGLB(asset);
+            onItemLoaded?.();
+        });
         await Promise.all(promises);
     }
 

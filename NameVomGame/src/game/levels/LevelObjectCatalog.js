@@ -8,11 +8,14 @@ export const LevelObjectType = Object.freeze({
     BARS: 'bars',
     DOOR: 'door',
     STONE: 'stone',
+    CACTUS: 'cactus',
     CACTUS_FLOWER: 'cactusFlower',
+    TORCH: 'torch',
     SPIKE_TRAP: 'spikeTrap',
     PRESSURE_PLATE: 'pressurePlate',
     PITFALL: 'pitfall',
     SPIRIT_LIGHT_CONE: 'spiritLightCone',
+    SPIRIT_PLATFORM: 'spiritPlatform',
     CHEST: 'chest',
     WORLD_TILE_5X5: 'worldTile',
     WORLD_TILE_1X1: 'worldTile1x1'
@@ -76,6 +79,16 @@ export const LevelObjectCatalog = Object.freeze([
         placementY: 0
     }),
     Object.freeze({
+        type: LevelObjectType.CACTUS,
+        label: 'cactus',
+        assetId: AssetId.CACTUS,
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        staticBatch: true,
+        placementY: 0
+    }),
+    Object.freeze({
         type: LevelObjectType.CACTUS_FLOWER,
         label: 'cactus flower',
         assetId: AssetId.CACTUS_FLOWER,
@@ -84,6 +97,16 @@ export const LevelObjectCatalog = Object.freeze([
         centerOnGround: true,
         staticBatch: true,
         placementY: 0
+    }),
+    Object.freeze({
+        type: LevelObjectType.TORCH,
+        label: 'wall torch',
+        assetId: AssetId.TORCH,
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        staticBatch: true,
+        placementY: 2
     }),
     Object.freeze({
         type: LevelObjectType.SPIKE_TRAP,
@@ -104,10 +127,9 @@ export const LevelObjectCatalog = Object.freeze([
     Object.freeze({
         type: LevelObjectType.PRESSURE_PLATE,
         label: 'pressure plate',
-        primitive: Object.freeze({
-            shape: 'box',
-            size: [1.5, 0.12, 1.5],
-            color: 0x319db2
+        assetId: AssetId.BUTTON,
+        assetVariants: Object.freeze({
+            spirit: AssetId.BUTTON_SPIRIT
         }),
         defaultScale: [1, 1, 1],
         defaultRotation: [0, 0, 0],
@@ -122,19 +144,12 @@ export const LevelObjectCatalog = Object.freeze([
     Object.freeze({
         type: LevelObjectType.PITFALL,
         label: 'trapdoor / pitfall',
-        primitive: Object.freeze({
-            shape: 'box',
-            size: [2, 0.02, 2],
-            color: 0x020403,
-            emissive: 0x020403,
-            emissiveIntensity: 1,
-            doubleSided: true
-        }),
+        assetId: AssetId.TRAPDOOR,
         defaultScale: [1, 1, 1],
         defaultRotation: [0, 0, 0],
-        centerOnGround: true,
+        surfaceMeshName: 'polySurface34',
         runtimeObject: LevelObjectType.PITFALL,
-        placementY: 0.012
+        placementY: 0.04
     }),
     Object.freeze({
         type: LevelObjectType.SPIRIT_LIGHT_CONE,
@@ -156,6 +171,19 @@ export const LevelObjectCatalog = Object.freeze([
         defaultProperties: Object.freeze({
             path: '5,0',
             speed: 2
+        }),
+        placementY: 0.01
+    }),
+    Object.freeze({
+        type: LevelObjectType.SPIRIT_PLATFORM,
+        label: 'spirit platform',
+        assetId: AssetId.PLATFORM,
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        runtimeObject: LevelObjectType.SPIRIT_PLATFORM,
+        defaultProperties: Object.freeze({
+            platformType: 'start'
         }),
         placementY: 0.01
     }),
@@ -184,7 +212,7 @@ export const LevelObjectCatalog = Object.freeze([
         assetId: AssetId.WORLD1,
         defaultScale: [0.05, 0.05, 0.05],
         defaultRotation: [0, 0, 0],
-        textureRepeat: [5, 5],
+        textureRepeat: [2.5, 2.5],
         staticBatch: true,
         colliderHeight: 0.2,
         physicsCollisionGroup: PhysicsCollisionGroup.WORLD,
@@ -196,7 +224,7 @@ export const LevelObjectCatalog = Object.freeze([
         assetId: AssetId.WORLD1,
         defaultScale: [0.01, 0.01, 0.01],
         defaultRotation: [0, 0, 0],
-        textureRepeat: [1, 1],
+        textureRepeat: [0.5, 0.5],
         staticBatch: true,
         colliderHeight: 0.2,
         physicsCollisionGroup: PhysicsCollisionGroup.WORLD,

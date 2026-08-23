@@ -9,7 +9,7 @@ const DarkVioletVignetteShader = {
         tDiffuse: { value: null },
         radius: { value: 0.35 },
         softness: { value: 0.45 },
-        intensity: { value: 0.0 }, // Startet bei 0 (unsichtbar)
+        intensity: { value: 0.0 }, //starts invisible
         vignetteColor: { value: new THREE.Color(0x581c87) }
     },
     vertexShader: `
@@ -45,29 +45,29 @@ export class PostProcessingManager
         this.composer = new EffectComposer(renderer);
         this.renderPass = null;
 
-        // Transitions-Parameter
+        //transition parameters
         this.isSpiritActive = false;
-        this.currentTransition = 0.0; // 0.0 = Körper, 1.0 = Geist
-        this.transitionSpeed = 4.0;   // Wie schnell der Wechsel blendet
+        this.currentTransition = 0.0; //0.0 represents body mode and 1.0 represents spirit mode
+        this.transitionSpeed = 4.0;   //controls how quickly the modes blend
 
-        // Ziel-Werte für den Geist-Modus
-        this.targetBloomStrength = 0.17;
+        //target values for spirit mode
+		this.targetBloomStrength = 0.17;
         this.targetVignetteIntensity = 0.85;
         this.targetFogDensity = 0.035;
 
-        // Farben für Überblenden
+        //colors used during the transition
         this.bodyBgColor = new THREE.Color(0x101218);
         this.spiritBgColor = new THREE.Color(0x1e0b36);
         this.spiritFogColor = new THREE.Color(0x280e46);
 
-        // 1. Vignette Pass (bleibt aktiv, Stärke wird über intensity gesteuert)
+        //the vignette pass stays active while intensity controls its strength
         this.vignettePass = new ShaderPass(DarkVioletVignetteShader);
         this.composer.addPass(this.vignettePass);
 
         // 2. Bloom Pass
         this.bloomPass = new UnrealBloomPass(
             new THREE.Vector2(window.innerWidth, window.innerHeight),
-            0.0,  // Startet bei 0
+            0.0,  //starts disabled
             0.4,
             0.25
         );
@@ -103,11 +103,11 @@ export class PostProcessingManager
         const alpha = 1 - Math.exp(-this.transitionSpeed * deltaTime);
         this.currentTransition = THREE.MathUtils.lerp(this.currentTransition, target, alpha);
 
-        // 1. Post-Processing anpassen
+        //updates post-processing effects
         this.vignettePass.uniforms.intensity.value = this.currentTransition * this.targetVignetteIntensity;
         this.bloomPass.strength = this.currentTransition * this.targetBloomStrength;
 
-        // 2. Nebel & Hintergrundfarbe weich interpolieren
+        //smoothly interpolates fog and background color
         if (this.currentScene)
         {
             if (this.currentScene.fog) {
