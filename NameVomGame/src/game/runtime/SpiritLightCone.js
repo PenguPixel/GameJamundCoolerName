@@ -10,6 +10,7 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
         super(physicsWorld, characterController, model, options);
 
         this.spiritCharacter = characterController.spiritCharacter;
+        this.isDisabled = false;
         this.hasDamaged = false;
         this.speed = options.speed ?? 2;
         this.pathDirection = new THREE.Vector3();
@@ -55,6 +56,7 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
 
     fixedUpdate(fixedDeltaTime)
     {
+        if (this.isDisabled) return;
         if (this.pathPoints.length < 2 || this.speed <= 0) return;
 
         const target = this.pathPoints[this.pathIndex];
@@ -82,10 +84,24 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
 
     update()
     {
+        if (this.isDisabled) return;
+
         const isInside = this.physicsWorld.intersectionPair(this.collider, this.spiritCharacter.collider);
 
         if (isInside && !this.hasDamaged) this.spiritCharacter.takeDamage(1);
         this.hasDamaged = isInside;
+    }
+
+
+    onActivationChanged(isActivated)
+    {
+        const shouldDisable = isActivated;
+        if (shouldDisable === this.isDisabled) return;
+
+        this.isDisabled = shouldDisable;
+        this.visible = !this.isDisabled;
+        this.collider.setEnabled(!this.isDisabled);
+        this.hasDamaged = false;
     }
 
 
