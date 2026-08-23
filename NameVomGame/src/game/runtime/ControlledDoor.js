@@ -54,7 +54,7 @@ export class ControlledDoor extends BaseRuntimeLevelObject
         if (shouldOpen === this.isOpen) return;
 
         this.isOpen = shouldOpen;
-        this.audioManager.playSfx(AudioId.DOOR_PRESSURE_PLATE);
+        this.audioManager?.playSfx(AudioId.DOOR_ACTIVATE);
 
         if (this.isOpen)
         {

@@ -22,11 +22,13 @@ export class BadEndScene extends BaseScene
     enter()
     {
         this.#createOverlay();
+        this.audioManager.playMusic(AudioId.DEATH_MUSIC);
     }
 
 
     exit()
     {
+        this.audioManager.stopMusic();
         this.overlay?.remove();
         this.overlay = null;
         this.isReturning = false;
@@ -38,7 +40,7 @@ export class BadEndScene extends BaseScene
         if (this.overlay) return;
 
         this.overlay = document.createElement('div');
-        this.overlay.className = 'end-screen';
+        this.overlay.className = 'end-screen end-screen--bad';
         this.overlay.innerHTML = endSceneOverlay;
         document.body.append(this.overlay);
 

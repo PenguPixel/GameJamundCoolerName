@@ -37,7 +37,7 @@ export class EndScene extends BaseScene
         if (this.overlay) return;
 
         this.overlay = document.createElement('div');
-        this.overlay.className = 'end-screen';
+        this.overlay.className = 'end-screen end-screen--good';
         this.overlay.innerHTML = endSceneOverlay;
 
         document.body.append(this.overlay);
