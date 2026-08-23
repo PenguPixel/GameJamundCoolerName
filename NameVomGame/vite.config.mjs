@@ -9,6 +9,7 @@ export default defineConfig(({ command, mode }) =>
         : './src/editor/LevelEditorDisabled.js';
 
     return {
+        base: './', // Wichtig: Relativer Basispfad für itch.io
         resolve: {
             alias: {
                 'virtual:level-editor-launcher': fileURLToPath(new URL(launcherFile, import.meta.url))
