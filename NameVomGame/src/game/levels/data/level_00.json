@@ -2,7 +2,7 @@
   "version": 1,
   "name": "level_00",
   "editor": {
-    "gridSize": 1
+    "gridSize": 0.25
   },
   "objects": [
     {
@@ -1747,7 +1747,7 @@
       ],
       "rotation": [
         0,
-        0,
+        -1.5708,
         0
       ],
       "scale": [
@@ -2923,25 +2923,6 @@
       ]
     },
     {
-      "id": "worldTile-174",
-      "type": "worldTile",
-      "position": [
-        0,
-        0,
-        -2
-      ],
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        0.05,
-        0.05,
-        0.05
-      ]
-    },
-    {
       "id": "worldTile-175",
       "type": "worldTile",
       "position": [
@@ -3275,6 +3256,563 @@
       "rotation": [
         0,
         0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-001",
+      "type": "cactus",
+      "position": [
+        1,
+        0,
+        -1.5
+      ],
+      "rotation": [
+        0,
+        -1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-003",
+      "type": "cactus",
+      "position": [
+        -8,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "worldTile-005",
+      "type": "worldTile",
+      "position": [
+        0,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.05,
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "id": "cactus-006",
+      "type": "cactus",
+      "position": [
+        5.5,
+        0,
+        6.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-007",
+      "type": "cactus",
+      "position": [
+        -16.5,
+        0,
+        8.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-008",
+      "type": "cactus",
+      "position": [
+        -19.5,
+        0,
+        -2
+      ],
+      "rotation": [
+        -1.1494,
+        -0.411,
+        -1.1494
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-009",
+      "type": "cactus",
+      "position": [
+        -12.5,
+        0,
+        -9.5
+      ],
+      "rotation": [
+        -0.9818,
+        -0.523,
+        -0.9223
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-010",
+      "type": "cactusFlower",
+      "position": [
+        -12,
+        0,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-011",
+      "type": "cactusFlower",
+      "position": [
+        -12.5,
+        0,
+        -9
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-012",
+      "type": "cactusFlower",
+      "position": [
+        -19.5,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        1.309,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-013",
+      "type": "cactusFlower",
+      "position": [
+        -19.25,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-014",
+      "type": "cactusFlower",
+      "position": [
+        -9,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-015",
+      "type": "cactusFlower",
+      "position": [
+        -8,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-016",
+      "type": "cactusFlower",
+      "position": [
+        1,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-017",
+      "type": "cactusFlower",
+      "position": [
+        2,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-018",
+      "type": "cactusFlower",
+      "position": [
+        1,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-019",
+      "type": "cactusFlower",
+      "position": [
+        3,
+        0,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-020",
+      "type": "cactusFlower",
+      "position": [
+        1.5,
+        0,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-021",
+      "type": "cactusFlower",
+      "position": [
+        -13.5,
+        0,
+        -10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "spikeTrap-001",
+      "type": "spikeTrap",
+      "position": [
+        -7.5,
+        0.01,
+        3.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "properties": {
+        "startDelay": 0,
+        "interval": 2,
+        "activeDuration": 1,
+        "damage": 1
+      }
+    },
+    {
+      "id": "torch-002",
+      "type": "torch",
+      "position": [
+        -16,
+        2,
+        -3.5
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-003",
+      "type": "torch",
+      "position": [
+        -11.25,
+        2.25,
+        -2.25
+      ],
+      "rotation": [
+        1.5708,
+        -1.0472,
+        1.5708
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-005",
+      "type": "torch",
+      "position": [
+        -15.5,
+        2,
+        1
+      ],
+      "rotation": [
+        1.5708,
+        -1.0472,
+        1.5708
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-006",
+      "type": "torch",
+      "position": [
+        -17,
+        2,
+        -10.5
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-007",
+      "type": "torch",
+      "position": [
+        -16,
+        2,
+        -14.75
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-008",
+      "type": "torch",
+      "position": [
+        -9.5,
+        2,
+        1.25
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-009",
+      "type": "torch",
+      "position": [
+        0,
+        2,
+        1.25
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-010",
+      "type": "torch",
+      "position": [
+        -5,
+        2,
+        1.25
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-011",
+      "type": "torch",
+      "position": [
+        -5,
+        2,
+        4.75
+      ],
+      "rotation": [
+        -0.5236,
+        -1.5708,
         0
       ],
       "scale": [
