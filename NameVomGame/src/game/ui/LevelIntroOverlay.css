@@ -1,0 +1,21 @@
+.level-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.level-intro[hidden] {
+    display: none;
+}
+
+.level-intro__title {
+    margin: 0;
+    color: #fff;
+    font: 400 clamp(2.5rem, 8vw, 6rem)/1 "Antara Distance", sans-serif;
+    letter-spacing: 0.08em;
+    opacity: 0;
+    text-shadow: 0 0 1.5rem rgb(118 90 124 / 70%);
+}

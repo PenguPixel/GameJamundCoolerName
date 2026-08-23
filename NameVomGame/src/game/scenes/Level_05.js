@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 import { BaseLevelScene } from './BaseLevelScene.js';
 import levelData from '../levels/data/new_level.json';
+import { SceneId } from '../../core/constants/SceneId.js';
 
 export class Level_05 extends BaseLevelScene
 {
-    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager)
+    constructor(inputManager, updateManager, sceneManager, assetManager, audioManager, gameState)
     {
         super(inputManager, updateManager, sceneManager, assetManager, audioManager, {
             cameraFov: 60,
@@ -16,7 +17,10 @@ export class Level_05 extends BaseLevelScene
             cameraDeadZoneZ: 0,
             cameraFollowY: true,
             bodyPosition: new THREE.Vector3(-3, 0, 0),
-            spiritPosition: new THREE.Vector3(2, 0, 0)
+            spiritPosition: new THREE.Vector3(2, 0, 0),
+            nextSceneId: SceneId.END,
+            gameState,
+            levelTitle: 'The Awakening'
         });
 
         this.scene.background = new THREE.Color(0x101218);

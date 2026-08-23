@@ -5,11 +5,12 @@ import { AssetId } from '../../core/constants/AssetId.js';
 
 export class SpiritCharacter extends BaseCharacter
 {
-    constructor(assetManager, physicsWorld, position)
+    constructor(assetManager, physicsWorld, position, healthController)
     {
         super(assetManager, AssetId.GHOST);
 
         this.physicsWorld = physicsWorld;
+        this.healthController = healthController;
 
         //character controller uses collision
         //the 0.1 offset is a safety gap/distance between objectcolliders
@@ -42,9 +43,9 @@ export class SpiritCharacter extends BaseCharacter
         super.updateAnimation(deltaTime);
     }
 
-    takeDamage()
+    takeDamage(amount = 1)
     {
-        console.log("GEIST AUA!");
+        this.healthController.takeDamage(amount);
     }
 
     move(direction, speed, fixedDeltaTime)

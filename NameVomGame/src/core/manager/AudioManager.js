@@ -45,12 +45,17 @@ export class AudioManager
 
     /**
      * loads every audio entry from the manifest in parallel.
+     * @param {Function|null} [onItemLoaded=null] - called whenever one manifest sound finishes loading.
      * @returns {Promise<void>} resolves after every registered sound has loaded.
      * @throws {Error} when one or more audio files cannot be loaded.
      */
-    async loadAll()
+    async loadAll(onItemLoaded = null)
     {
-        const promises = this.manifest.map(config => this.#load(config));
+        const promises = this.manifest.map(async config =>
+        {
+            await this.#load(config);
+            onItemLoaded?.();
+        });
         await Promise.all(promises);
     }
 
@@ -68,6 +73,23 @@ export class AudioManager
         if (this.types.get(id) !== 'sfx') throw new Error ('Audio is not SFX: ' + id);
 
         return sound.play();
+    }
+
+
+    /**
+     * stops one playback instance of a loaded sound effect.
+     * @param {string} id - registered identifier of an sfx entry.
+     * @param {number} playbackId - howler playback identifier returned by playsfx.
+     * @returns {void}
+     * @throws {Error} when the audio is missing or is not registered as sfx.
+     */
+    stopSfx(id, playbackId)
+    {
+        const sound = this.#get(id);
+
+        if (this.types.get(id) !== 'sfx') throw new Error('Audio is not SFX: ' + id);
+
+        sound.stop(playbackId);
     }
 
 
@@ -335,7 +357,7 @@ export class AudioManager
     #get(id)
     {
         const sound = this.sounds.get(id);
-        if (!sound) throw new Error('Audio ist not loaded: ' + id);
+        if (!sound) throw new Error('Audio is not loaded: ' + id);
         return sound;
     }
 

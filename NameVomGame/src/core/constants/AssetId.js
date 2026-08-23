@@ -16,5 +16,9 @@ export const AssetId = Object.freeze(
         DOOR: 'door',
         STONE: 'stone',
         CACTUS_FLOWER: 'cactusFlower',
-        SPIKES: 'spikes'
+        SPIKES: 'spikes',
+        BUTTON: 'button',
+        BUTTON_SPIRIT: 'buttonSpirit',
+        TRAPDOOR: 'trapdoor',
+        PLATFORM: 'platform'
     });

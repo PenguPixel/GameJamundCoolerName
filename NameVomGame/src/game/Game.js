@@ -5,6 +5,8 @@ import { Level_01 } from "./scenes/Level_01.js";
 import { TitleScene } from "./scenes/TitleScene.js";
 import { Level_00 } from "./scenes/Level_00.js";
 import { Level_05 } from "./scenes/Level_05.js";
+import { BadEndScene } from "./scenes/BadEndScene.js";
+import { GameState } from "./GameState.js";
 
 export class Game
 {
@@ -19,6 +21,7 @@ export class Game
         this.assetManager = assetManager;
         this.sceneManager = sceneManager;
         this.audioManager = audioManager;
+        this.gameState = new GameState();
 
         this.#setupInput();
         this.#setupScenes();
@@ -49,7 +52,8 @@ export class Game
                 this.updateManager,
                 this.sceneManager,
                 this.audioManager,
-                this.assetManager
+                this.assetManager,
+                this.gameState
             ));
 
         this.sceneManager.registerScene(SceneId.LEVEL_00, () =>
@@ -58,7 +62,8 @@ export class Game
                 this.updateManager,
                 this.sceneManager,
                 this.assetManager,
-                this.audioManager
+                this.audioManager,
+                this.gameState
             ));
 
         this.sceneManager.registerScene(SceneId.LEVEL_01, () =>
@@ -67,7 +72,8 @@ export class Game
                 this.updateManager,
                 this.sceneManager,
                 this.assetManager,
-                this.audioManager
+                this.audioManager,
+                this.gameState
             ));
 
         this.sceneManager.registerScene(SceneId.LEVEL_05, () =>
@@ -76,7 +82,8 @@ export class Game
                 this.updateManager,
                 this.sceneManager,
                 this.assetManager,
-                this.audioManager
+                this.audioManager,
+                this.gameState
             ));
 
         //copy this block, uncomment it, and replace the scene id and level scene class
@@ -87,12 +94,20 @@ export class Game
                 this.updateManager,
                 this.sceneManager,
                 this.assetManager,
-                this.audioManager
+                this.audioManager,
+                this.gameState
             ));
         */
 
         this.sceneManager.registerScene(SceneId.END, () =>
             new EndScene(
+                this.updateManager,
+                this.sceneManager,
+                this.audioManager
+            ));
+
+        this.sceneManager.registerScene(SceneId.BAD_END, () =>
+            new BadEndScene(
                 this.updateManager,
                 this.sceneManager,
                 this.audioManager

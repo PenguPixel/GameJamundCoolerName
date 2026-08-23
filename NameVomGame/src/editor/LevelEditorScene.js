@@ -528,7 +528,8 @@ export class LevelEditorScene extends BaseScene
         {
             const label = document.createElement('label');
             const text = document.createElement('span');
-            const input = propertyName === 'activator'
+            const isSelect = propertyName === 'activator' || propertyName === 'platformType';
+            const input = isSelect
                 ? document.createElement('select')
                 : document.createElement('input');
 
@@ -541,6 +542,10 @@ export class LevelEditorScene extends BaseScene
             if (propertyName === 'activator')
             {
                 input.append(new Option('body', 'body'), new Option('spirit', 'spirit'));
+            }
+            else if (propertyName === 'platformType')
+            {
+                input.append(new Option('start', 'start'), new Option('end', 'end'));
             }
             else
             {

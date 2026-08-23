@@ -1,3 +1,84 @@
+@font-face
+{
+    font-family: "Antara Distance";
+    src:
+        url("/assets/fonts/a_antara_distance/aAntaraDistance.otf") format("opentype"),
+        url("/assets/fonts/a_antara_distance/aAntaraDistance.ttf") format("truetype");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.loading-screen
+{
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    background: #000;
+    opacity: 1;
+    transition: opacity 800ms ease-in-out;
+}
+
+.loading-screen--complete
+{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-screen__content
+{
+    width: min(28rem, 75vw);
+    text-align: center;
+}
+
+.loading-screen__text
+{
+    margin: 0 0 1.25rem;
+    color: #f5eef7;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    letter-spacing: 0.1em;
+}
+
+.loading-screen__track
+{
+    height: 0.8rem;
+    overflow: hidden;
+    border: 1px solid #765a7c;
+    border-radius: 999px;
+    background: #07141a;
+    box-shadow: 0 0 1rem rgb(118 90 124 / 35%);
+}
+
+.loading-screen__fill
+{
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #2b0034, #765a7c, #319db2);
+    box-shadow: 0 0 1rem #765a7c;
+    transition: width 200ms ease-out;
+    animation: loading-pulse 900ms ease-in-out infinite alternate;
+}
+
+@keyframes loading-pulse
+{
+    from
+    {
+        filter: brightness(0.75);
+        opacity: 0.75;
+    }
+
+    to
+    {
+        filter: brightness(1.35);
+        opacity: 1;
+    }
+}
+
 html,
 body
 {
@@ -174,16 +255,57 @@ body
     cursor: pointer;
 }
 
-.title-menu__credits
+.title-menu__credits-list
 {
-    margin: 0 0 1rem;
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    overflow-y: auto;
     color: rgb(245 238 247 / 72%);
-    line-height: 1.6;
+    scrollbar-color: #765a7c transparent;
 }
 
-.title-menu__credits:last-of-type
+.title-menu__credit-group h3
 {
-    margin-bottom: 2.5rem;
+    margin: 0 0 0.65rem;
+    color: #a88eae;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.title-menu__credit-group p
+{
+    display: grid;
+    gap: 0.15rem;
+    margin: 0 0 0.7rem;
+    line-height: 1.35;
+}
+
+.title-menu__credit-group p:last-child
+{
+    margin-bottom: 0;
+}
+
+.title-menu__credit-group strong
+{
+    color: #f5eef7;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.title-menu__credit-group span
+{
+    font-size: 0.78rem;
+}
+
+.title-menu__game-jam
+{
+    margin: 0;
+    color: #319db2;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
 }
 
 @media (max-width: 520px)
