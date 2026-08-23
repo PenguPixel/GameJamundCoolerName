@@ -18,6 +18,7 @@ export const LevelObjectType = Object.freeze({
     SPIRIT_LIGHT_CONE: 'spiritLightCone',
     SPIRIT_PLATFORM: 'spiritPlatform',
     CHEST: 'chest',
+    WORLD_TILE_25X25: 'worldTile25x25',
     WORLD_TILE_5X5: 'worldTile',
     WORLD_TILE_1X1: 'worldTile1x1'
 });
@@ -220,6 +221,18 @@ export const LevelObjectCatalog = Object.freeze([
         assetId: AssetId.CHEST,
         defaultScale: [100, 100, 100],
         defaultRotation: [0, 0, 0],
+        placementY: 0
+    }),
+    Object.freeze({
+        type: LevelObjectType.WORLD_TILE_25X25,
+        label: 'world tile 25x25',
+        assetId: AssetId.WORLD1,
+        defaultScale: [0.25, 0.25, 0.25],
+        defaultRotation: [0, 0, 0],
+        textureRepeat: [12.5, 12.5],
+        staticBatch: true,
+        colliderHeight: 0.2,
+        physicsCollisionGroup: PhysicsCollisionGroup.WORLD,
         placementY: 0
     }),
     Object.freeze({
