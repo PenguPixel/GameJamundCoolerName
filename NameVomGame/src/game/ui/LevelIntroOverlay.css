@@ -106,5 +106,7 @@
     font: 400 clamp(2.5rem, 8vw, 6rem)/1 "Antara Distance", sans-serif;
     letter-spacing: 0.08em;
     opacity: 0;
-    text-shadow: 0 0 1.5rem rgb(118 90 124 / 70%);
+    text-shadow:
+        0 0.2rem 0.3rem rgb(0 0 0 / 90%),
+        0 0 2rem rgb(118 90 124 / 95%);
 }
