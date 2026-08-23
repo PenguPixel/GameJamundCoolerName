@@ -1,4 +1,4 @@
-const STARTING_HEALTH = 3;
+const STARTING_HEALTH = 5;
 
 export class GameState
 {

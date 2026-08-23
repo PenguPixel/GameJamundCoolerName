@@ -45,7 +45,7 @@ export class SpiritCharacter extends BaseCharacter
 
     takeDamage(amount = 1)
     {
-        this.healthController.takeDamage(amount);
+        return this.healthController.takeDamage(amount);
     }
 
     move(direction, speed, fixedDeltaTime)

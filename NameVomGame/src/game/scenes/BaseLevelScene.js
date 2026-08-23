@@ -55,7 +55,8 @@ export class BaseLevelScene extends BaseScene
             bodyAmbientId = AudioId.BODY_LEVEL_AMBIENT,
             nextSceneId = SceneId.END,
             gameState,
-            levelTitle = 'level'
+            levelTitle = 'level',
+            showControls = false
         } = options;
 
         this.inputManager = inputManager;
@@ -87,7 +88,11 @@ export class BaseLevelScene extends BaseScene
         this.spiritChallengeController = null;
         this.deathEndTimer = 0;
         this.isPaused = false;
-        this.levelIntroController = new LevelIntroController(levelTitle, this.audioManager);
+        this.levelIntroController = new LevelIntroController(
+            levelTitle,
+            this.audioManager,
+            showControls
+        );
         this.pauseController = new PauseController(
             this.audioManager,
             () => this.#resumeGame(),

@@ -1,3 +1,92 @@
+.level-controls {
+    position: fixed;
+    inset: 0;
+    z-index: 31;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: rgb(5 8 12 / 55%);
+    backdrop-filter: blur(0.45rem);
+}
+
+.level-controls[hidden] {
+    display: none;
+}
+
+.level-controls__panel {
+    width: min(28rem, 100%);
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+    background: rgb(31 4 39 / 92%);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 2rem rgb(118 90 124 / 45%);
+}
+
+.level-controls__title {
+    margin: 0 0 1.5rem;
+    font: 700 2rem/1 sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.level-controls__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0 0 2rem;
+}
+
+.level-controls__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.level-controls__row dt,
+.level-controls__row dd {
+    margin: 0;
+}
+
+.level-controls__row dt {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.level-controls__row dd {
+    text-align: left;
+}
+
+.level-controls kbd {
+    display: inline-block;
+    min-width: 2rem;
+    padding: 0.35rem 0.55rem;
+    color: #fff;
+    font: 700 0.9rem/1 sans-serif;
+    background: #765a7c;
+    border-radius: 0.45rem;
+    box-shadow: 0 0.2rem 0 #3a1344;
+}
+
+.level-controls__button {
+    padding: 0.75rem 2rem;
+    color: #fff;
+    font: 700 1.15rem/1 sans-serif;
+    cursor: pointer;
+    background: #765a7c;
+    border: 0;
+    border-radius: 999px;
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.level-controls__button:hover,
+.level-controls__button:focus-visible {
+    background: #923aa0;
+    outline: none;
+    transform: scale(1.05);
+}
+
 .level-intro {
     position: fixed;
     inset: 0;
