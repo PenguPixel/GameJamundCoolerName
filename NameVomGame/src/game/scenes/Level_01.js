@@ -46,6 +46,7 @@ export class Level_01 extends BaseLevelScene
         directionalLight.shadow.bias = -0.0001;
         directionalLight.shadow.normalBias = 0.02;
 
+        this.trackShadowLight(directionalLight);
         this.scene.add(ambientLight, directionalLight);
     }
 

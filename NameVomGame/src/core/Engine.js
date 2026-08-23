@@ -127,7 +127,7 @@ export default class Engine
         this.updateManager.update(this.time.deltaTime);
 
         //runs logic that depends on completed updates
-        this.updateManager.lateUpdate(this.time.deltaTime);
+        this.updateManager.lateUpdate(this.time.deltaTime, this.time.interpolationAlpha);
 
         //renders the scene and clears single-frame input states
         this.sceneManager.render(this.renderer);

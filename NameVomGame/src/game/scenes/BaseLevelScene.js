@@ -51,6 +51,8 @@ export class BaseLevelScene extends BaseScene
             cameraFollowY = true,
             bodyPosition = new THREE.Vector3(-2, 3, 0),
             spiritPosition = new THREE.Vector3(2, 3, 0),
+            bodyMusicId = AudioId.BODY_LEVEL_MUSIC,
+            bodyAmbientId = AudioId.BODY_LEVEL_AMBIENT,
             nextSceneId = SceneId.END,
             gameState,
             levelTitle = 'level'
@@ -77,6 +79,8 @@ export class BaseLevelScene extends BaseScene
         this.cameraFollowPoint = new THREE.Vector3();
         this.cameraTarget = new THREE.Vector3();
         this.characterPosition = new THREE.Vector3();
+        this.shadowLight = null;
+        this.shadowLightOffset = new THREE.Vector3();
         this.levelObjectFactory = new LevelObjectFactory(this.assetManager);
         this.loadedLevelObjects = [];
         this.runtimeLevelObjects = [];
@@ -95,7 +99,7 @@ export class BaseLevelScene extends BaseScene
             this.assetManager,
             this.audioManager,
             this.physicsWorld,
-            { bodyPosition, spiritPosition, gameState }
+            { bodyPosition, spiritPosition, bodyMusicId, bodyAmbientId, gameState }
         );
         this.scene.add(this.characterController);
 
@@ -167,9 +171,10 @@ export class BaseLevelScene extends BaseScene
         this.updateLevel(deltaTime);
     }
 
-    lateUpdate(deltaTime)
+    lateUpdate(deltaTime, interpolationAlpha)
     {
         if (this.isPaused || !this.levelIntroController.isComplete) return;
+        this.characterController.interpolatePhysics(interpolationAlpha);
         this.lateUpdateLevel(deltaTime);
         this.#followCamera(deltaTime);
     }
@@ -342,6 +347,14 @@ export class BaseLevelScene extends BaseScene
         return this.physicsWorld.createCollider(colliderDescription, rigidBody);
     }
 
+    trackShadowLight(light)
+    {
+        this.shadowLight = light;
+        this.shadowLightOffset.copy(light.position);
+        this.scene.add(light.target);
+        this.#updateShadowLight();
+    }
+
     onTransitionInComplete()
     {
         this.levelIntroController.start();
@@ -494,5 +507,14 @@ export class BaseLevelScene extends BaseScene
 
         this.camera.position.copy(this.cameraFollowPoint).add(this.cameraOffset);
         this.camera.lookAt(this.cameraFollowPoint);
+        this.#updateShadowLight();
+    }
+
+    #updateShadowLight()
+    {
+        if (!this.shadowLight) return;
+
+        this.shadowLight.position.copy(this.cameraFollowPoint).add(this.shadowLightOffset);
+        this.shadowLight.target.position.copy(this.cameraFollowPoint);
     }
 }

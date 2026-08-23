@@ -94,13 +94,14 @@ export class UpdateManager
     /**
      * runs follow-up logic after all regular updates have completed.
      * @param {number} deltaTime - elapsed frame time in seconds.
+     * @param {number} interpolationAlpha - remaining fraction between fixed simulation steps.
      * @returns {void}
      */
-    lateUpdate(deltaTime)
+    lateUpdate(deltaTime, interpolationAlpha)
     {
         for (const object of this.lateUpdateables)
         {
-            object.lateUpdate(deltaTime);
+            object.lateUpdate(deltaTime, interpolationAlpha);
         }
     }
 

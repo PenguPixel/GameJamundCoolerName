@@ -11,6 +11,8 @@ export class BaseCharacter extends THREE.Group
 
         this.rigidBody = null;
         this.collider = null;
+        this.previousPhysicsPosition = new THREE.Vector3();
+        this.currentPhysicsPosition = new THREE.Vector3();
 
         this.#createModel(assetId);
         this.#setupAnimation(playDefaultAnimation);
@@ -43,18 +45,38 @@ export class BaseCharacter extends THREE.Group
     {
         this.rigidBody = rigidBody;
         this.collider = collider;
+
+        const position = this.rigidBody.translation();
+        this.previousPhysicsPosition.set(position.x, position.y, position.z);
+        this.currentPhysicsPosition.copy(this.previousPhysicsPosition);
+        this.position.copy(this.currentPhysicsPosition);
     }
 
-    syncPhysics()
+    syncPhysics(snap = false)
     {
         //characters without physics can still use this base class without causing an error
         if (!this.rigidBody) return;
 
         //rapier owns the authoritative position after the physics world has stepped
         const position = this.rigidBody.translation();
+        this.previousPhysicsPosition.copy(this.currentPhysicsPosition);
+        this.currentPhysicsPosition.set(position.x, position.y, position.z);
 
-        //three.js does not know about rapier, so its visible object must be updated manually
-        this.position.set(position.x, position.y, position.z);
+        if (!snap) return;
+
+        this.previousPhysicsPosition.copy(this.currentPhysicsPosition);
+        this.position.copy(this.currentPhysicsPosition);
+    }
+
+    interpolatePhysics(interpolationAlpha)
+    {
+        if (!this.rigidBody) return;
+
+        this.position.lerpVectors(
+            this.previousPhysicsPosition,
+            this.currentPhysicsPosition,
+            interpolationAlpha
+        );
     }
 
     dispose()

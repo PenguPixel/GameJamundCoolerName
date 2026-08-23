@@ -3,6 +3,7 @@ import { BaseLevelScene } from './BaseLevelScene.js';
 import levelData from '../levels/data/level_end.json';
 import { SceneId } from '../../core/constants/SceneId.js';
 import { AssetId } from '../../core/constants/AssetId.js';
+import { AudioId } from '../../core/constants/AudioId.js';
 import { BaseCharacter } from '../characters/BaseCharacter.js';
 import { SpiritPlatform } from '../runtime/SpiritPlatform.js';
 import finalSequenceOverlay from '../ui/FinalSequenceOverlay.html?raw';
@@ -45,6 +46,7 @@ export class Level_End extends BaseLevelScene
             cameraFollowY: true,
             bodyPosition: new THREE.Vector3(-7, 0, -0.7),
             spiritPosition: new THREE.Vector3(-7, 0, 0.7),
+            bodyMusicId: AudioId.FINAL_LEVEL_MUSIC,
             nextSceneId: SceneId.END,
             gameState,
             levelTitle: 'The Reunion'
@@ -170,6 +172,7 @@ export class Level_End extends BaseLevelScene
         directionalLight.shadow.bias = -0.0001;
         directionalLight.shadow.normalBias = 0.02;
 
+        this.trackShadowLight(directionalLight);
         this.scene.add(ambientLight, directionalLight);
     }
 
