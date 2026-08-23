@@ -113,7 +113,7 @@ export class SceneManager
             this.transitionOverlay.classList.add('scene-transition--visible');
             this.#activateScene(id, sceneFunction);
             this.transitionOverlay.getBoundingClientRect();
-            requestAnimationFrame(() => this.#fadeInActiveScene());
+            this.#fadeInAfterSceneRender();
             return;
         }
 
@@ -124,7 +124,7 @@ export class SceneManager
             window.setTimeout(() =>
             {
                 this.#activateScene(id, sceneFunction);
-                requestAnimationFrame(() => this.#fadeInActiveScene());
+                this.#fadeInAfterSceneRender();
             }, FADE_DURATION);
         });
     }
@@ -177,6 +177,15 @@ export class SceneManager
             this.transitionOverlay.classList.remove('scene-transition--active');
             this.activeScene?.onTransitionInComplete?.();
         }, FADE_DURATION);
+    }
+
+
+    #fadeInAfterSceneRender()
+    {
+        requestAnimationFrame(() =>
+        {
+            requestAnimationFrame(() => this.#fadeInActiveScene());
+        });
     }
 
 
