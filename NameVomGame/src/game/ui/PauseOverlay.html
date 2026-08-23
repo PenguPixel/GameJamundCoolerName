@@ -1,6 +1,14 @@
 <main class="pause-menu" data-pause-menu hidden>
-    <section class="pause-menu__panel" aria-label="pause menu">
+    <section class="pause-menu__panel" aria-label="pause menu" data-pause-panel="menu">
         <h1 class="pause-menu__title">paused</h1>
+
+        <button class="title-menu__button" type="button" data-pause-action="resume">resume</button>
+        <button class="title-menu__button" type="button" data-pause-action="options">options</button>
+        <button class="title-menu__button" type="button" data-pause-action="title">back to title</button>
+    </section>
+
+    <section class="pause-menu__panel" aria-label="pause options" data-pause-panel="options" hidden>
+        <h2 class="pause-menu__title">options</h2>
 
         <div class="title-menu__volume-list pause-menu__volume-list">
             <label class="title-menu__volume">
@@ -28,7 +36,6 @@
             </label>
         </div>
 
-        <button class="title-menu__button" type="button" data-pause-action="resume">resume</button>
-        <button class="title-menu__button" type="button" data-pause-action="title">back to title</button>
+        <button class="title-menu__button" type="button" data-pause-action="back">back</button>
     </section>
 </main>

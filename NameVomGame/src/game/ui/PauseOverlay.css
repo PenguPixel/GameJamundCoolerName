@@ -1,9 +1,10 @@
 .pause-menu {
-    position: fixed;
+    position: absolute;
     inset: 0;
     z-index: 100;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1.5rem;
     box-sizing: border-box;
     background: rgb(5 0 8 / 55%);
@@ -16,11 +17,15 @@
 
 .pause-menu__panel {
     display: grid;
-    width: min(90vw, 24rem);
+    width: min(90%, 24rem);
     justify-items: center;
     gap: 1rem;
     padding: 2.5rem;
     box-sizing: border-box;
+}
+
+.pause-menu__panel[hidden] {
+    display: none;
 }
 
 .pause-menu__title {

@@ -121,7 +121,7 @@ body
     place-items: center;
     padding: 1.5rem;
     box-sizing: border-box;
-    background: transparent;
+    background: url('/assets/images/title_screen.jpeg') center / cover no-repeat;
     color: #f5eef7;
 }
 
@@ -188,6 +188,35 @@ body
     text-align: center;
 }
 
+.title-menu__panel[data-panel="menu"]
+{
+    position: absolute;
+    inset: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: clamp(3rem, 7vw, 5.5rem);
+    text-align: left;
+}
+
+.title-menu__panel[data-panel="menu"] .title-menu__actions
+{
+    justify-items: start;
+}
+
+.title-menu__panel[data-panel="menu"] .title-menu__button
+{
+    align-self: start;
+    justify-self: start;
+}
+
+.title-menu__panel[data-panel="options"],
+.title-menu__panel[data-panel="credits"]
+{
+    background: rgb(0 0 0 / 80%);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1.5rem rgb(0 0 0 / 35%);
+}
+
 .title-menu__panel[hidden]
 {
     display: none;
@@ -195,12 +224,11 @@ body
 
 .title-menu__title
 {
-    margin: 0 0 3rem;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    font-weight: 300;
+    max-width: 60%;
+    margin: 0;
+    font: 400 clamp(4rem, 11vw, 7rem)/1 "Antara Distance", sans-serif;
     letter-spacing: 0.08em;
-    line-height: 1;
-    text-transform: uppercase;
+    text-shadow: 0 0 1rem rgb(0 0 0 / 75%);
 }
 
 .title-menu__heading

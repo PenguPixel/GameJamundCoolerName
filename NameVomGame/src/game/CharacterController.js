@@ -27,6 +27,7 @@ export class CharacterController extends THREE.Group
         this.challengeAudioActive = false;
         this.bodyMusicId = bodyMusicId;
         this.bodyAmbientId = bodyAmbientId;
+        this.bodySpawnPosition = bodyPosition.clone();
         this.healthController = new HealthController(gameState);
 
         this.bodyCharacter = new BodyCharacter(
@@ -122,6 +123,16 @@ export class CharacterController extends THREE.Group
         this.spiritCharacter.rigidBody.setTranslation(position, true);
         this.spiritCharacter.rigidBody.setNextKinematicTranslation(position);
         this.spiritCharacter.syncPhysics(true);
+    }
+
+    resetCharacters(spiritPosition)
+    {
+        this.direction.set(0, 0, 0);
+        this.bodyCharacter.rigidBody.setTranslation(this.bodySpawnPosition, true);
+        this.bodyCharacter.rigidBody.setLinvel({ x: 0, y: 0, z: 0 }, true);
+        this.bodyCharacter.rigidBody.setAngvel({ x: 0, y: 0, z: 0 }, true);
+        this.bodyCharacter.syncPhysics(true);
+        this.resetSpirit(spiritPosition);
     }
 
     takeDamage(amount = 1)

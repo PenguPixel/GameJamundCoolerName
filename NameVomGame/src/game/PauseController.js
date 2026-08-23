@@ -13,23 +13,22 @@ export class PauseController
 
         this.menu = this.overlay.querySelector('[data-pause-menu]');
         const resumeButton = this.overlay.querySelector('[data-pause-action="resume"]');
+        const optionsButton = this.overlay.querySelector('[data-pause-action="options"]');
+        const backButton = this.overlay.querySelector('[data-pause-action="back"]');
         const titleButton = this.overlay.querySelector('[data-pause-action="title"]');
 
-        resumeButton.addEventListener('click', () =>
-        {
-            this.audioManager.playSfx(AudioId.MENU_CLICK);
-            onResume();
-        });
-        titleButton.addEventListener('click', () =>
-        {
-            this.audioManager.playSfx(AudioId.MENU_CLICK);
-            onBackToTitle();
-        });
+        resumeButton.addEventListener('click', onResume);
+        optionsButton.addEventListener('click', () => this.#showPanel('options'));
+        backButton.addEventListener('click', () => this.#showPanel('menu'));
+        titleButton.addEventListener('click', onBackToTitle);
 
-        for (const button of [resumeButton, titleButton])
+        for (const button of this.overlay.querySelectorAll('.title-menu__button'))
         {
             button.addEventListener('mouseenter', () =>
                 this.audioManager.playSfx(AudioId.MENU_HOVER)
+            );
+            button.addEventListener('click', () =>
+                this.audioManager.playSfx(AudioId.MENU_CLICK)
             );
         }
 
@@ -39,6 +38,7 @@ export class PauseController
 
     show()
     {
+        this.#showPanel('menu');
         this.menu.hidden = false;
     }
 
@@ -54,6 +54,15 @@ export class PauseController
         this.overlay?.remove();
         this.overlay = null;
         this.menu = null;
+    }
+
+
+    #showPanel(panelName)
+    {
+        for (const panel of this.overlay.querySelectorAll('[data-pause-panel]'))
+        {
+            panel.hidden = panel.dataset.pausePanel !== panelName;
+        }
     }
 
 

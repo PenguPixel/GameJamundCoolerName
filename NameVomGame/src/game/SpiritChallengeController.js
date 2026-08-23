@@ -16,7 +16,6 @@ export class SpiritChallengeController
         this.checkpointPlatforms = platforms.filter(platform =>
             platform.platformType === 'start' || platform.platformType === 'save'
         );
-        this.respawnPlatform = this.startPlatform;
         this.nextSceneId = nextSceneId;
         this.remainingTime = TIMER_DURATION;
         this.isArmed = false;
@@ -43,7 +42,6 @@ export class SpiritChallengeController
 
         if (checkpoint || isOnEndPlatform)
         {
-            if (checkpoint) this.respawnPlatform = checkpoint;
             this.#resetTimer();
             this.isArmed = true;
             return false;
@@ -62,7 +60,7 @@ export class SpiritChallengeController
         if (this.remainingTime === 0)
         {
             this.characterController.takeDamage(1);
-            this.#resetSpirit();
+            this.#resetCharacters();
         }
 
         return false;
@@ -116,7 +114,15 @@ export class SpiritChallengeController
     #resetSpirit(restoreAudio = true)
     {
         this.#resetTimer(restoreAudio);
-        this.characterController.resetSpirit(this.respawnPlatform.getSpawnPosition());
+        this.characterController.resetSpirit(this.startPlatform.getSpawnPosition());
+        this.isArmed = false;
+    }
+
+
+    #resetCharacters()
+    {
+        this.#resetTimer();
+        this.characterController.resetCharacters(this.startPlatform.getSpawnPosition());
         this.isArmed = false;
     }
 
