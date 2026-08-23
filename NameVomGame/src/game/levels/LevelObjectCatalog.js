@@ -103,9 +103,9 @@ export const LevelObjectCatalog = Object.freeze([
         label: 'wall torch',
         assetId: AssetId.TORCH,
         defaultScale: [1, 1, 1],
-        defaultRotation: [0, 0, 0],
+        defaultRotation: [0.5236, 0, 0],
         centerOnGround: true,
-        staticBatch: true,
+        runtimeObject: LevelObjectType.TORCH,
         placementY: 2
     }),
     Object.freeze({
