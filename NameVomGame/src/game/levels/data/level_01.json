@@ -5924,6 +5924,2020 @@
       "properties": {
         "platformType": "save"
       }
+    },
+    {
+      "id": "palmTree-001",
+      "type": "palmTree",
+      "position": [
+        5.5,
+        0,
+        8.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-002",
+      "type": "palmTree",
+      "position": [
+        -7.5,
+        0,
+        2.5
+      ],
+      "rotation": [
+        0,
+        -0.7854,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-003",
+      "type": "cactusFlower",
+      "position": [
+        8,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-004",
+      "type": "cactusFlower",
+      "position": [
+        6,
+        0,
+        4.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-005",
+      "type": "cactusFlower",
+      "position": [
+        7,
+        0,
+        3.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-006",
+      "type": "cactusFlower",
+      "position": [
+        -3,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-007",
+      "type": "cactusFlower",
+      "position": [
+        -4,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-008",
+      "type": "cactus",
+      "position": [
+        6.5,
+        0,
+        4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-009",
+      "type": "torch",
+      "position": [
+        8.5,
+        2,
+        -5
+      ],
+      "rotation": [
+        0.5236,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-010",
+      "type": "torch",
+      "position": [
+        0.5,
+        2,
+        -5
+      ],
+      "rotation": [
+        0.5236,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-011",
+      "type": "torch",
+      "position": [
+        2,
+        2,
+        -6.5
+      ],
+      "rotation": [
+        0.5236,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-012",
+      "type": "torch",
+      "position": [
+        -3,
+        2,
+        2
+      ],
+      "rotation": [
+        0.5236,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-013",
+      "type": "torch",
+      "position": [
+        12,
+        2,
+        -2.5
+      ],
+      "rotation": [
+        0.5236,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-014",
+      "type": "torch",
+      "position": [
+        16,
+        2,
+        -5
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-015",
+      "type": "torch",
+      "position": [
+        16.5,
+        2,
+        0
+      ],
+      "rotation": [
+        0.5236,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-016",
+      "type": "stone",
+      "position": [
+        16,
+        0,
+        2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-017",
+      "type": "stone",
+      "position": [
+        16.5,
+        0,
+        2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-018",
+      "type": "stone",
+      "position": [
+        17,
+        0,
+        1.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-019",
+      "type": "stone",
+      "position": [
+        11,
+        0,
+        3
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-020",
+      "type": "stone",
+      "position": [
+        10.5,
+        0,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-021",
+      "type": "stone",
+      "position": [
+        9.5,
+        0,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-022",
+      "type": "cactusFlower",
+      "position": [
+        10,
+        0,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-023",
+      "type": "cactusFlower",
+      "position": [
+        11.5,
+        0,
+        -2.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-024",
+      "type": "cactusFlower",
+      "position": [
+        10,
+        0,
+        -2
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-025",
+      "type": "stone",
+      "position": [
+        8.5,
+        0,
+        -6
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-026",
+      "type": "stone",
+      "position": [
+        8.5,
+        0,
+        -5.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-027",
+      "type": "stone",
+      "position": [
+        8,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-028",
+      "type": "stone",
+      "position": [
+        8.5,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-029",
+      "type": "stone",
+      "position": [
+        7.5,
+        0,
+        -6
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-030",
+      "type": "stone",
+      "position": [
+        8,
+        0,
+        -5.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-031",
+      "type": "stone",
+      "position": [
+        8.5,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-032",
+      "type": "stone",
+      "position": [
+        8.5,
+        0,
+        -5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-033",
+      "type": "stone",
+      "position": [
+        7,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-034",
+      "type": "cactus",
+      "position": [
+        1.5,
+        0,
+        -5.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-035",
+      "type": "stone",
+      "position": [
+        -3.5,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-036",
+      "type": "stone",
+      "position": [
+        -3,
+        0,
+        -0.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-037",
+      "type": "stone",
+      "position": [
+        -2.5,
+        0,
+        -1
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-038",
+      "type": "stone",
+      "position": [
+        -4,
+        0,
+        -0.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-039",
+      "type": "stone",
+      "position": [
+        -3.5,
+        0,
+        -0.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-040",
+      "type": "stone",
+      "position": [
+        -2.5,
+        0,
+        -0.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "palmTree-041",
+      "type": "palmTree",
+      "position": [
+        4,
+        0,
+        -21.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-042",
+      "type": "stone",
+      "position": [
+        12.5,
+        0,
+        -15.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-043",
+      "type": "stone",
+      "position": [
+        12,
+        0,
+        -15.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-044",
+      "type": "stone",
+      "position": [
+        12.5,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-045",
+      "type": "stone",
+      "position": [
+        13.5,
+        0,
+        -17
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-046",
+      "type": "stone",
+      "position": [
+        11.5,
+        0,
+        -15.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-047",
+      "type": "stone",
+      "position": [
+        10.5,
+        0,
+        -15
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-048",
+      "type": "stone",
+      "position": [
+        10.5,
+        0,
+        -15.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-049",
+      "type": "stone",
+      "position": [
+        12,
+        0,
+        -16.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-050",
+      "type": "stone",
+      "position": [
+        12,
+        0,
+        -16.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-051",
+      "type": "stone",
+      "position": [
+        13,
+        0,
+        -17
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-052",
+      "type": "stone",
+      "position": [
+        13,
+        0,
+        -16.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-053",
+      "type": "stone",
+      "position": [
+        12.5,
+        0,
+        -16.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-054",
+      "type": "stone",
+      "position": [
+        12,
+        0,
+        -17
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-055",
+      "type": "stone",
+      "position": [
+        12,
+        0,
+        -17.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-056",
+      "type": "stone",
+      "position": [
+        12.5,
+        0,
+        -17
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-057",
+      "type": "stone",
+      "position": [
+        11.5,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-058",
+      "type": "stone",
+      "position": [
+        11,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-059",
+      "type": "stone",
+      "position": [
+        11.5,
+        0,
+        -16.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-060",
+      "type": "stone",
+      "position": [
+        10.5,
+        0,
+        -15.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-061",
+      "type": "cactus",
+      "position": [
+        10.5,
+        0,
+        -16.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-062",
+      "type": "cactus",
+      "position": [
+        6.5,
+        0,
+        -16
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-063",
+      "type": "stone",
+      "position": [
+        12.5,
+        0,
+        -23.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-064",
+      "type": "stone",
+      "position": [
+        4.5,
+        0,
+        -23
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-065",
+      "type": "stone",
+      "position": [
+        4.5,
+        0,
+        -23
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-066",
+      "type": "stone",
+      "position": [
+        4,
+        0,
+        -22.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-067",
+      "type": "stone",
+      "position": [
+        5,
+        0,
+        -22.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-068",
+      "type": "stone",
+      "position": [
+        4.5,
+        0,
+        -22.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-069",
+      "type": "stone",
+      "position": [
+        4,
+        0,
+        -22
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-070",
+      "type": "stone",
+      "position": [
+        4,
+        0,
+        -22
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-071",
+      "type": "stone",
+      "position": [
+        2.5,
+        0,
+        -22
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-072",
+      "type": "stone",
+      "position": [
+        2.5,
+        0,
+        -21.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-073",
+      "type": "stone",
+      "position": [
+        2.5,
+        0,
+        -21.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-074",
+      "type": "torch",
+      "position": [
+        2.5,
+        2,
+        -19
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-075",
+      "type": "torch",
+      "position": [
+        8,
+        2,
+        -15.5
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-076",
+      "type": "torch",
+      "position": [
+        8,
+        2,
+        -23.5
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-077",
+      "type": "cactusFlower",
+      "position": [
+        3,
+        0,
+        -23.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-078",
+      "type": "cactusFlower",
+      "position": [
+        2.5,
+        0,
+        -22.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-079",
+      "type": "cactusFlower",
+      "position": [
+        2.5,
+        0,
+        -20
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-080",
+      "type": "cactusFlower",
+      "position": [
+        2.5,
+        0,
+        -21
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-001",
+      "type": "torch",
+      "position": [
+        13.5,
+        2,
+        -18
+      ],
+      "rotation": [
+        0.5236,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-002",
+      "type": "torch",
+      "position": [
+        13.5,
+        2,
+        -21
+      ],
+      "rotation": [
+        0.5236,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactus-003",
+      "type": "cactus",
+      "position": [
+        10.5,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-004",
+      "type": "stone",
+      "position": [
+        11,
+        0,
+        -14
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-005",
+      "type": "stone",
+      "position": [
+        10,
+        0,
+        -14
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-006",
+      "type": "stone",
+      "position": [
+        9.5,
+        0,
+        -13.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-007",
+      "type": "stone",
+      "position": [
+        10,
+        0,
+        -14
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-008",
+      "type": "stone",
+      "position": [
+        10,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-009",
+      "type": "stone",
+      "position": [
+        9.5,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-010",
+      "type": "stone",
+      "position": [
+        16.5,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-011",
+      "type": "stone",
+      "position": [
+        16.5,
+        0,
+        -8
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-012",
+      "type": "stone",
+      "position": [
+        15.5,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-013",
+      "type": "stone",
+      "position": [
+        16.5,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-014",
+      "type": "stone",
+      "position": [
+        16.5,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-015",
+      "type": "stone",
+      "position": [
+        16.5,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-022",
+      "type": "stone",
+      "position": [
+        16,
+        0,
+        -7.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-023",
+      "type": "stone",
+      "position": [
+        16,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-024",
+      "type": "stone",
+      "position": [
+        16,
+        0,
+        -7
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-034",
+      "type": "stone",
+      "position": [
+        16,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        1.5708,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-041",
+      "type": "stone",
+      "position": [
+        16,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        3.1416,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "stone-061",
+      "type": "stone",
+      "position": [
+        15,
+        0,
+        -6.5
+      ],
+      "rotation": [
+        0,
+        4.7124,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-063",
+      "type": "cactusFlower",
+      "position": [
+        11,
+        0,
+        -13
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-064",
+      "type": "cactusFlower",
+      "position": [
+        13,
+        0,
+        -14.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-065",
+      "type": "cactusFlower",
+      "position": [
+        18,
+        0,
+        -12.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "cactusFlower-066",
+      "type": "cactusFlower",
+      "position": [
+        17.5,
+        0,
+        -12
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "torch-068",
+      "type": "torch",
+      "position": [
+        17.5,
+        2,
+        -13
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
     }
   ]
 }
