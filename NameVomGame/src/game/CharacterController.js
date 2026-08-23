@@ -49,6 +49,7 @@ export class CharacterController extends THREE.Group
 
     update(deltaTime)
     {
+        this.healthController.update(deltaTime);
         this.bodyCharacter.updateAnimation(
             deltaTime,
             this.activeCharacter === this.bodyCharacter
@@ -125,7 +126,7 @@ export class CharacterController extends THREE.Group
 
     takeDamage(amount = 1)
     {
-        this.healthController.takeDamage(amount);
+        return this.healthController.takeDamage(amount);
     }
 
     kill()

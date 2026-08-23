@@ -101,9 +101,13 @@ export class SpiritLightCone extends BaseRuntimeLevelObject
 
         if (isInside && !this.hasDamaged)
         {
-            this.spiritCharacter.takeDamage(1);
-            this.audioManager.playSfx(AudioId.SPIRIT_SPOTTED);
-            this.#startHitTint();
+            const tookDamage = this.spiritCharacter.takeDamage(1);
+
+            if (tookDamage)
+            {
+                this.audioManager.playSfx(AudioId.SPIRIT_SPOTTED);
+                this.#startHitTint();
+            }
         }
         this.hasDamaged = isInside;
     }

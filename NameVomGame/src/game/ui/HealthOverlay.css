@@ -9,9 +9,9 @@
 }
 
 .health-overlay__heart {
-    color: #765a7c;
-    font: 700 2rem/1 sans-serif;
-    text-shadow: 0 0 0.7rem rgb(118 90 124 / 65%);
+    color: #e32636;
+    font: 700 2.35rem/1 sans-serif;
+    text-shadow: 0 0 0.75rem rgb(227 38 54 / 70%);
     transition: opacity 150ms ease, transform 150ms ease;
 }
 

@@ -84,10 +84,10 @@ export class BodyCharacter extends BaseCharacter
 
     takeDamage(amount = 1)
     {
-        if (this.healthController.isDead || amount <= 0) return;
+        if (!this.healthController.takeDamage(amount)) return false;
 
-        this.healthController.takeDamage(amount);
         this.#playRandomHitSound();
+        return true;
     }
 
     updateFootsteps(deltaTime, isActive)

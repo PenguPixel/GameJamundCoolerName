@@ -4,6 +4,7 @@ import './ui/LevelIntroOverlay.css';
 
 const IntroState = Object.freeze({
     WAITING: 'waiting',
+    SHOWING_CONTROLS: 'showingControls',
     FADING_IN: 'fadingIn',
     HOLDING: 'holding',
     FADING_OUT: 'fadingOut',
@@ -16,9 +17,10 @@ const FADE_OUT_DURATION = 1;
 
 export class LevelIntroController
 {
-    constructor(levelTitle, audioManager)
+    constructor(levelTitle, audioManager, showControls = false)
     {
         this.audioManager = audioManager;
+        this.showControls = showControls;
         this.state = IntroState.WAITING;
         this.stateTime = 0;
         this.scribblePlaybackId = null;
@@ -29,7 +31,12 @@ export class LevelIntroController
 
         this.intro = this.overlay.querySelector('[data-level-intro]');
         this.title = this.overlay.querySelector('[data-level-intro-title]');
+        this.controls = this.overlay.querySelector('[data-level-controls]');
+        this.continueButton = this.overlay.querySelector('[data-level-controls-continue]');
         this.title.textContent = levelTitle;
+
+        this.onContinue = () => this.#startTitleIntro();
+        this.continueButton.addEventListener('click', this.onContinue);
     }
 
 
@@ -37,6 +44,23 @@ export class LevelIntroController
     {
         if (this.state !== IntroState.WAITING) return;
 
+        if (this.showControls)
+        {
+            this.state = IntroState.SHOWING_CONTROLS;
+            this.controls.hidden = false;
+            this.continueButton.focus();
+            return;
+        }
+
+        this.#startTitleIntro();
+    }
+
+
+    #startTitleIntro()
+    {
+        if (this.state !== IntroState.WAITING && this.state !== IntroState.SHOWING_CONTROLS) return;
+
+        this.controls.hidden = true;
         this.state = IntroState.FADING_IN;
         this.stateTime = 0;
         this.intro.hidden = false;
@@ -46,7 +70,11 @@ export class LevelIntroController
 
     update(deltaTime)
     {
-        if (this.state === IntroState.WAITING || this.state === IntroState.COMPLETE) return;
+        if (
+            this.state === IntroState.WAITING ||
+            this.state === IntroState.SHOWING_CONTROLS ||
+            this.state === IntroState.COMPLETE
+        ) return;
 
         this.stateTime += deltaTime;
 
@@ -85,6 +113,7 @@ export class LevelIntroController
     dispose()
     {
         this.#stopScribble();
+        this.continueButton?.removeEventListener('click', this.onContinue);
         this.overlay?.remove();
         this.overlay = null;
     }

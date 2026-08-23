@@ -2,11 +2,14 @@ import healthOverlay from './ui/HealthOverlay.html?raw';
 import './ui/HealthOverlay.css';
 import { GameState } from './GameState.js';
 
+const DAMAGE_INVULNERABILITY_DURATION = 0.4;
+
 export class HealthController
 {
     constructor(gameState = new GameState())
     {
         this.gameState = gameState;
+        this.invulnerabilityRemaining = 0;
 
         this.overlay = document.createElement('div');
         this.overlay.innerHTML = healthOverlay;
@@ -27,12 +30,24 @@ export class HealthController
     }
 
 
+    update(deltaTime)
+    {
+        this.invulnerabilityRemaining = Math.max(0, this.invulnerabilityRemaining - deltaTime);
+    }
+
+
     takeDamage(amount = 1)
     {
+        if (this.gameState.isDead || amount <= 0 || this.invulnerabilityRemaining > 0) return false;
+
         const previousHealth = this.gameState.health;
         this.gameState.takeDamage(amount);
-        if (this.gameState.health < previousHealth) this.#playHitFeedback();
+        if (this.gameState.health >= previousHealth) return false;
+
+        this.invulnerabilityRemaining = DAMAGE_INVULNERABILITY_DURATION;
+        this.#playHitFeedback();
         this.#updateOverlay();
+        return true;
     }
 
 

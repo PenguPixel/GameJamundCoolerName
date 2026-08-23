@@ -20,7 +20,8 @@ export class Level_00 extends BaseLevelScene
             spiritPosition: new THREE.Vector3(2, 0, 0),
             nextSceneId: SceneId.LEVEL_01,
             gameState,
-            levelTitle: 'The Awakening'
+            levelTitle: 'The Awakening',
+            showControls: true
         });
 
         this.scene.background = new THREE.Color(0x101218);
