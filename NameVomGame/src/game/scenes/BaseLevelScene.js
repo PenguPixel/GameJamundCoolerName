@@ -12,6 +12,7 @@ import { PressurePlate } from '../runtime/PressurePlate.js';
 import { Pitfall } from '../runtime/Pitfall.js';
 import { SpiritLightCone } from '../runtime/SpiritLightCone.js';
 import { SpiritPlatform } from '../runtime/SpiritPlatform.js';
+import { Torch } from '../runtime/Torch.js';
 import { SpiritChallengeController } from '../SpiritChallengeController.js';
 import { SceneId } from '../../core/constants/SceneId.js';
 import { LevelIntroController } from '../LevelIntroController.js';
@@ -23,7 +24,8 @@ const RuntimeLevelObjectClasses = new Map([
     [LevelObjectType.PRESSURE_PLATE, PressurePlate],
     [LevelObjectType.PITFALL, Pitfall],
     [LevelObjectType.SPIRIT_LIGHT_CONE, SpiritLightCone],
-    [LevelObjectType.SPIRIT_PLATFORM, SpiritPlatform]
+    [LevelObjectType.SPIRIT_PLATFORM, SpiritPlatform],
+    [LevelObjectType.TORCH, Torch]
 ]);
 
 const DEATH_END_DELAY = 1;

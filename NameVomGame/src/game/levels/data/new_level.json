@@ -2,7 +2,7 @@
   "version": 1,
   "name": "new_level",
   "editor": {
-    "gridSize": 0.5
+    "gridSize": 0.25
   },
   "objects": [
     {
@@ -2343,6 +2343,25 @@
         "activator": "spirit",
         "targetId": "door-001"
       }
+    },
+    {
+      "id": "torch-001",
+      "type": "torch",
+      "position": [
+        1.5,
+        2,
+        -5.75
+      ],
+      "rotation": [
+        0.5236,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
     }
   ]
 }
