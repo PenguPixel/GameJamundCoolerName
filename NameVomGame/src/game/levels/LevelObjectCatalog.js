@@ -8,7 +8,9 @@ export const LevelObjectType = Object.freeze({
     BARS: 'bars',
     DOOR: 'door',
     STONE: 'stone',
+    CACTUS: 'cactus',
     CACTUS_FLOWER: 'cactusFlower',
+    TORCH: 'torch',
     SPIKE_TRAP: 'spikeTrap',
     PRESSURE_PLATE: 'pressurePlate',
     PITFALL: 'pitfall',
@@ -77,6 +79,16 @@ export const LevelObjectCatalog = Object.freeze([
         placementY: 0
     }),
     Object.freeze({
+        type: LevelObjectType.CACTUS,
+        label: 'cactus',
+        assetId: AssetId.CACTUS,
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        staticBatch: true,
+        placementY: 0
+    }),
+    Object.freeze({
         type: LevelObjectType.CACTUS_FLOWER,
         label: 'cactus flower',
         assetId: AssetId.CACTUS_FLOWER,
@@ -85,6 +97,16 @@ export const LevelObjectCatalog = Object.freeze([
         centerOnGround: true,
         staticBatch: true,
         placementY: 0
+    }),
+    Object.freeze({
+        type: LevelObjectType.TORCH,
+        label: 'wall torch',
+        assetId: AssetId.TORCH,
+        defaultScale: [1, 1, 1],
+        defaultRotation: [0, 0, 0],
+        centerOnGround: true,
+        staticBatch: true,
+        placementY: 2
     }),
     Object.freeze({
         type: LevelObjectType.SPIKE_TRAP,
